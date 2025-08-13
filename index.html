@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Careers — AdSpend Agency & OperatorHQ</title>
-  <meta name="description" content="Join AdSpend Agency and OperatorHQ.ai — media buyers, creatives, engineers, and operators building the future of ads and AI installs."/>
+  <title>Careers — Adspend & OperatorHQ AI</title>
+  <meta name="description" content="Join Adspend and OperatorHQ AI — media buyers, creatives, engineers, and operators building the future of ads and AI installs."/>
   <style>
     :root{
       --bg: #0f1115;          /* page background */
       --panel: #151822;       /* cards/nav */
       --muted: #8b91a7;       /* secondary text */
       --text: #e8ecf3;        /* primary text */
-      --brand: #C1FF72;       /* AdSpend green (saved pref) */
+      --brand: #C1FF72;       /* Adspend green */
       --brand-2: #8fd3ff;     /* Operator blue */
       --accent: #ffd166;      /* warm accent */
       --border: #24283a;      /* borders */
@@ -43,14 +43,13 @@
 
     /* Hero */
     .hero{ display:grid; gap:18px; padding:36px 0 18px; }
-    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; }
+    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
     .hero p{ color: var(--muted); margin:0; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
-    .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background;
-    }
-    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; }
-    .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); }
-    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); }
+    .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background, .2s color; color:#fff; }
+    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; color:#fff; }
+    .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); color:#fff; font-weight:800; }
+    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); color:#fff; }
 
     /* Filters */
     .filters{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 22px; align-items:center; }
@@ -60,18 +59,20 @@
 
     /* Job grid */
     .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
-    .card{ grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; }
+    .card{ position:relative; grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; }
     .card:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
     @media(min-width:720px){ .card{ grid-column: span 6; } }
-    @media(min-width:980px){ .card{ grid-column: span 4; } }
+    /* Make modules wider at desktop so titles don't collide with the corner label */
+    @media(min-width:980px){ .card{ grid-column: span 6; } }
 
     .pill{ font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; color:var(--muted); }
     .job-head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-    .job-title{ margin:0; font-weight:700; }
+    .job-title{ margin:0; font-weight:700; padding-right: 140px; } /* reserve room for corner label */
     .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-    .brand-chip{ display:inline-flex; align-items:center; gap:8px; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:600; }
-    .brand-chip.ad{ background: color-mix(in oklab, var(--brand), #000 70%); color:#0c1208; }
-    .brand-chip.op{ background: color-mix(in oklab, var(--brand-2), #000 65%); color:#07131a; }
+
+    /* Unified glassy brand chip in upper-right */
+    .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#ffffff; background: rgba(193,255,114,.28); border:1px solid rgba(193,255,114,.45); backdrop-filter: blur(10px) saturate(110%); -webkit-backdrop-filter: blur(10px) saturate(110%); box-shadow: 0 6px 24px rgba(193,255,114,.18), inset 0 1px 0 rgba(255,255,255,.12); }
+    .brand-chip.ad, .brand-chip.op{ background: rgba(193,255,114,.28); color:#ffffff; border:1px solid rgba(193,255,114,.45); }
 
     .desc{ color: var(--muted); font-size:14px; margin:8px 0 12px; }
 
@@ -98,7 +99,7 @@
     .modal-body{ padding:16px; }
     .x{ cursor:pointer; border:1px solid var(--border); border-radius:8px; padding:6px 9px; background: transparent; color:var(--muted); }
 
-    .empty{ text-align:center; color:var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
+    .empty{ text-align:center; color: var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
 
     .sr{ position:absolute; left:-9999px; }
   </style>
@@ -108,9 +109,9 @@
     <div class="container nav">
       <div class="logo" aria-label="Site logo">
         <span class="logo-badge">A</span>
-        AdSpend Careers
+        Adspend Careers
         <span class="dot"></span>
-        <span class="tag">with OperatorHQ</span>
+        <span class="tag">with OperatorHQ AI</span>
       </div>
       <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
         <a class="btn" href="https://form.typeform.com/to/XG6oHXSn">Hiring Process</a>
@@ -122,8 +123,8 @@
 
   <main class="container">
     <section class="hero">
-      <h1>Build the future of <span style="color:var(--brand);">performance ads</span> & <span style="color:var(--brand-2);">AI installs</span>.</h1>
-      <p>Two tracks. One team. Join <strong>AdSpend Agency</strong> (growth operators, media buyers, creatives) or <strong>OperatorHQ</strong> (engineers, AI installers, product ops). High ownership, high impact.</p>
+      <h1>Shape the <span style="color:var(--brand-2);">Future of Agentic AI</span> & <span style="color:var(--brand);">Performance Marketing</span>.</h1>
+      <p>Two tracks. One team. Join <strong>Adspend</strong> (growth operators, media buyers, creatives) or <strong>OperatorHQ AI</strong> (engineers, AI installers, product ops). High ownership, high impact.</p>
       <div class="cta-row">
         <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">See open roles</a>
         <a class="btn blue" href="https://form.typeform.com/to/XG6oHXSn">Why join us</a>
@@ -138,8 +139,8 @@
 
         <select id="brand" class="input">
           <option value="">All Brands</option>
-          <option value="AdSpend">AdSpend Agency</option>
-          <option value="OperatorHQ">OperatorHQ</option>
+          <option value="Adspend">Adspend</option>
+          <option value="OperatorHQ AI">OperatorHQ AI</option>
         </select>
         <select id="dept" class="input">
           <option value="">All Teams</option>
@@ -203,7 +204,7 @@
           <ul class="clean">
             <li>Competitive base + performance bonuses</li>
             <li>High-ROI roles include revenue share</li>
-            <li>OperatorHQ: equity for key technical hires</li>
+            <li>OperatorHQ AI: equity for key technical hires</li>
           </ul>
         </div>
         <div class="tile">
@@ -238,7 +239,7 @@
 
   <footer>
     <div class="container">
-      <div>© <span id="year"></span> AdSpend Agency & OperatorHQ — All rights reserved.</div>
+      <div>© <span id="year"></span> Adspend & OperatorHQ AI — All rights reserved.</div>
     </div>
   </footer>
 
@@ -258,7 +259,7 @@
     {
       id: 'mb-1',
       title: 'Senior Media Buyer — Ecom',
-      brand: 'AdSpend',
+      brand: 'Adspend',
       dept: 'Media Buying',
       type: 'Full-Time',
       location: 'Remote',
@@ -274,7 +275,7 @@
     {
       id: 'am-1',
       title: 'Client Account Manager',
-      brand: 'AdSpend',
+      brand: 'Adspend',
       dept: 'Account Management',
       type: 'Full-Time',
       location: 'Chicago, IL',
@@ -290,7 +291,7 @@
     {
       id: 'sr-1',
       title: 'Sales Representative',
-      brand: 'AdSpend',
+      brand: 'Adspend',
       dept: 'Sales',
       type: 'Full-Time',
       location: 'Remote',
@@ -306,7 +307,7 @@
     {
       id: 'ai-1',
       title: 'AI Engineer (LLM & Automation)',
-      brand: 'OperatorHQ',
+      brand: 'OperatorHQ AI',
       dept: 'Engineering',
       type: 'Full-Time',
       location: 'Remote',
@@ -322,7 +323,7 @@
     {
       id: 'aii-1',
       title: 'AI Installer (Field Ops)',
-      brand: 'OperatorHQ',
+      brand: 'OperatorHQ AI',
       dept: 'AI Installs',
       type: 'Contract',
       location: 'Remote',
@@ -338,7 +339,7 @@
     {
       id: 'fe-1',
       title: 'Senior Frontend Developer',
-      brand: 'OperatorHQ',
+      brand: 'OperatorHQ AI',
       dept: 'Engineering',
       type: 'Full-Time',
       location: 'Remote',
@@ -366,7 +367,7 @@
         <div style="display:flex; flex-direction:column; gap:8px; width:100%">
           <div class="job-head">
             <h3 class="job-title">${job.title}</h3>
-            <span class="brand-chip ${job.brand==='AdSpend' ? 'ad' : 'op'}">${job.brand}</span>
+            <span class="brand-chip ${job.brand==='Adspend' ? 'ad' : 'op'}">${job.brand}</span>
           </div>
           <div class="meta">
             <span class="pill">${job.dept}</span>
@@ -376,7 +377,7 @@
           </div>
           <p class="desc">${job.summary}</p>
           <div style="display:flex; gap:8px; align-items:center;">
-            <a class="btn" href="${APPLY_URL}" target="_blank" rel="noopener">Role details</a>
+            <button class="btn" data-exempt onclick="openDetails('${job.id}')">Role details</button>
             <a class="btn brand" href="${APPLY_URL}" target="_blank" rel="noopener">Apply</a>
           </div>
         </div>
@@ -403,7 +404,28 @@
     emptyEl.hidden = list.length !== 0;
   }
 
-  function openDetails(job){ /* modal kept for future use */ }
+  function openDetails(id){
+    const job = JOBS.find(j=>j.id===id);
+    if(!job) return;
+    modalTitle.textContent = job.title;
+    const bulletList = job.bullets && job.bullets.length ? `<ul class="clean">${job.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>` : '';
+    modalBody.innerHTML = `
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px">
+        <span class="pill">${job.brand}</span>
+        <span class="pill">${job.dept}</span>
+        <span class="pill">${job.type}</span>
+        <span class="pill">${job.location}</span>
+        <span class="pill">${job.comp}</span>
+      </div>
+      <p style="color:var(--muted); margin-top:0;">${job.summary}</p>
+      ${bulletList}
+      <div style="display:flex; gap:8px; margin-top:14px;">
+        <a class="btn brand" href="${job.apply}" target="_blank" rel="noopener">Apply</a>
+        <button class="btn" data-exempt onclick="jobModal.close()">Close</button>
+      </div>
+    `;
+    modal.showModal();
+  }
 
   ['#search','#brand','#dept','#type','#location'].forEach(id => el(id).addEventListener('input', render));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.open) modal.close(); })
