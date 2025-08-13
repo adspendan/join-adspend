@@ -12,7 +12,7 @@
       --muted: #8b91a7;       /* secondary text */
       --text: #e8ecf3;        /* primary text */
       --brand: #C1FF72;       /* Adspend green */
-      --brand-2: #8fd3ff;     /* Operator blue */
+      --brand-2: #8fd3ff;     /* Operator blue (kept if you want later) */
       --accent: #ffd166;      /* warm accent */
       --border: #24283a;      /* borders */
       --success:#4ade80;
@@ -22,7 +22,8 @@
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       background: var(--bg); color: var(--text);
     }
     a { color: inherit; text-decoration: none; }
@@ -36,20 +37,44 @@
       border-bottom: 1px solid var(--border);
     }
     .nav{ display:flex; align-items:center; gap:16px; padding:14px 0; }
-    .logo{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; }
-    .logo-badge{ display:grid; place-items:center; width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), #7cffd2 60%); color:#101214; font-weight:900; }
-    .dot{ width:6px; height:6px; background:var(--muted); border-radius:999px; opacity:.6 }
-    .tag{ padding:3px 8px; border:1px solid var(--border); border-radius:999px; font-size:12px; color:var(--muted); }
+
+    /* Simplified nav (keeps your base fonts/weights) */
+    .simple-nav{ justify-content:space-between; }
+    .brand-title{
+      font: inherit;            /* inherit family, size, weight */
+      font-weight: 700;         /* matches your original logo weight */
+      letter-spacing:.2px;
+      color: var(--brand);
+      /* glow removed */
+      display:flex; align-items:center; gap:.5ch;
+    }
+    .brand-title .x{ color: var(--text); opacity:.7; font-weight:600; }
+
+    /* Buttons — force readable text */
+    .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background, .2s color, .2s box-shadow; color:#fff !important; }
+    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; color:#fff !important; }
+    .btn.brand{
+      border-color: color-mix(in oklab, var(--brand), #000 30%);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel));
+      color:#fff !important;   /* stay white on brand button */
+      font-weight:800;
+    }
+    .btn.brand:hover{
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+      color:#fff !important;
+    }
+    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); color:#fff !important; }
 
     /* Hero */
     .hero{ display:grid; gap:18px; padding:36px 0 18px; }
-    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
+    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; } /* unchanged */
+    .hero .headline-accent{
+      color: var(--brand);
+      text-shadow: none; /* glow removed */
+    }
     .hero p{ color: var(--muted); margin:0; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
-    .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background, .2s color; color:#fff; }
-    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; color:#fff; }
-    .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); color:#fff; font-weight:800; }
-    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); color:#fff; }
 
     /* Filters */
     .filters{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 22px; align-items:center; }
@@ -62,27 +87,24 @@
     .card{ position:relative; grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; }
     .card:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
     @media(min-width:720px){ .card{ grid-column: span 6; } }
-    /* Make modules wider at desktop so titles don't collide with the corner label */
     @media(min-width:980px){ .card{ grid-column: span 6; } }
 
     .pill{ font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; color:var(--muted); }
     .job-head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-    .job-title{ margin:0; font-weight:700; padding-right: 140px; } /* reserve room for corner label */
+    .job-title{ margin:0; font-weight:700; padding-right: 140px; }
     .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
-    /* Unified glassy brand chip in upper-right */
-    .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#ffffff; background: rgba(193,255,114,.28); border:1px solid rgba(193,255,114,.45); backdrop-filter: blur(10px) saturate(110%); -webkit-backdrop-filter: blur(10px) saturate(110%); box-shadow: 0 6px 24px rgba(193,255,114,.18), inset 0 1px 0 rgba(255,255,255,.12); }
-    .brand-chip.ad, .brand-chip.op{ background: rgba(193,255,114,.28); color:#ffffff; border:1px solid rgba(193,255,114,.45); }
+    /* Brand chip */
+    .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#ffffff; background: rgba(193,255,114,.28); border:1px solid rgba(193,255,114,.45); backdrop-filter: blur(10px) saturate(110%); -webkit-backdrop-filter: blur(10px) saturate(110%); box-shadow: 0 6px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12); }
 
     .desc{ color: var(--muted); font-size:14px; margin:8px 0 12px; }
-
     .card .btn{ margin-left:auto; }
 
     /* Sections */
     section{ padding: 24px 0 18px; }
     h2{ font-size: clamp(18px, 3vw, 24px); margin: 8px 0 8px; }
 
-    /* Process / Benefits */
+    /* Base tiles */
     .tiles{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
     .tile{ grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:16px; }
     @media(min-width:800px){ .tile{ grid-column: span 6; } }
@@ -102,32 +124,57 @@
     .empty{ text-align:center; color: var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
 
     .sr{ position:absolute; left:-9999px; }
+
+    /* ===== Tighten & Stack: Hiring Process, About, Benefits ===== */
+    #process .tiles { grid-template-columns: 1fr; gap: 10px; }
+    #process .tile { padding: 14px; border-radius: 12px; }
+    #process .tile h3 { margin: 0 0 6px; font-size: clamp(16px, 2.5vw, 20px); }
+    #process .tile .desc { margin: 6px 0 0; line-height: 1.55; }
+
+    #about .tiles, #benefits .tiles { grid-template-columns: 1fr; gap: 10px; }
+    #about .tile, #benefits .tile { padding: 14px; border-radius: 12px; }
+    #about .tile h3, #benefits .tile h3 { margin: 0 0 6px; font-size: clamp(16px, 2.5vw, 20px); }
+    #about .tile .desc, #benefits .tile .desc { margin: 6px 0 0; line-height: 1.55; }
+
+    @media (min-width: 1200px) {
+      #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== Fancy hover glow for role cards ===== */
+    .card{ overflow:hidden; }
+    .card::after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:16px;
+      background:
+        radial-gradient(140px 140px at var(--mx,50%) var(--my,50%), rgba(193,255,114,.35), rgba(193,255,114,0) 60%),
+        conic-gradient(from var(--angle,0deg), rgba(193,255,114,.35), rgba(193,255,114,0) 20%, rgba(143,211,255,.25), rgba(193,255,114,.35));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude; -webkit-mask-composite: xor;
+      padding:1px; /* border-like effect */
+      opacity:0; pointer-events:none;
+      transition: opacity .25s ease;
+    }
+    .card:hover::after, .card:focus-within::after{ opacity:1; }
+    @keyframes spinBorder { to { --angle: 360deg; } }
+    .card:hover::after{ animation: spinBorder 2s linear infinite; }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <div class="logo" aria-label="Site logo">
-        <span class="logo-badge">A</span>
-        Adspend Careers
-        <span class="dot"></span>
-        <span class="tag">with OperatorHQ AI</span>
-      </div>
-      <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
-        <a class="btn" href="https://form.typeform.com/to/XG6oHXSn">Hiring Process</a>
-        <a class="btn" href="https://form.typeform.com/to/XG6oHXSn">Benefits</a>
-        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">View Open Roles</a>
-      </div>
+    <div class="container nav simple-nav">
+      <div class="brand-title">Adspend Agency <span class="x">×</span> OperatorHQ AI</div>
+      <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">Join Us</a>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Shape the <span style="color:var(--brand-2);">Future of Agentic AI</span> & <span style="color:var(--brand);">Performance Marketing</span>.</h1>
-      <p>Two tracks. One team. Join <strong>Adspend</strong> (growth operators, media buyers, creatives) or <strong>OperatorHQ AI</strong> (engineers, AI installers, product ops). High ownership, high impact.</p>
+      <h1>Shape the Future of <span class="headline-accent">Agentic AI</span> & <span class="headline-accent">Performance Marketing</span>.</h1>
+      <p>Join the team building the future of ads and AI.</p>
+      <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on-premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world-class content creators and influencers to small business owners, e-commerce brands, med spas, doctors, lawyers, roofers, contractors, and entrepreneurs — delivering results that move markets and transform businesses.</p>
       <div class="cta-row">
         <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">See open roles</a>
-        <a class="btn blue" href="https://form.typeform.com/to/XG6oHXSn">Why join us</a>
       </div>
     </section>
 
@@ -165,6 +212,7 @@
           <option>Remote</option>
           <option>Chicago, IL</option>
           <option>Austin, TX</option>
+          <option>Brooklyn, NY</option>
         </select>
       </div>
 
@@ -176,21 +224,21 @@
       <h2>Why join us</h2>
       <div class="tiles">
         <div class="tile">
-          <h3>Owner-operator culture</h3>
-          <p class="desc">We give you real problems, real budgets, and real autonomy. You ship, you learn, you level up.</p>
+          <h3>Run with the pros, build with the bold</h3>
+          <p class="desc">We don’t just run ads — we run the plays that scale empires. We don’t just install AI — we build the systems that make businesses unshakable. Here, you’ll work on high-stakes campaigns, ship tools used by real operators, and solve problems that actually move the scoreboard.</p>
           <ul class="clean">
-            <li>Ship fast, measure, iterate</li>
-            <li>Zero fluff, direct feedback</li>
-            <li>Growth comp + upside for impact</li>
+            <li>Ship fast, measure everything, and iterate like a founder</li>
+            <li>Zero fluff, high-trust feedback culture</li>
+            <li>Growth comp + upside tied directly to the impact you create</li>
           </ul>
         </div>
         <div class="tile">
-          <h3>Hard problems, real impact</h3>
-          <p class="desc">From 8-figure attribution puzzles to offline AI installs in live businesses — you’ll work on market-moving challenges.</p>
+          <h3>Big challenges, bigger wins</h3>
+          <p class="desc">From 8-figure ad funnels to on-prem AI installs that power entire companies — you’ll work on projects most agencies can’t even pitch — let alone deliver.</p>
           <ul class="clean">
-            <li>Hybrid ads + AI product surface</li>
-            <li>Enterprise installs & automation</li>
-            <li>Hands-on with founders</li>
+            <li>Multi-platform ad scaling & creative execution</li>
+            <li>Enterprise-grade automation & AI deployments</li>
+            <li>Direct access to founders, decision-makers, and high-value clients</li>
           </ul>
         </div>
       </div>
@@ -204,15 +252,15 @@
           <ul class="clean">
             <li>Competitive base + performance bonuses</li>
             <li>High-ROI roles include revenue share</li>
-            <li>OperatorHQ AI: equity for key technical hires</li>
+            <li>Equity opportunities for key OperatorHQ AI technical hires</li>
           </ul>
         </div>
         <div class="tile">
           <h3>Support</h3>
           <ul class="clean">
-            <li>Remote-first + Chicago hub access</li>
-            <li>Flexible schedule; outcomes over hours</li>
-            <li>Gear stipend; pro software stack</li>
+            <li>Remote-first, with optional Chicago HQ access</li>
+            <li>Flexible schedule — outcomes &gt; hours</li>
+            <li>Gear stipend for top-tier tech + pro software stack + in-house AI tools</li>
           </ul>
         </div>
       </div>
@@ -220,18 +268,19 @@
 
     <section id="process">
       <h2>Hiring process</h2>
+      <p class="desc">Resumes? Cute. We care about assets that close clients. Show us your media buying results, your creative concepts that converted, your funnels that printed cash. We want to see what happens when you are in control. Proof of work tells us if you can build the future. Show the campaigns, code, systems, or products you’ve shipped that created real impact. If it’s not ambitious and high-leverage, it’s not what we’re looking for. We want to see the system you built, the bottleneck you removed, and the impact you created. Everything else is noise.</p>
       <div class="tiles">
         <div class="tile">
-          <h3>1. Intro & portfolio</h3>
-          <p class="desc">Share work you’re proud of — ad accounts, case studies, repos, or shipped features.</p>
+          <h3>1. Intro &amp; portfolio</h3>
+          <p class="desc">Show us your work — ad accounts, case studies, creative samples, automation builds, or shipped projects. We want to see results.</p>
         </div>
         <div class="tile">
           <h3>2. Paid trial sprint</h3>
-          <p class="desc">We do a 3–7 day scoped sprint on a real problem. You get context, we get signal.</p>
+          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project for 7 days. No simulations. No hypotheticals. Just execution. You’ll have full access to our in-house, AI-powered portals — our game‑changing tools for winning here. Each portal is a living playbook loaded with step‑by‑step training, live data, proven templates, and an AI assistant trained on our exact systems for each role in our organization. They give you everything you need to execute without guesswork — but it’s still up to you to make the calls, deliver results, and show you belong.</p>
         </div>
         <div class="tile">
           <h3>3. Offer</h3>
-          <p class="desc">Clear comp, clear targets, 30–90 day ramp plan. No surprises.</p>
+          <p class="desc">You’ll know exactly what’s expected, exactly what you’ll earn, and exactly how to win — fast. If you make it here, you’re in the big leagues. You’ll know exactly how to hit your target, blow past it, and get paid big for doing it. Clear comps. Clear path. No ceilings. Your first 30–90 days are built for momentum. We’ll map out your first 90 days so you’re winning fast — and then it’s all about how far you want to push it.</p>
         </div>
       </div>
     </section>
@@ -278,7 +327,7 @@
       brand: 'Adspend',
       dept: 'Account Management',
       type: 'Full-Time',
-      location: 'Chicago, IL',
+      location: 'Remote',
       comp: 'Competitive base + client bonus',
       summary: 'Own client outcomes, reporting, and comms. Translate goals to playbooks.',
       bullets: [
@@ -301,6 +350,49 @@
         'Top-of-funnel outbound + booked call follow-through',
         'CRM hygiene, velocity, and win rates',
         'Comfortable on video and screenshare'
+      ],
+      apply: APPLY_URL,
+    },
+    /* Senior Content Producer (Video Editor) — Adspend */
+    {
+      id: 've-1',
+      title: 'Senior Content Producer (Video Editor)',
+      brand: 'Adspend',
+      dept: 'Creative',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'World-class editor creating everything from viral memes to premium launch films. Cutting-edge AI video, ruthless storytelling, social-native instincts.',
+      bullets: [
+        'Ship launch videos that capture attention',
+        'Motion graphics & title design mastery',
+        'AI tools: Veo 3, Runway, + emerging platforms',
+        'Platform-optimized content: X, IG, TikTok',
+        'Pacing, music, & narrative that hooks',
+        'Turn cultural moments into shareable memes',
+        'Collaborate with creative leadership end-to-end',
+        'Track trends, test formats, evolve style'
+      ],
+      apply: APPLY_URL,
+    },
+    /* Tech Integration Specialist — Adspend */
+    {
+      id: 'tech-1',
+      title: 'Tech Integration Specialist',
+      brand: 'Adspend',
+      dept: 'Operations',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Own client tech setup end-to-end. Embed checkouts, wire billing flows, automate workflows, and lead technical onboarding for high-value accounts.',
+      bullets: [
+        'Embed & customize checkout in GHL/ClickFunnels/Custom sites',
+        'Set up custom billing via API; troubleshoot integrations',
+        'Automate with Zapier, n8n, webhooks — build seamless flows',
+        'Identify product gaps; partner with engineering on fixes',
+        'Creative problem-solving beyond “supported features”',
+        'Create docs & streamline future integrations',
+        '30/60/90: master APIs; lead onboarding; mentor peers'
       ],
       apply: APPLY_URL,
     },
@@ -385,6 +477,29 @@
     `;
   }
 
+  // Hover glow follows pointer/touch
+  function bindCardHover(){
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const setPos = (e) => {
+        const rect = card.getBoundingClientRect();
+        const pt = e.touches ? e.touches[0] : e;
+        const x = pt.clientX - rect.left;
+        const y = pt.clientY - rect.top;
+        if (!isNaN(x) && !isNaN(y)) {
+          card.style.setProperty('--mx', x + 'px');
+          card.style.setProperty('--my', y + 'px');
+        }
+      };
+      card.addEventListener('pointermove', setPos, {passive:true});
+      card.addEventListener('touchmove', setPos, {passive:true});
+      card.addEventListener('pointerleave', ()=>{
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
+      });
+    });
+  }
+
   function render(){
     const q = el('#search').value.trim().toLowerCase();
     const brand = el('#brand').value;
@@ -402,6 +517,7 @@
 
     jobsEl.innerHTML = list.map(jobCard).join('');
     emptyEl.hidden = list.length !== 0;
+    bindCardHover();
   }
 
   function openDetails(id){
@@ -437,8 +553,7 @@
   document.addEventListener('click', (e)=>{
     const btn = e.target.closest('.btn');
     if(!btn) return;
-    if(btn.hasAttribute('data-exempt')) return; // allow Close, etc.
-    // Normalize anchors too
+    if(btn.hasAttribute('data-exempt')) return;
     if(btn.tagName === 'A') btn.setAttribute('href', APPLY_URL);
   });
   </script>
