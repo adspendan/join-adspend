@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers — AdSpend Agency & OperatorHQ</title>
+  <meta name="description" content="Join AdSpend Agency and OperatorHQ.ai — media buyers, creatives, engineers, and operators building the future of ads and AI installs."/>
+  <style>
+    :root{
+      --bg: #0f1115;          /* page background */
+      --panel: #151822;       /* cards/nav */
+      --muted: #8b91a7;       /* secondary text */
+      --text: #e8ecf3;        /* primary text */
+      --brand: #C1FF72;       /* AdSpend green (saved pref) */
+      --brand-2: #8fd3ff;     /* Operator blue */
+      --accent: #ffd166;      /* warm accent */
+      --border: #24283a;      /* borders */
+      --success:#4ade80;
+      --danger:#f87171;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container{ width:min(1100px, 100% - 32px); margin: 0 auto; }
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index:10;
+      backdrop-filter: saturate(120%) blur(6px);
+      background: color-mix(in oklab, var(--bg), #000 20% / 85%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{ display:flex; align-items:center; gap:16px; padding:14px 0; }
+    .logo{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; }
+    .logo-badge{ display:grid; place-items:center; width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), #7cffd2 60%); color:#101214; font-weight:900; }
+    .dot{ width:6px; height:6px; background:var(--muted); border-radius:999px; opacity:.6 }
+    .tag{ padding:3px 8px; border:1px solid var(--border); border-radius:999px; font-size:12px; color:var(--muted); }
+
+    /* Hero */
+    .hero{ display:grid; gap:18px; padding:36px 0 18px; }
+    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; }
+    .hero p{ color: var(--muted); margin:0; }
+    .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background;
+    }
+    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; }
+    .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); }
+    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); }
+
+    /* Filters */
+    .filters{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 22px; align-items:center; }
+    .input{ background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; color:var(--text); outline:none; }
+    .search{ min-width:260px; }
+    select.input{ appearance: none; padding-right: 28px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="%23aaaaaa"><path d="M7 10l5 5 5-5z"/></svg>'); background-repeat:no-repeat; background-position: right 8px center; }
+
+    /* Job grid */
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+    .card{ grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; }
+    .card:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+    @media(min-width:720px){ .card{ grid-column: span 6; } }
+    @media(min-width:980px){ .card{ grid-column: span 4; } }
+
+    .pill{ font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; color:var(--muted); }
+    .job-head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+    .job-title{ margin:0; font-weight:700; }
+    .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .brand-chip{ display:inline-flex; align-items:center; gap:8px; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:600; }
+    .brand-chip.ad{ background: color-mix(in oklab, var(--brand), #000 70%); color:#0c1208; }
+    .brand-chip.op{ background: color-mix(in oklab, var(--brand-2), #000 65%); color:#07131a; }
+
+    .desc{ color: var(--muted); font-size:14px; margin:8px 0 12px; }
+
+    .card .btn{ margin-left:auto; }
+
+    /* Sections */
+    section{ padding: 24px 0 18px; }
+    h2{ font-size: clamp(18px, 3vw, 24px); margin: 8px 0 8px; }
+
+    /* Process / Benefits */
+    .tiles{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+    .tile{ grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:16px; }
+    @media(min-width:800px){ .tile{ grid-column: span 6; } }
+
+    ul.clean{ margin:8px 0 0 0; padding:0 0 0 18px; color:var(--muted); }
+
+    /* Footer */
+    footer{ border-top:1px solid var(--border); padding:20px 0 40px; color: var(--muted); }
+
+    /* Modal */
+    dialog{ width:min(760px, 96vw); border:1px solid var(--border); background: var(--panel); color: var(--text); border-radius:16px; padding:0; }
+    dialog::backdrop{ background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+    .modal-head{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid var(--border); }
+    .modal-body{ padding:16px; }
+    .x{ cursor:pointer; border:1px solid var(--border); border-radius:8px; padding:6px 9px; background: transparent; color:var(--muted); }
+
+    .empty{ text-align:center; color:var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
+
+    .sr{ position:absolute; left:-9999px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo" aria-label="Site logo">
+        <span class="logo-badge">A</span>
+        AdSpend Careers
+        <span class="dot"></span>
+        <span class="tag">with OperatorHQ</span>
+      </div>
+      <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+        <a class="btn" href="https://form.typeform.com/to/XG6oHXSn">Hiring Process</a>
+        <a class="btn" href="https://form.typeform.com/to/XG6oHXSn">Benefits</a>
+        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">View Open Roles</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Build the future of <span style="color:var(--brand);">performance ads</span> & <span style="color:var(--brand-2);">AI installs</span>.</h1>
+      <p>Two tracks. One team. Join <strong>AdSpend Agency</strong> (growth operators, media buyers, creatives) or <strong>OperatorHQ</strong> (engineers, AI installers, product ops). High ownership, high impact.</p>
+      <div class="cta-row">
+        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">See open roles</a>
+        <a class="btn blue" href="https://form.typeform.com/to/XG6oHXSn">Why join us</a>
+      </div>
+    </section>
+
+    <section id="open-roles" aria-labelledby="roles-heading">
+      <h2 id="roles-heading">Open roles</h2>
+      <div class="filters">
+        <label class="sr" for="search">Search</label>
+        <input id="search" class="input search" placeholder="Search title, team, keyword… (e.g., Media, LLM, Sales)" />
+
+        <select id="brand" class="input">
+          <option value="">All Brands</option>
+          <option value="AdSpend">AdSpend Agency</option>
+          <option value="OperatorHQ">OperatorHQ</option>
+        </select>
+        <select id="dept" class="input">
+          <option value="">All Teams</option>
+          <option>Media Buying</option>
+          <option>Creative</option>
+          <option>Sales</option>
+          <option>Account Management</option>
+          <option>Engineering</option>
+          <option>AI Installs</option>
+          <option>Product</option>
+          <option>Operations</option>
+        </select>
+        <select id="type" class="input">
+          <option value="">All Types</option>
+          <option>Full-Time</option>
+          <option>Part-Time</option>
+          <option>Contract</option>
+          <option>Internship</option>
+        </select>
+        <select id="location" class="input">
+          <option value="">All Locations</option>
+          <option>Remote</option>
+          <option>Chicago, IL</option>
+          <option>Austin, TX</option>
+        </select>
+      </div>
+
+      <div id="jobs" class="grid" aria-live="polite"></div>
+      <div id="empty" class="empty" hidden>No roles match your filters. Try clearing a filter or using a different keyword.</div>
+    </section>
+
+    <section id="about">
+      <h2>Why join us</h2>
+      <div class="tiles">
+        <div class="tile">
+          <h3>Owner-operator culture</h3>
+          <p class="desc">We give you real problems, real budgets, and real autonomy. You ship, you learn, you level up.</p>
+          <ul class="clean">
+            <li>Ship fast, measure, iterate</li>
+            <li>Zero fluff, direct feedback</li>
+            <li>Growth comp + upside for impact</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <h3>Hard problems, real impact</h3>
+          <p class="desc">From 8-figure attribution puzzles to offline AI installs in live businesses — you’ll work on market-moving challenges.</p>
+          <ul class="clean">
+            <li>Hybrid ads + AI product surface</li>
+            <li>Enterprise installs & automation</li>
+            <li>Hands-on with founders</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <h2>Benefits & Perks</h2>
+      <div class="tiles">
+        <div class="tile">
+          <h3>Compensation</h3>
+          <ul class="clean">
+            <li>Competitive base + performance bonuses</li>
+            <li>High-ROI roles include revenue share</li>
+            <li>OperatorHQ: equity for key technical hires</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <h3>Support</h3>
+          <ul class="clean">
+            <li>Remote-first + Chicago hub access</li>
+            <li>Flexible schedule; outcomes over hours</li>
+            <li>Gear stipend; pro software stack</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>Hiring process</h2>
+      <div class="tiles">
+        <div class="tile">
+          <h3>1. Intro & portfolio</h3>
+          <p class="desc">Share work you’re proud of — ad accounts, case studies, repos, or shipped features.</p>
+        </div>
+        <div class="tile">
+          <h3>2. Paid trial sprint</h3>
+          <p class="desc">We do a 3–7 day scoped sprint on a real problem. You get context, we get signal.</p>
+        </div>
+        <div class="tile">
+          <h3>3. Offer</h3>
+          <p class="desc">Clear comp, clear targets, 30–90 day ramp plan. No surprises.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> AdSpend Agency & OperatorHQ — All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Job Details Modal -->
+  <dialog id="jobModal" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <strong id="modalTitle">Role Title</strong>
+      <button class="x btn" data-exempt onclick="jobModal.close()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <script>
+  const APPLY_URL = 'https://form.typeform.com/to/XG6oHXSn';
+
+  const JOBS = [
+    {
+      id: 'mb-1',
+      title: 'Senior Media Buyer — Ecom',
+      brand: 'AdSpend',
+      dept: 'Media Buying',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Base + bonus; revenue share eligible',
+      summary: 'Own 7-figure ad accounts across Meta, TikTok, and Google. Build, scale, and systematize.',
+      bullets: [
+        '5+ years running ecom at scale',
+        'CAPI, attribution, creative testing frameworks',
+        'Obsessed with numbers, fast experiments'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'am-1',
+      title: 'Client Account Manager',
+      brand: 'AdSpend',
+      dept: 'Account Management',
+      type: 'Full-Time',
+      location: 'Chicago, IL',
+      comp: 'Competitive base + client bonus',
+      summary: 'Own client outcomes, reporting, and comms. Translate goals to playbooks.',
+      bullets: [
+        'Great communicator, ruthless prioritizer',
+        'Understands funnels, CRO, and LTV',
+        'Agency experience preferred'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'sr-1',
+      title: 'Sales Representative',
+      brand: 'AdSpend',
+      dept: 'Sales',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Commission + bonuses; accelerator tiers',
+      summary: 'Qualify, educate, and close. You’ll sell agency retainers and later our Operator package.',
+      bullets: [
+        'Top-of-funnel outbound + booked call follow-through',
+        'CRM hygiene, velocity, and win rates',
+        'Comfortable on video and screenshare'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'ai-1',
+      title: 'AI Engineer (LLM & Automation)',
+      brand: 'OperatorHQ',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; role-level based',
+      summary: 'Build local-first LLM modules and automation pipelines. Ship real-world AI installs.',
+      bullets: [
+        'Strong TypeScript/Python; containerization',
+        'Retrieval, evals, and agentic workflows',
+        'Security, privacy, and on-device constraints'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'aii-1',
+      title: 'AI Installer (Field Ops)',
+      brand: 'OperatorHQ',
+      dept: 'AI Installs',
+      type: 'Contract',
+      location: 'Remote',
+      comp: 'Day rate + install bonuses',
+      summary: 'Configure Operator on client hardware, run playbooked integrations, verify acceptance tests.',
+      bullets: [
+        'Comfort with Mac Studio + local networks',
+        'Follow checklists; document and train users',
+        'Travel optional; remote installs supported'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'fe-1',
+      title: 'Senior Frontend Developer',
+      brand: 'OperatorHQ',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; role-level based',
+      summary: 'Ship clean React UIs for dashboards and installer flows. Performance + DX nerd.',
+      bullets: [
+        'React 18, state mgmt, modern bundlers',
+        'Design systems; accessibility; testing',
+        'API contracts with backend/agents'
+      ],
+      apply: APPLY_URL,
+    },
+  ];
+
+  const el = sel => document.querySelector(sel);
+  const jobsEl = el('#jobs');
+  const emptyEl = el('#empty');
+  const modal = el('#jobModal');
+  const modalTitle = el('#modalTitle');
+  const modalBody = el('#modalBody');
+
+  function jobCard(job){
+    return `
+      <article class="card" data-brand="${job.brand}" data-dept="${job.dept}" data-type="${job.type}" data-location="${job.location}" data-title="${job.title.toLowerCase()} ${job.summary.toLowerCase()}">
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%">
+          <div class="job-head">
+            <h3 class="job-title">${job.title}</h3>
+            <span class="brand-chip ${job.brand==='AdSpend' ? 'ad' : 'op'}">${job.brand}</span>
+          </div>
+          <div class="meta">
+            <span class="pill">${job.dept}</span>
+            <span class="pill">${job.type}</span>
+            <span class="pill">${job.location}</span>
+            <span class="pill">${job.comp}</span>
+          </div>
+          <p class="desc">${job.summary}</p>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <a class="btn" href="${APPLY_URL}" target="_blank" rel="noopener">Role details</a>
+            <a class="btn brand" href="${APPLY_URL}" target="_blank" rel="noopener">Apply</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function render(){
+    const q = el('#search').value.trim().toLowerCase();
+    const brand = el('#brand').value;
+    const dept = el('#dept').value;
+    const type = el('#type').value;
+    const location = el('#location').value;
+
+    const list = JOBS.filter(j => (
+      (!brand || j.brand === brand) &&
+      (!dept || j.dept === dept) &&
+      (!type || j.type === type) &&
+      (!location || j.location === location) &&
+      (!q || (j.title+" "+j.summary+" "+j.dept).toLowerCase().includes(q))
+    ));
+
+    jobsEl.innerHTML = list.map(jobCard).join('');
+    emptyEl.hidden = list.length !== 0;
+  }
+
+  function openDetails(job){ /* modal kept for future use */ }
+
+  ['#search','#brand','#dept','#type','#location'].forEach(id => el(id).addEventListener('input', render));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.open) modal.close(); })
+  el('#year').textContent = new Date().getFullYear();
+
+  render();
+
+  // Universal router: any .btn click goes to Typeform unless data-exempt
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.btn');
+    if(!btn) return;
+    if(btn.hasAttribute('data-exempt')) return; // allow Close, etc.
+    // Normalize anchors too
+    if(btn.tagName === 'A') btn.setAttribute('href', APPLY_URL);
+  });
+  </script>
+</body>
+</html>
