@@ -12,18 +12,15 @@
       --muted: #8b91a7;       /* secondary text */
       --text: #e8ecf3;        /* primary text */
       --brand: #C1FF72;       /* Adspend green */
-      --brand-2: #8fd3ff;     /* Operator blue (kept if you want later) */
+      --brand-2: #8fd3ff;     /* Operator blue (unused now) */
       --accent: #ffd166;      /* warm accent */
       --border: #24283a;      /* borders */
-      --success:#4ade80;
-      --danger:#f87171;
     }
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       background: var(--bg); color: var(--text);
     }
     a { color: inherit; text-decoration: none; }
@@ -36,43 +33,23 @@
       background: color-mix(in oklab, var(--bg), #000 20% / 85%);
       border-bottom: 1px solid var(--border);
     }
-    .nav{ display:flex; align-items:center; gap:16px; padding:14px 0; }
+    .nav{ display:flex; align-items:center; gap:16px; padding:14px 0; justify-content:space-between; }
 
-    /* Simplified nav (keeps your base fonts/weights) */
-    .simple-nav{ justify-content:space-between; }
-    .brand-title{
-      font: inherit;            /* inherit family, size, weight */
-      font-weight: 700;         /* matches your original logo weight */
-      letter-spacing:.2px;
-      color: var(--brand);
-      /* glow removed */
-      display:flex; align-items:center; gap:.5ch;
-    }
+    .brand-title{ font-weight:700; letter-spacing:.2px; display:flex; align-items:center; gap:.5ch; }
+    .brand-title a{ color: var(--brand); text-decoration:none; }
+    .brand-title a:hover{ text-decoration:underline; }
     .brand-title .x{ color: var(--text); opacity:.7; font-weight:600; }
 
-    /* Buttons — force readable text */
+    /* Buttons — keep readable */
     .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background, .2s color, .2s box-shadow; color:#fff !important; }
     .btn:hover{ transform: translateY(-1px); background: #1a1e2b; color:#fff !important; }
-    .btn.brand{
-      border-color: color-mix(in oklab, var(--brand), #000 30%);
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel));
-      color:#fff !important;   /* stay white on brand button */
-      font-weight:800;
-    }
-    .btn.brand:hover{
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
-      color:#fff !important;
-    }
-    .btn.blue{ border-color: color-mix(in oklab, var(--brand-2), #000 30%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand-2) 12%), var(--panel)); color:#fff !important; }
+    .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); color:#fff !important; font-weight:800; }
+    .btn.brand:hover{ box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); }
 
     /* Hero */
     .hero{ display:grid; gap:18px; padding:36px 0 18px; }
-    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; } /* unchanged */
-    .hero .headline-accent{
-      color: var(--brand);
-      text-shadow: none; /* glow removed */
-    }
+    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
+    .hero .headline-accent{ color: var(--brand); } /* glow removed */
     .hero p{ color: var(--muted); margin:0; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
 
@@ -84,7 +61,7 @@
 
     /* Job grid */
     .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
-    .card{ position:relative; grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; }
+    .card{ position:relative; grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start; transition:.2s transform, .2s box-shadow; overflow:hidden; }
     .card:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
     @media(min-width:720px){ .card{ grid-column: span 6; } }
     @media(min-width:980px){ .card{ grid-column: span 6; } }
@@ -140,31 +117,38 @@
       #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ===== Fancy hover glow for role cards ===== */
-    .card{ overflow:hidden; }
-    .card::after{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:16px;
+    /* ===== Animated edge on job cards ===== */
+    .card::before{
+      content:""; position:absolute; inset:-1px; border-radius:16px; padding:1px;
       background:
-        radial-gradient(140px 140px at var(--mx,50%) var(--my,50%), rgba(193,255,114,.35), rgba(193,255,114,0) 60%),
-        conic-gradient(from var(--angle,0deg), rgba(193,255,114,.35), rgba(193,255,114,0) 20%, rgba(143,211,255,.25), rgba(193,255,114,.35));
+        conic-gradient(from var(--angle,0deg), rgba(193,255,114,.5), rgba(193,255,114,0) 25%, rgba(143,211,255,.35), rgba(193,255,114,.5));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      mask-composite: exclude; -webkit-mask-composite: xor;
-      padding:1px; /* border-like effect */
-      opacity:0; pointer-events:none;
-      transition: opacity .25s ease;
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      opacity:0; transition: opacity .25s ease; pointer-events:none;
+    }
+    @keyframes spinBorder { to { --angle: 360deg; } }
+    .card:hover::before, .card:focus-within::before{ opacity:1; animation: spinBorder 2s linear infinite; }
+
+    /* Optional hotspot that follows pointer */
+    .card::after{
+      content:""; position:absolute; inset:-1px; border-radius:16px; padding:1px;
+      background: radial-gradient(140px 140px at var(--mx,50%) var(--my,50%), rgba(193,255,114,.35), rgba(193,255,114,0) 60%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      opacity:0; transition: opacity .25s ease; pointer-events:none;
     }
     .card:hover::after, .card:focus-within::after{ opacity:1; }
-    @keyframes spinBorder { to { --angle: 360deg; } }
-    .card:hover::after{ animation: spinBorder 2s linear infinite; }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav simple-nav">
-      <div class="brand-title">Adspend Agency <span class="x">×</span> OperatorHQ AI</div>
-      <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">Join Us</a>
+    <div class="container nav">
+      <div class="brand-title">
+        <a href="https://adspend.agency/" target="_blank" rel="noopener">Adspend Agency</a>
+        <span class="x">×</span>
+        <a href="http://operatorai.agency/" target="_blank" rel="noopener">OperatorHQ AI</a>
+      </div>
+      <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn" target="_blank" rel="noopener">Join Us</a>
     </div>
   </header>
 
@@ -174,7 +158,7 @@
       <p>Join the team building the future of ads and AI.</p>
       <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on-premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world-class content creators and influencers to small business owners, e-commerce brands, med spas, doctors, lawyers, roofers, contractors, and entrepreneurs — delivering results that move markets and transform businesses.</p>
       <div class="cta-row">
-        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn">See open roles</a>
+        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn" target="_blank" rel="noopener">See open roles</a>
       </div>
     </section>
 
@@ -212,7 +196,6 @@
           <option>Remote</option>
           <option>Chicago, IL</option>
           <option>Austin, TX</option>
-          <option>Brooklyn, NY</option>
         </select>
       </div>
 
@@ -276,11 +259,11 @@
         </div>
         <div class="tile">
           <h3>2. Paid trial sprint</h3>
-          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project for 7 days. No simulations. No hypotheticals. Just execution. You’ll have full access to our in-house, AI-powered portals — our game‑changing tools for winning here. Each portal is a living playbook loaded with step‑by‑step training, live data, proven templates, and an AI assistant trained on our exact systems for each role in our organization. They give you everything you need to execute without guesswork — but it’s still up to you to make the calls, deliver results, and show you belong.</p>
+          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project. You’ll have full access to our in-house, AI-powered portals — living playbooks with training, live data, templates, and an AI assistant trained on our systems. They give you everything you need to execute without guesswork — but it’s still up to you to deliver.</p>
         </div>
         <div class="tile">
           <h3>3. Offer</h3>
-          <p class="desc">You’ll know exactly what’s expected, exactly what you’ll earn, and exactly how to win — fast. If you make it here, you’re in the big leagues. You’ll know exactly how to hit your target, blow past it, and get paid big for doing it. Clear comps. Clear path. No ceilings. Your first 30–90 days are built for momentum. We’ll map out your first 90 days so you’re winning fast — and then it’s all about how far you want to push it.</p>
+          <p class="desc">You’ll know exactly what’s expected, exactly what you’ll earn, and exactly how to win — fast. Clear comps. Clear path. No ceilings. Your first 30–90 days are built for momentum.</p>
         </div>
       </div>
     </section>
@@ -477,7 +460,6 @@
     `;
   }
 
-  // Hover glow follows pointer/touch
   function bindCardHover(){
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
@@ -553,7 +535,7 @@
   document.addEventListener('click', (e)=>{
     const btn = e.target.closest('.btn');
     if(!btn) return;
-    if(btn.hasAttribute('data-exempt')) return;
+    if(btn.hasAttribute('data-exempt')) return; // allow Close, etc.
     if(btn.tagName === 'A') btn.setAttribute('href', APPLY_URL);
   });
   </script>
