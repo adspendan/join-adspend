@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Careers — Adspend Agency x OperatorHQ AI</title>
-  <meta name="description" content="Join Adspend Agency x OperatorHQ AI — building the future of ads and private, on‑prem AI installs." />
+  <title>Careers — Adspend & OperatorHQ AI</title>
+  <meta name="description" content="Join Adspend and OperatorHQ AI — media buyers, creatives, engineers, and operators building the future of ads and AI installs."/>
   <style>
     :root{
+      color-scheme: dark;
       --bg: #0f1115;          /* page background */
       --panel: #151822;       /* cards/nav */
       --muted: #8b91a7;       /* secondary text */
       --text: #e8ecf3;        /* primary text */
-      --brand: #C1FF72;       /* brand green */
-      --accent: #ffd166;      /* warm accent */
+      --brand: #C1FF72;       /* Adspend green */
       --border: #24283a;      /* borders */
-      --hotspot: 240px;       /* neon hotspot size */
+      --chip: rgba(193,255,114,.28);
+      --chip-b: rgba(193,255,114,.45);
     }
 
     * { box-sizing: border-box; }
@@ -41,117 +42,102 @@
 
     /* Buttons */
     .btn{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background:var(--panel); cursor:pointer; transition: .2s transform, .2s background, .2s color, .2s box-shadow; color:#fff !important; }
-    .btn:hover,.btn:focus-visible{ transform: translateY(-1px); background: #1a1e2b; color:#fff !important; outline: none; }
+    .btn:hover{ transform: translateY(-1px); background: #1a1e2b; color:#fff !important; }
     .btn.brand{ border-color: color-mix(in oklab, var(--brand), #000 30%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel)); color:#fff !important; font-weight:800; }
     .btn.brand:hover{ box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); }
 
     /* Hero */
-    .hero{ display:grid; gap:12px; padding:28px 0 12px; }
-    h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
-    .headline-accent{ color: var(--brand); }
+    .hero{ display:grid; gap:18px; padding:36px 0 18px; }
+    .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
+    .hero .headline-accent{ color: var(--brand); white-space: nowrap; } /* keep Agentic AI together */
     .hero p{ color: var(--muted); margin:0; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
 
-    /* Sections */
-    main{ padding-bottom: 40px; }
-    section{ padding: 20px 0 14px; }
-    h2{ font-size: clamp(18px, 3vw, 24px); margin: 8px 0 8px; }
-
     /* Filters */
-    .filters{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 18px; align-items:center; }
+    .filters{ display:flex; flex-wrap:wrap; gap:10px; padding:14px 0 22px; align-items:center; }
     .input{ background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; color:var(--text); outline:none; }
     .search{ min-width:260px; }
     select.input{ appearance: none; padding-right: 28px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="%23aaaaaa"><path d="M7 10l5 5 5-5z"/></svg>'); background-repeat:no-repeat; background-position: right 8px center; }
 
-    /* Grid & cards */
+    /* Job grid & card */
     .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
     .card{
-      position:relative; grid-column: span 12;
-      border:1px solid var(--border); background: var(--panel);
-      border-radius:16px; padding:14px; display:block;
-      transition:.2s transform, .2s box-shadow; overflow:hidden;
-      cursor: pointer;
+      position:relative; grid-column: span 12; border:1px solid var(--border); background: var(--panel);
+      border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start;
+      transition:.22s transform ease, .22s box-shadow ease, .22s border-color ease;
+      overflow:hidden;
+      /* OUTER-ONLY glow (idle) */
+      box-shadow: 0 0 8px rgba(193,255,114,0.10);
     }
-    .card:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
-    @media(min-width:720px){ .card{ grid-column: span 6; } }
-    @media(min-width:1080px){ .card{ grid-column: span 6; } }
+    .card:hover{
+      transform: translateY(-1px);
+      /* OUTER-ONLY glow (hover) */
+      box-shadow: 0 0 0 1px rgba(193,255,114,0.35), 0 0 22px rgba(193,255,114,0.35), 0 6px 26px rgba(0,0,0,.25);
+    }
+    /* Subtle breathing while idle (respect reduced motion) */
+    @media (prefers-reduced-motion: no-preference){
+      @keyframes breatheGlow {
+        0%,100% { box-shadow: 0 0 8px rgba(193,255,114,0.10); }
+        50%     { box-shadow: 0 0 10px rgba(193,255,114,0.14); }
+      }
+      .card{ animation: breatheGlow 3.6s ease-in-out infinite; }
+      .card:hover{ animation: none; } /* snap steady on hover */
+    }
 
-    .job-head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-    .job-title{ margin:0; font-weight:700; padding-right: 120px; }
-    .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0; }
+    @media(min-width:720px){ .card{ grid-column: span 6; } }
+    @media(min-width:980px){ .card{ grid-column: span 6; } }
+
     .pill{ font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; color:var(--muted); }
-    .desc{ color: var(--muted); font-size:14px; margin:8px 0 0; }
+    .job-head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+    .job-title{ margin:0; font-weight:700; padding-right: 140px; }
+    .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
     /* Brand chip */
-    .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#111; background: rgba(193,255,114,.95); border:1px solid rgba(193,255,114,1); box-shadow: 0 6px 24px rgba(193,255,114,.25), inset 0 1px 0 rgba(255,255,255,.15); }
+    .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#101214; background: var(--brand); border:1px solid var(--chip-b); box-shadow: 0 16px 28px rgba(193,255,114,.18); }
 
-    /* Tighten tiles */
-    #about .tiles, #benefits .tiles, #process .tiles { display:grid; grid-template-columns: 1fr; gap: 10px; }
-    #about .tile, #benefits .tile, #process .tile { border:1px solid var(--border); background: var(--panel); border-radius:12px; padding:14px; }
-    #about .tile h3, #benefits .tile h3, #process .tile h3 { margin:0 0 6px; font-size: clamp(16px, 2.5vw, 20px); }
-    #about .tile .desc, #benefits .tile .desc, #process .tile .desc { margin:6px 0 0; line-height:1.55; color:var(--muted); }
-    @media (min-width: 1200px) { #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr 1fr; } }
+    .desc{ color: var(--muted); font-size:14px; margin:8px 0 12px; }
+    .card .btn{ margin-left:auto; }
 
-    /* ==== NEON EDGE — brand green only ==== */
-    .card::before{
-      content:""; position:absolute; inset:-1px; border-radius:16px; padding:2px;
-      background:
-        conic-gradient(from var(--angle,0deg),
-          rgba(193,255,114,0) 0deg,
-          rgba(193,255,114,.75) 20deg,
-          rgba(193,255,114,0) 90deg,
-          rgba(193,255,114,.6) 180deg,
-          rgba(193,255,114,0) 260deg,
-          rgba(193,255,114,.75) 320deg,
-          rgba(193,255,114,0) 360deg);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      opacity:0; transition: opacity .25s ease; pointer-events:none;
-    }
-    @keyframes spinBorder { to { --angle: 360deg; } }
-    .card:hover::before, .card:focus-within::before{ opacity:1; animation: spinBorder 2.6s linear infinite; }
+    /* Sections */
+    section{ padding: 24px 0 18px; }
+    h2{ font-size: clamp(18px, 3vw, 24px); margin: 8px 0 8px; }
 
-    /* Hotspot follows pointer */
-    .card::after{
-      content:""; position:absolute; inset:-1px; border-radius:16px; padding:2px;
-      background: radial-gradient(var(--hotspot) var(--hotspot) at var(--mx,50%) var(--my,50%),
-        rgba(193,255,114,.75), rgba(193,255,114,0) 60%);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      opacity:0; transition: opacity .2s ease; pointer-events:none;
-    }
-    .card:hover::after, .card:focus-within::after{ opacity:1; }
-
-    /* Locked state: stop spin, pulse slowly */
-    @keyframes pulseBorder { 0%,100% { opacity: .35 } 50% { opacity: .85 } }
-    @keyframes pulseHotspot { 0%,100% { opacity: .25 } 50% { opacity: .6 } }
-
-    .card.locked::before{
-      opacity:.7;
-      animation: pulseBorder 3s ease-in-out infinite !important; /* override spin */
-    }
-    .card.locked:hover::before{ animation: pulseBorder 3s ease-in-out infinite !important; }
-    .card.locked::after{
-      /* center hotspot and pulse */
-      background: radial-gradient(var(--hotspot) var(--hotspot) at 50% 50%, rgba(193,255,114,.45), rgba(193,255,114,0) 65%);
-      opacity:.4;
-      animation: pulseHotspot 3s ease-in-out infinite !important;
-    }
-    .card.locked:hover::after{ animation: pulseHotspot 3s ease-in-out infinite !important; }
-
-    /* Motion preferences */
-    @media (prefers-reduced-motion: reduce){
-      .card::before, .card::after{ animation:none !important; opacity:.35 !important; }
-    }
+    /* Base tiles */
+    .tiles{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+    .tile{ grid-column: span 12; border:1px solid var(--border); background: var(--panel); border-radius:16px; padding:16px; }
+    @media(min-width:800px){ .tile{ grid-column: span 6; } }
+    ul.clean{ margin:8px 0 0 0; padding:0 0 0 18px; color:var(--muted); }
 
     /* Footer */
     footer{ border-top:1px solid var(--border); padding:20px 0 40px; color: var(--muted); }
 
+    /* Modal (force dark) */
+    dialog{ width:min(760px, 96vw); border:1px solid var(--border); background: var(--panel); color: var(--text); border-radius:16px; padding:0; color-scheme: dark; }
+    dialog::backdrop{ background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+    .modal-head{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid var(--border); }
+    .modal-body{ padding:16px; color: var(--text); }
+    .x{ cursor:pointer; border:1px solid var(--border); border-radius:8px; padding:6px 9px; background: transparent; color:var(--muted); }
+
+    .empty{ text-align:center; color: var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
+
     .sr{ position:absolute; left:-9999px; }
+
+    /* Tighten sections + extra space above first process tile */
+    #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr; gap: 10px; }
+    #about .tile, #benefits .tile, #process .tile { padding: 14px; border-radius: 12px; }
+    #about .tile h3, #benefits .tile h3, #process .tile h3 { margin: 0 0 6px; font-size: clamp(16px, 2.5vw, 20px); }
+    #about .tile .desc, #benefits .tile .desc, #process .tile .desc { margin: 6px 0 0; line-height: 1.55; }
+    #process > .desc { margin-bottom: 14px; } /* breathing room before first tile */
+    @media (min-width: 1200px) { #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr 1fr; } }
+
+    /* Mobile tweak: keep “Agentic AI” on one line in hero */
+    @media (max-width: 480px){
+      .hero .headline-accent{ white-space: nowrap; }
+    }
   </style>
 </head>
 <body>
-  <header role="navigation" aria-label="Top">
+  <header>
     <div class="container nav">
       <div class="brand-title">
         <a href="https://adspend.framer.website/" target="_blank" rel="noopener">Adspend Agency</a>
@@ -164,9 +150,9 @@
 
   <main class="container">
     <section class="hero">
-      <h1>Shape the Future of <span class="headline-accent">Agentic AI</span> & <span class="headline-accent">Performance Marketing</span>.</h1>
+      <h1>Shape the Future of <span class="headline-accent">Agentic&nbsp;AI</span> & <span class="headline-accent">Performance Marketing</span>.</h1>
       <p>Join the team building the future of ads and AI.</p>
-      <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on‑premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world‑class creators and influencers to SMBs, e‑commerce brands, med spas, doctors, lawyers, roofers, contractors, and entrepreneurs — delivering results that move markets and transform businesses.</p>
+      <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on-premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world-class content creators and influencers to small business owners, e-commerce brands, med spas, doctors, lawyers, roofers, contractors, and entrepreneurs — delivering results that move markets and transform businesses.</p>
       <div class="cta-row">
         <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn" target="_blank" rel="noopener">See open roles</a>
       </div>
@@ -176,7 +162,7 @@
       <h2 id="roles-heading">Open roles</h2>
       <div class="filters">
         <label class="sr" for="search">Search</label>
-        <input id="search" class="input search" placeholder="Search title, team, keyword… (e.g., Media, Backend, iOS)" />
+        <input id="search" class="input search" placeholder="Search title, team, keyword… (e.g., Media, LLM, Sales)" />
 
         <select id="brand" class="input">
           <option value="">All Brands</option>
@@ -191,8 +177,8 @@
           <option>Account Management</option>
           <option>Engineering</option>
           <option>AI Installs</option>
-          <option>Operations</option>
           <option>Product</option>
+          <option>Operations</option>
         </select>
         <select id="type" class="input">
           <option value="">All Types</option>
@@ -204,9 +190,9 @@
         <select id="location" class="input">
           <option value="">All Locations</option>
           <option>Remote</option>
-	<option>❤️ Chicago, USA</option>
+<option>❤️ Chicago, USA</option>
 	<option>San Diego, USA</option>
-          <option>New York City, USA</option>
+<option>New York City, USA</option>
           <option>San Francisco / Bay Area, USA</option>
           <option>Austin, USA</option>
           <option>Warsaw, Poland</option>
@@ -233,7 +219,7 @@
       </div>
 
       <div id="jobs" class="grid" aria-live="polite"></div>
-      <div id="empty" class="desc" hidden>No roles match your filters right now.</div>
+      <div id="empty" class="empty" hidden>No roles match your filters. Try clearing a filter or using a different keyword.</div>
     </section>
 
     <section id="about">
@@ -241,20 +227,20 @@
       <div class="tiles">
         <div class="tile">
           <h3>Run with the pros, build with the bold</h3>
-          <p class="desc">We don’t just run ads — we run the plays that scale empires. We don’t just install AI — we build the systems that make businesses unshakable. Here, you’ll work on high‑stakes campaigns, ship tools used by real operators, and solve problems that actually move the scoreboard.</p>
-          <ul class="desc" style="padding-left:18px; margin:8px 0 0">
+          <p class="desc">We don’t just run ads — we run the plays that scale empires. We don’t just install AI — we build the systems that make businesses unshakable. Here, you’ll work on high-stakes campaigns, ship tools used by real operators, and solve problems that actually move the scoreboard.</p>
+          <ul class="clean">
             <li>Ship fast, measure everything, and iterate like a founder</li>
-            <li>Zero fluff, high‑trust feedback culture</li>
+            <li>Zero fluff, high-trust feedback culture</li>
             <li>Growth comp + upside tied directly to the impact you create</li>
           </ul>
         </div>
         <div class="tile">
           <h3>Big challenges, bigger wins</h3>
-          <p class="desc">From 8‑figure ad funnels to on‑prem AI installs that power entire companies — you’ll work on projects most agencies can’t even pitch — let alone deliver.</p>
-          <ul class="desc" style="padding-left:18px; margin:8px 0 0">
-            <li>Multi‑platform ad scaling & creative execution</li>
-            <li>Enterprise‑grade automation & AI deployments</li>
-            <li>Direct access to founders, decision‑makers, and high‑value clients</li>
+          <p class="desc">From 8-figure ad funnels to on-prem AI installs that power entire companies — you’ll work on projects most agencies can’t even pitch — let alone deliver.</p>
+          <ul class="clean">
+            <li>Multi-platform ad scaling & creative execution</li>
+            <li>Enterprise-grade automation & AI deployments</li>
+            <li>Direct access to founders, decision-makers, and high-value clients</li>
           </ul>
         </div>
       </div>
@@ -265,18 +251,18 @@
       <div class="tiles">
         <div class="tile">
           <h3>Compensation</h3>
-          <ul class="desc" style="padding-left:18px; margin:8px 0 0">
+          <ul class="clean">
             <li>Competitive base + performance bonuses</li>
-            <li>High‑ROI roles include revenue share</li>
+            <li>High-ROI roles include revenue share</li>
             <li>Equity opportunities for key OperatorHQ AI technical hires</li>
           </ul>
         </div>
         <div class="tile">
           <h3>Support</h3>
-          <ul class="desc" style="padding-left:18px; margin:8px 0 0">
-            <li>Remote‑first (optional Chicago HQ access)</li>
+          <ul class="clean">
+            <li>Remote-first, with optional Chicago HQ access</li>
             <li>Flexible schedule — outcomes &gt; hours</li>
-            <li>Gear stipend for top‑tier tech + pro software stack + in‑house AI tools</li>
+            <li>Gear stipend for top-tier tech + pro software stack + in-house AI tools</li>
           </ul>
         </div>
       </div>
@@ -284,7 +270,7 @@
 
     <section id="process">
       <h2>Hiring process</h2>
-      <p class="desc">Resumes? Cute. We care about assets that close clients. Show us your media buying results, your creative concepts that converted, your funnels that printed cash. We want to see what happens when you are in control. Proof of work tells us if you can build the future. Show the campaigns, code, systems, or products you’ve shipped that created real impact. If it’s not ambitious and high‑leverage, it’s not what we’re looking for. We want to see the system you built, the bottleneck you removed, and the impact you created. Everything else is noise.</p>
+      <p class="desc">Resumes? Cute. We care about assets that close clients. Show us your media buying results, your creative concepts that converted, your funnels that printed cash. We want to see what happens when you are in control. Proof of work tells us if you can build the future. Show the campaigns, code, systems, or products you’ve shipped that created real impact. If it’s not ambitious and high-leverage, it’s not what we’re looking for. We want to see the system you built, the bottleneck you removed, and the impact you created. Everything else is noise.</p>
       <div class="tiles">
         <div class="tile">
           <h3>1. Intro &amp; portfolio</h3>
@@ -292,7 +278,7 @@
         </div>
         <div class="tile">
           <h3>2. Paid trial sprint</h3>
-          <p class="desc">3–7 days to prove you can hang on a live project. Full access to our AI‑powered portals — living playbooks with training, live data, templates, and an AI assistant trained on our systems. We provide the context — you deliver.</p>
+          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project. You’ll have full access to our in-house, AI-powered portals — living playbooks with training, live data, templates, and an AI assistant trained on our systems. They give you everything you need to execute without guesswork — but it’s still up to you to deliver.</p>
         </div>
         <div class="tile">
           <h3>3. Offer</h3>
@@ -308,22 +294,33 @@
     </div>
   </footer>
 
+  <!-- Job Details Modal -->
+  <dialog id="jobModal" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <strong id="modalTitle">Role Title</strong>
+      <button class="x btn" data-exempt onclick="jobModal.close()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
   <script>
   const APPLY_URL = 'https://form.typeform.com/to/XG6oHXSn';
 
-  // Jobs data — Adspend + OperatorHQ AI
   const JOBS = [
-    /* Adspend roles */
+    /* Adspend */
     {
       id: 've-1',
       title: 'Senior Content Producer (Video Editor)',
-      brand: 'Adspend', dept: 'Creative', type: 'Full-Time', location: 'Remote',
+      brand: 'Adspend',
+      dept: 'Creative',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Cash + equity; full benefits',
       summary: 'World-class editor creating everything from viral memes to premium launch films. Cutting-edge AI video, ruthless storytelling, social-native instincts.',
       bullets: [
         'Ship launch videos that capture attention',
         'Motion graphics & title design mastery',
-        'AI tools: Veo / Runway / emerging platforms',
+        'AI tools: Veo 3, Runway, + emerging platforms',
         'Platform-optimized content: X, IG, TikTok',
         'Pacing, music, & narrative that hooks',
         'Turn cultural moments into shareable memes',
@@ -333,25 +330,12 @@
       apply: APPLY_URL,
     },
     {
-      id: 'tech-1',
-      title: 'Tech Integration Specialist',
-      brand: 'Adspend', dept: 'Operations', type: 'Full-Time', location: 'Remote',
-      comp: 'Cash + equity; full benefits',
-      summary: 'Own client tech setup end-to-end. Embed checkouts, wire billing flows, automate workflows, and lead technical onboarding for high-value accounts.',
-      bullets: [
-        'Embed & customize checkout in GHL/ClickFunnels/Custom sites',
-        'Custom billing via API; troubleshoot integrations',
-        'Automate with Zapier, n8n, webhooks',
-        'Identify product gaps; partner with engineering',
-        'Create docs & streamline future integrations',
-        '30/60/90: master APIs; lead onboarding; mentor peers'
-      ],
-      apply: APPLY_URL,
-    },
-    {
       id: 'mb-1',
       title: 'Senior Media Buyer — Ecom',
-      brand: 'Adspend', dept: 'Media Buying', type: 'Full-Time', location: 'Remote',
+      brand: 'Adspend',
+      dept: 'Media Buying',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Base + bonus; revenue share eligible',
       summary: 'Own 7-figure ad accounts across Meta, TikTok, and Google. Build, scale, and systematize.',
       bullets: [
@@ -364,7 +348,10 @@
     {
       id: 'am-1',
       title: 'Client Account Manager',
-      brand: 'Adspend', dept: 'Account Management', type: 'Full-Time', location: 'Remote',
+      brand: 'Adspend',
+      dept: 'Account Management',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Competitive base + client bonus',
       summary: 'Own client outcomes, reporting, and comms. Translate goals to playbooks.',
       bullets: [
@@ -377,97 +364,130 @@
     {
       id: 'sr-1',
       title: 'Sales Representative',
-      brand: 'Adspend', dept: 'Sales', type: 'Full-Time', location: 'Remote',
+      brand: 'Adspend',
+      dept: 'Sales',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Commission + bonuses; accelerator tiers',
-      summary: 'Qualify, educate, and close. Sell agency retainers and later our Operator package.',
+      summary: 'Qualify, educate, and close. You’ll sell agency retainers and later our Operator package.',
       bullets: [
-        'Outbound + booked call follow-through',
+        'Top-of-funnel outbound + booked call follow-through',
         'CRM hygiene, velocity, and win rates',
         'Comfortable on video and screenshare'
       ],
       apply: APPLY_URL,
     },
+    {
+      id: 'tech-1',
+      title: 'Tech Integration Specialist',
+      brand: 'Adspend',
+      dept: 'Operations',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Own client tech setup end-to-end. Embed checkouts, wire billing flows, automate workflows, and lead technical onboarding for high-value accounts.',
+      bullets: [
+        'Embed & customize checkout in GHL/ClickFunnels/Custom sites',
+        'Set up custom billing via API; troubleshoot integrations',
+        'Automate with Zapier, n8n, webhooks — build seamless flows',
+        'Identify product gaps; partner with engineering on fixes',
+        'Creative problem-solving beyond “supported features”',
+        'Create docs & streamline future integrations',
+        '30/60/90: master APIs; lead onboarding; mentor peers'
+      ],
+      apply: APPLY_URL,
+    },
 
-    /* OperatorHQ AI roles */
+    /* OperatorHQ AI */
     {
-      id: 'staff-be-1',
-      title: 'Staff Software Engineer, Backend',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
-      comp: 'Cash + equity; full benefits',
-      summary: 'Own the core backend that powers private, on‑prem OperatorHQ deployments. Design fast, clean APIs and reliable data flows for on‑device agents and customer dashboards.',
-      bullets: [
-        'Design primitive, composable APIs consumed by internal & client apps',
-        'Low-latency services for retrieval, evals, and orchestration',
-        'PostgreSQL performance, queueing, caching, observability',
-        'Security-first architectures: local-first, privacy-aware',
-        'Ship fast: prototype → production with crisp docs',
-        'Retire dead code; keep systems simple and leverageable'
-      ],
-      apply: APPLY_URL,
-    },
-    {
-      id: 'staff-fe-web-1',
-      title: 'Staff Software Engineer, Frontend Web',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
-      comp: 'Cash + equity; full benefits',
-      summary: 'Lead web experiences for OperatorHQ — from installer flows to real‑time ops dashboards used by field teams and executives.',
-      bullets: [
-        'Own features end‑to‑end in React/TypeScript',
-        'High‑performance UI: streaming data, optimistic updates',
-        'Design systems; tasteful UX with accessibility by default',
-        'Integrate with on‑prem APIs; occasionally flex into backend',
-        'Prototype quickly, validate with users, ship weekly',
-        'Prune legacy UI; establish reusable patterns that speed delivery'
-      ],
-      apply: APPLY_URL,
-    },
-    {
-      id: 'staff-ios-1',
-      title: 'Staff Software Engineer, iOS',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
-      comp: 'Cash + equity; full benefits',
-      summary: 'Build on‑device OperatorHQ extensions in Swift/SwiftUI for client teams that need local, offline‑capable workflows.',
-      bullets: [
-        'Swift/SwiftUI with async/await; secure local storage',
-        'Offline‑first sync with on‑prem OperatorHQ nodes',
-        'Integrations: camera, geolocation, files, push',
-        'Ship polished UX for field ops (e.g., routing, checklists, reports)',
-        'Occasional Rails or API schema work to support features'
-      ],
-      apply: APPLY_URL,
-    },
-    {
-      id: 'staff-android-1',
-      title: 'Staff Software Engineer, Android',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
-      comp: 'Cash + equity; full benefits',
-      summary: 'Build Android OperatorHQ extensions in Kotlin/Compose so field operators can run local workflows on their devices.',
-      bullets: [
-        'Kotlin/Compose with modern tooling; Hilt/Room familiarity',
-        'Offline‑first sync; background tasks; reliability in poor networks',
-        'Device integrations; secure data handling',
-        'Collaborate on reusable mobile architecture patterns',
-        'Flex into API contracts as needed'
-      ],
-      apply: APPLY_URL,
-    },
-    {
-      id: 'ai-eng-1',
+      id: 'ai-1',
       title: 'AI Engineer (LLM & Automation)',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Cash + equity; role-level based',
-      summary: 'Build local‑first LLM modules and automation pipelines. Ship real‑world AI installs.',
+      summary: 'Build local-first LLM modules and automation pipelines. Ship real-world AI installs.',
       bullets: [
-        'TypeScript/Python; containerization',
+        'Strong TypeScript/Python; containerization',
         'Retrieval, evals, and agentic workflows',
-        'Security, privacy, and on‑device constraints'
+        'Security, privacy, and on-device constraints'
       ],
       apply: APPLY_URL,
     },
     {
-      id: 'ai-installer-1',
+      id: 'swe-backend',
+      title: 'Staff Software Engineer, Backend',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Own the core backend that powers private, on-prem OperatorHQ deployments. Design fast, clean APIs and reliable data flows for on-device agents and customer dashboards.',
+      bullets: [
+        'Design & ship beautiful, fast APIs for internal/external devs',
+        'Create primitives, patterns, and internal tooling for leverage',
+        'Partner with founders/design to turn vision into clean systems',
+        'Prototype quickly; delete what’s outdated; keep it simple'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'swe-frontend',
+      title: 'Staff Software Engineer, Frontend Web',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Build polished web experiences across OperatorHQ. Own end‑to‑end features that ship weekly and power operators in the field.',
+      bullets: [
+        'Craft fast, tasteful UX with React/TypeScript',
+        'Own features end‑to‑end; think deeply about interactions',
+        'Collaborate closely with design & founders; ship weekly',
+        'Flex across API contracts and data models when needed'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'swe-ios',
+      title: 'Staff Software Engineer, iOS',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Build beautiful, fast OperatorHQ iOS experiences for client teams working on‑site. Enable local workflows, offline reliability, and tight integrations.',
+      bullets: [
+        'Swift/SwiftUI with modern async patterns',
+        'Tasteful mobile UX; own features end‑to‑end',
+        'Coordinate with backend to deploy install‑specific tooling'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'swe-android',
+      title: 'Staff Software Engineer, Android',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Cash + equity; full benefits',
+      summary: 'Ship fast, robust OperatorHQ Android apps for client field teams. Focus on clarity, performance, and reliability.',
+      bullets: [
+        'Kotlin/Compose with modern patterns',
+        'Own critical features users touch every day',
+        'Build reusable architecture for future installs'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'aii-1',
       title: 'AI Installer (Field Ops)',
-      brand: 'OperatorHQ AI', dept: 'AI Installs', type: 'Contract', location: 'Remote',
+      brand: 'OperatorHQ AI',
+      dept: 'AI Installs',
+      type: 'Contract',
+      location: 'Remote',
       comp: 'Day rate + install bonuses',
       summary: 'Configure Operator on client hardware, run playbooked integrations, verify acceptance tests.',
       bullets: [
@@ -480,7 +500,10 @@
     {
       id: 'fe-1',
       title: 'Senior Frontend Developer',
-      brand: 'OperatorHQ AI', dept: 'Engineering', type: 'Full-Time', location: 'Remote',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Full-Time',
+      location: 'Remote',
       comp: 'Cash + equity; role-level based',
       summary: 'Ship clean React UIs for dashboards and installer flows. Performance + DX nerd.',
       bullets: [
@@ -495,64 +518,32 @@
   const el = sel => document.querySelector(sel);
   const jobsEl = el('#jobs');
   const emptyEl = el('#empty');
+  const modal = el('#jobModal');
+  const modalTitle = el('#modalTitle');
+  const modalBody = el('#modalBody');
 
-  /* Build one card */
   function jobCard(job){
-    const dataTitle = (job.title + " " + job.summary + " " + job.dept).toLowerCase();
     return `
-      <article class="card"
-        data-brand="${job.brand}" data-dept="${job.dept}" data-type="${job.type}"
-        data-location="${job.location}" data-title="${dataTitle}">
-        <div class="job-head">
-          <h3 class="job-title">${job.title}</h3>
-          <span class="brand-chip">${job.brand}</span>
-        </div>
-        <div class="meta">
-          <span class="pill">${job.dept}</span>
-          <span class="pill">${job.type}</span>
-          <span class="pill">${job.location}</span>
-          <span class="pill">${job.comp}</span>
-        </div>
-        <p class="desc">${job.summary}</p>
-        <div style="display:flex; gap:8px; align-items:center; margin-top:10px;">
-          <button class="btn" data-exempt onclick="openDetails('${job.id}')">Role details</button>
-          <a class="btn brand" href="${APPLY_URL}" target="_blank" rel="noopener">Apply</a>
+      <article class="card" data-brand="${job.brand}" data-dept="${job.dept}" data-type="${job.type}" data-location="${job.location}" data-title="${job.title.toLowerCase()} ${job.summary.toLowerCase()}">
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%">
+          <div class="job-head">
+            <h3 class="job-title">${job.title}</h3>
+            <span class="brand-chip">${job.brand}</span>
+          </div>
+          <div class="meta">
+            <span class="pill">${job.dept}</span>
+            <span class="pill">${job.type}</span>
+            <span class="pill">${job.location}</span>
+            <span class="pill">${job.comp}</span>
+          </div>
+          <p class="desc">${job.summary}</p>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <button class="btn" data-exempt onclick="openDetails('${job.id}')">Role details</button>
+            <a class="btn brand" href="${APPLY_URL}" target="_blank" rel="noopener">Apply</a>
+          </div>
         </div>
       </article>
     `;
-  }
-
-  /* Hover hotspot + click-to-lock behavior */
-  function bindCardInteractions(){
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      // Pointer hotspot tracker
-      const setPos = (e) => {
-        if(card.classList.contains('locked')) return; // when locked, keep centered pulse
-        const rect = card.getBoundingClientRect();
-        const pt = e.touches ? e.touches[0] : e;
-        const x = pt.clientX - rect.left;
-        const y = pt.clientY - rect.top;
-        if (!isNaN(x) && !isNaN(y)) {
-          card.style.setProperty('--mx', x + 'px');
-          card.style.setProperty('--my', y + 'px');
-        }
-      };
-      card.addEventListener('pointermove', setPos, {passive:true});
-      card.addEventListener('touchmove', setPos, {passive:true});
-      card.addEventListener('pointerleave', ()=>{
-        if(!card.classList.contains('locked')){
-          card.style.removeProperty('--mx');
-          card.style.removeProperty('--my');
-        }
-      });
-
-      // Toggle lock on click (ignore button/link clicks)
-      card.addEventListener('click', (e)=>{
-        if(e.target.closest('.btn, a')) return; // let buttons/links work
-        card.classList.toggle('locked');
-      });
-    });
   }
 
   function render(){
@@ -572,28 +563,13 @@
 
     jobsEl.innerHTML = list.map(jobCard).join('');
     emptyEl.hidden = list.length !== 0;
-    bindCardInteractions();
   }
-
-  /* Modal for details */
-  const modal = document.createElement('dialog');
-  modal.id = 'jobModal';
-  modal.innerHTML = `
-    <div class="modal-head" style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border)">
-      <strong id="modalTitle">Role Title</strong>
-      <button class="btn" data-exempt onclick="document.getElementById('jobModal').close()">✕</button>
-    </div>
-    <div class="modal-body" id="modalBody" style="padding:16px;"></div>
-  `;
-  document.body.appendChild(modal);
 
   function openDetails(id){
     const job = JOBS.find(j=>j.id===id);
     if(!job) return;
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
     modalTitle.textContent = job.title;
-    const bulletList = job.bullets && job.bullets.length ? `<ul class="desc" style="padding-left:18px;margin:8px 0 0">${job.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>` : '';
+    const bulletList = job.bullets && job.bullets.length ? `<ul class="clean" style="margin-top:8px">${job.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>` : '';
     modalBody.innerHTML = `
       <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px">
         <span class="pill">${job.brand}</span>
@@ -602,35 +578,31 @@
         <span class="pill">${job.location}</span>
         <span class="pill">${job.comp}</span>
       </div>
-      <p class="desc" style="margin-top:0;">${job.summary}</p>
+      <p style="color:var(--muted); margin-top:0;">${job.summary}</p>
       ${bulletList}
       <div style="display:flex; gap:8px; margin-top:14px;">
         <a class="btn brand" href="${job.apply}" target="_blank" rel="noopener">Apply</a>
-        <button class="btn" data-exempt onclick="document.getElementById('jobModal').close()">Close</button>
+        <button class="btn" data-exempt onclick="jobModal.close()">Close</button>
       </div>
     `;
     modal.showModal();
   }
 
-  /* Wire filters */
-  ['#search','#brand','#dept','#type','#location'].forEach(id => {
-    const elInput = document.querySelector(id);
-    elInput && elInput.addEventListener('input', render);
-  });
+  ['#search','#brand','#dept','#type','#location'].forEach(id => el(id).addEventListener('input', render));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.open) modal.close(); })
+  el('#year').textContent = new Date().getFullYear();
 
-  document.getElementById('year').textContent = new Date().getFullYear();
   render();
 
-  // Accessibility: close modal on Escape
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.open) modal.close(); });
-
-  // Keep .btn links pointing at APPLY_URL unless exempt
+  // Universal router: any .btn click goes to Typeform unless data-exempt
   document.addEventListener('click', (e)=>{
     const btn = e.target.closest('.btn');
     if(!btn) return;
-    if(btn.hasAttribute('data-exempt')) return;
+    if(btn.hasAttribute('data-exempt')) return; // allow Close, etc.
     if(btn.tagName === 'A') btn.setAttribute('href', APPLY_URL);
   });
   </script>
 </body>
 </html>
+
+
