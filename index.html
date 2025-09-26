@@ -49,7 +49,7 @@
     /* Hero */
     .hero{ display:grid; gap:18px; padding:36px 0 18px; }
     .hero h1{ font-size: clamp(28px, 4vw, 40px); margin:0; line-height:1.1; font-weight: 900; }
-    .hero .headline-accent{ color: var(--brand); white-space: nowrap; } /* keep Agentic AI together */
+    .hero .headline-accent{ color: var(--brand); white-space: nowrap; }
     .hero p{ color: var(--muted); margin:0; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
 
@@ -66,22 +66,19 @@
       border-radius:16px; padding:14px; display:flex; gap:14px; align-items:flex-start;
       transition:.22s transform ease, .22s box-shadow ease, .22s border-color ease;
       overflow:hidden;
-      /* OUTER-ONLY glow (idle) */
       box-shadow: 0 0 8px rgba(193,255,114,0.10);
     }
     .card:hover{
       transform: translateY(-1px);
-      /* OUTER-ONLY glow (hover) */
       box-shadow: 0 0 0 1px rgba(193,255,114,0.35), 0 0 22px rgba(193,255,114,0.35), 0 6px 26px rgba(0,0,0,.25);
     }
-    /* Subtle breathing while idle (respect reduced motion) */
     @media (prefers-reduced-motion: no-preference){
       @keyframes breatheGlow {
         0%,100% { box-shadow: 0 0 8px rgba(193,255,114,0.10); }
         50%     { box-shadow: 0 0 10px rgba(193,255,114,0.14); }
       }
       .card{ animation: breatheGlow 3.6s ease-in-out infinite; }
-      .card:hover{ animation: none; } /* snap steady on hover */
+      .card:hover{ animation: none; }
     }
 
     @media(min-width:720px){ .card{ grid-column: span 6; } }
@@ -92,7 +89,6 @@
     .job-title{ margin:0; font-weight:700; padding-right: 140px; }
     .meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
-    /* Brand chip */
     .brand-chip{ position:absolute; top:12px; right:12px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:12px; font-size:12px; font-weight:800; color:#101214; background: var(--brand); border:1px solid var(--chip-b); box-shadow: 0 16px 28px rgba(193,255,114,.18); }
 
     .desc{ color: var(--muted); font-size:14px; margin:8px 0 12px; }
@@ -111,7 +107,7 @@
     /* Footer */
     footer{ border-top:1px solid var(--border); padding:20px 0 40px; color: var(--muted); }
 
-    /* Modal (force dark) */
+    /* Modal */
     dialog{ width:min(760px, 96vw); border:1px solid var(--border); background: var(--panel); color: var(--text); border-radius:16px; padding:0; color-scheme: dark; }
     dialog::backdrop{ background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
     .modal-head{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid var(--border); }
@@ -119,21 +115,17 @@
     .x{ cursor:pointer; border:1px solid var(--border); border-radius:8px; padding:6px 9px; background: transparent; color:var(--muted); }
 
     .empty{ text-align:center; color: var(--muted); padding:30px; border:1px dashed var(--border); border-radius:12px; }
-
     .sr{ position:absolute; left:-9999px; }
 
-    /* Tighten sections + extra space above first process tile */
+    /* Tighten sections */
     #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr; gap: 10px; }
     #about .tile, #benefits .tile, #process .tile { padding: 14px; border-radius: 12px; }
     #about .tile h3, #benefits .tile h3, #process .tile h3 { margin: 0 0 6px; font-size: clamp(16px, 2.5vw, 20px); }
     #about .tile .desc, #benefits .tile .desc, #process .tile .desc { margin: 6px 0 0; line-height: 1.55; }
-    #process > .desc { margin-bottom: 14px; } /* breathing room before first tile */
+    #process > .desc { margin-bottom: 14px; }
     @media (min-width: 1200px) { #about .tiles, #benefits .tiles, #process .tiles { grid-template-columns: 1fr 1fr; } }
 
-    /* Mobile tweak: keep “Agentic AI” on one line in hero */
-    @media (max-width: 480px){
-      .hero .headline-accent{ white-space: nowrap; }
-    }
+    @media (max-width: 480px){ .hero .headline-accent{ white-space: nowrap; } }
   </style>
 </head>
 <body>
@@ -152,7 +144,7 @@
     <section class="hero">
       <h1>Shape the Future of <span class="headline-accent">Agentic&nbsp;AI</span> & <span class="headline-accent">Performance Marketing</span>.</h1>
       <p>Join the team building the future of ads and AI.</p>
-      <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on-premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world-class content creators and influencers to small business owners, e-commerce brands, med spas, doctors, lawyers, roofers, contractors, and entrepreneurs — delivering results that move markets and transform businesses.</p>
+      <p>At <strong>Adspend Agency</strong>, we scale brands with precision media buying, creative firepower, and an unshakable focus on ROI. At <strong>OperatorHQ AI</strong>, we engineer and install private, on‑premise AI systems that automate, integrate, and multiply business output. We partner with the best — from world‑class creators to SMBs and enterprise operators — delivering results that move markets and transform businesses.</p>
       <div class="cta-row">
         <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn" target="_blank" rel="noopener">See open roles</a>
       </div>
@@ -164,8 +156,8 @@
         <label class="sr" for="search">Search</label>
         <input id="search" class="input search" placeholder="Search title, team, keyword… (e.g., Media, LLM, Sales)" />
 
-        <select id="brand" class="input">
-          <option value="">All Brands</option>
+        <select id="brand" class="input" aria-label="Organization">
+          <option value="">All Orgs</option>
           <option value="Adspend">Adspend</option>
           <option value="OperatorHQ AI">OperatorHQ AI</option>
         </select>
@@ -185,14 +177,15 @@
           <option>Full-Time</option>
           <option>Part-Time</option>
           <option>Contract</option>
+          <option>Contract-to-Hire</option>
           <option>Internship</option>
         </select>
         <select id="location" class="input">
           <option value="">All Locations</option>
           <option>Remote</option>
-<option>❤️ Chicago, USA</option>
-	<option>San Diego, USA</option>
-<option>New York City, USA</option>
+          <option>❤️ Chicago, USA</option>
+          <option>San Diego, USA</option>
+          <option>New York City, USA</option>
           <option>San Francisco / Bay Area, USA</option>
           <option>Austin, USA</option>
           <option>Warsaw, Poland</option>
@@ -227,20 +220,20 @@
       <div class="tiles">
         <div class="tile">
           <h3>Run with the pros, build with the bold</h3>
-          <p class="desc">We don’t just run ads — we run the plays that scale empires. We don’t just install AI — we build the systems that make businesses unshakable. Here, you’ll work on high-stakes campaigns, ship tools used by real operators, and solve problems that actually move the scoreboard.</p>
+          <p class="desc">We don’t just run ads — we run the plays that scale empires. We don’t just install AI — we build the systems that make businesses unshakable. Here, you’ll work on high‑stakes campaigns, ship tools used by real operators, and solve problems that actually move the scoreboard.</p>
           <ul class="clean">
             <li>Ship fast, measure everything, and iterate like a founder</li>
-            <li>Zero fluff, high-trust feedback culture</li>
+            <li>Zero fluff, high‑trust feedback culture</li>
             <li>Growth comp + upside tied directly to the impact you create</li>
           </ul>
         </div>
         <div class="tile">
           <h3>Big challenges, bigger wins</h3>
-          <p class="desc">From 8-figure ad funnels to on-prem AI installs that power entire companies — you’ll work on projects most agencies can’t even pitch — let alone deliver.</p>
+          <p class="desc">From 8‑figure ad funnels to on‑prem AI installs that power entire companies — you’ll work on projects most agencies can’t even pitch — let alone deliver.</p>
           <ul class="clean">
-            <li>Multi-platform ad scaling & creative execution</li>
-            <li>Enterprise-grade automation & AI deployments</li>
-            <li>Direct access to founders, decision-makers, and high-value clients</li>
+            <li>Multi‑platform ad scaling & creative execution</li>
+            <li>Enterprise‑grade automation & AI deployments</li>
+            <li>Direct access to founders, decision‑makers, and high‑value clients</li>
           </ul>
         </div>
       </div>
@@ -253,16 +246,16 @@
           <h3>Compensation</h3>
           <ul class="clean">
             <li>Competitive base + performance bonuses</li>
-            <li>High-ROI roles include revenue share</li>
+            <li>High‑ROI roles include revenue share</li>
             <li>Equity opportunities for key OperatorHQ AI technical hires</li>
           </ul>
         </div>
         <div class="tile">
           <h3>Support</h3>
           <ul class="clean">
-            <li>Remote-first, with optional Chicago HQ access</li>
+            <li>Remote‑first, with optional Chicago HQ access</li>
             <li>Flexible schedule — outcomes &gt; hours</li>
-            <li>Gear stipend for top-tier tech + pro software stack + in-house AI tools</li>
+            <li>Gear stipend for top‑tier tech + pro software stack + in‑house AI tools</li>
           </ul>
         </div>
       </div>
@@ -270,35 +263,44 @@
 
     <section id="process">
       <h2>Hiring process</h2>
-      <p class="desc">Resumes? Cute. We care about assets that close clients. Show us your media buying results, your creative concepts that converted, your funnels that printed cash. We want to see what happens when you are in control. Proof of work tells us if you can build the future. Show the campaigns, code, systems, or products you’ve shipped that created real impact. If it’s not ambitious and high-leverage, it’s not what we’re looking for. We want to see the system you built, the bottleneck you removed, and the impact you created. Everything else is noise.</p>
+      <p class="desc">Resumes? Cute. We care about assets that close clients. Show us your media buying results, your creative concepts that converted, your funnels that printed cash. Proof of work tells us if you can build the future. Show the campaigns, code, systems, or products you’ve shipped that created real impact. If it’s not ambitious and high‑leverage, it’s not what we’re looking for.</p>
       <div class="tiles">
         <div class="tile">
           <h3>1. Intro &amp; portfolio</h3>
-          <p class="desc">Show us your work — ad accounts, case studies, creative samples, automation builds, and shipped projects; the deals you’ve closed, the revenue you’ve driven, or the campaigns that crushed. We want to see results.</p>
+          <p class="desc">Show us your work — ad accounts, case studies, creative samples, automation builds, shipped projects; the deals you’ve closed, the revenue you’ve driven, or the campaigns that crushed.</p>
         </div>
         <div class="tile">
           <h3>2. Paid trial sprint</h3>
-          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project. You’ll have full access to our in-house, AI-powered portals — living playbooks with training, live data, templates, and an AI assistant trained on our systems. They give you everything you need to execute without guesswork — but it’s still up to you to deliver.</p>
+          <p class="desc">3–7 days to prove you can hang, real project, real stakes. You get the inside view, we see your chops in action. You’ll step straight into a live project with access to our AI‑powered portals.</p>
         </div>
         <div class="tile">
           <h3>3. Offer</h3>
-          <p class="desc">You’ll know exactly what’s expected, exactly what you’ll earn, and exactly how to win — fast. Clear comps. Clear path. No ceilings. Your first 30–90 days are built for momentum.</p>
+          <p class="desc">You’ll know exactly what’s expected, what you’ll earn, and how to win — fast. Clear comps. Clear path. Your first 30–90 days are built for momentum.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Adspend & OperatorHQ AI — All rights reserved.</div>
+    <div class="container" style="display:grid; gap:12px;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+        <div>© <span id="year"></span> Adspend & OperatorHQ AI — All rights reserved.</div>
+        <nav style="display:flex; gap:14px;">
+          <a href="mailto:careers@adspend.agency" class="pill">careers@adspend.agency</a>
+          <a href="https://adspend.framer.website/" target="_blank" rel="noopener" class="pill">About</a>
+          <a href="#" class="pill">Privacy</a>
+          <a href="#" class="pill">Terms</a>
+          <a href="https://form.typeform.com/to/XG6oHXSn" target="_blank" rel="noopener" class="pill">Join our talent network</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
   <!-- Job Details Modal -->
-  <dialog id="jobModal" aria-labelledby="modalTitle">
+  <dialog id="jobModal" aria-labelledby="modalTitle" aria-modal="true">
     <div class="modal-head">
       <strong id="modalTitle">Role Title</strong>
-      <button class="x btn" data-exempt onclick="jobModal.close()" aria-label="Close">✕</button>
+      <button type="button" class="x btn" data-exempt onclick="jobModal.close()" aria-label="Close">✕</button>
     </div>
     <div class="modal-body" id="modalBody"></div>
   </dialog>
@@ -378,8 +380,8 @@
       apply: APPLY_URL,
     },
     {
-      id: 'tech-1',
-      title: 'Tech Integration Specialist',
+      id: 'revops-1',
+      title: 'RevOps / Integrations Specialist',
       brand: 'Adspend',
       dept: 'Operations',
       type: 'Full-Time',
@@ -394,6 +396,88 @@
         'Creative problem-solving beyond “supported features”',
         'Create docs & streamline future integrations',
         '30/60/90: master APIs; lead onboarding; mentor peers'
+      ],
+      apply: APPLY_URL,
+    },
+
+    /* New Adspend roles */
+    {
+      id: 'cs-1',
+      title: 'Creative Strategist / UGC Director',
+      brand: 'Adspend',
+      dept: 'Creative',
+      type: 'Contract-to-Hire',
+      location: 'Remote',
+      comp: 'Day rate + performance bonus',
+      summary: 'Own hooks, briefs, and the testing matrix. Turn editors and creators into a repeatable content engine.',
+      bullets: [
+        'Hook trees, angle banks, swipe analysis',
+        'Test matrices across TikTok/IG/Reels/YouTube',
+        'Creator sourcing + brief + feedback loop'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'pd-1',
+      title: 'Performance Designer (Ads + Landing)',
+      brand: 'Adspend',
+      dept: 'Creative',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Base + performance bonus',
+      summary: 'Design high-velocity ad iterations and CRO landing sections that move CPA.',
+      bullets: [
+        'Rapid creative systems for Meta/TikTok',
+        'Inter/Space Grotesk, accessible components',
+        'A/B via data; Figma/Notion handoff'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'lifecycle-1',
+      title: 'Lifecycle / CRM Specialist',
+      brand: 'Adspend',
+      dept: 'Operations',
+      type: 'Part-Time',
+      location: 'Remote',
+      comp: 'Hourly + performance bonus',
+      summary: 'Own show-up rate, nurture, and the review flywheel in GHL/HubSpot.',
+      bullets: [
+        'Build SMS/email cadences and DNC-safe automations',
+        'Improve booking → show → close %',
+        'Automate review asks + referrals'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'sdr-1',
+      title: 'Sales Development Rep (SDR)',
+      brand: 'Adspend',
+      dept: 'Sales',
+      type: 'Contract',
+      location: 'Remote',
+      comp: 'Hourly + booked-call bonus',
+      summary: 'Book meetings for the closer using cold calls, voicemail drops, and SMS.',
+      bullets: [
+        '120+ dials/day, voicemail drops, SMS follow-ups',
+        'Calendar control; clean CRM; shows > sets',
+        'Scripts + live objection handling'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'ea-ops-1',
+      title: 'Executive Assistant / Ops Coordinator',
+      brand: 'Adspend',
+      dept: 'Operations',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Competitive base',
+      summary: 'Be the force-multiplier for the founder. Calendars, recruiting ops, SOPs, vendor wrangling.',
+      bullets: [
+        'Own scheduling, inbox, travel',
+        'Source candidates, run first-screen logistics',
+        'Keep SOPs current; unblock projects'
       ],
       apply: APPLY_URL,
     },
@@ -497,19 +581,69 @@
       ],
       apply: APPLY_URL,
     },
+
+    /* New Operator roles */
     {
-      id: 'fe-1',
-      title: 'Senior Frontend Developer',
+      id: 'sa-1',
+      title: 'Solutions Architect (AI)',
       brand: 'OperatorHQ AI',
-      dept: 'Engineering',
+      dept: 'Product',
       type: 'Full-Time',
       location: 'Remote',
-      comp: 'Cash + equity; role-level based',
-      summary: 'Ship clean React UIs for dashboards and installer flows. Performance + DX nerd.',
+      comp: 'Cash + equity',
+      summary: 'Pre-sale scoping + demo buildouts. Translate messy ops into crisp Operator installs.',
       bullets: [
-        'React 18, state mgmt, modern bundlers',
-        'Design systems; accessibility; testing',
-        'API contracts with backend/agents'
+        'Discovery → scope → solution design',
+        'Prototype agentic flows; acceptance criteria',
+        'Partner with sales on tailored demos'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'devops-1',
+      title: 'DevOps / SRE (Operator Installs)',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Contract',
+      location: 'Remote',
+      comp: 'Day rate',
+      summary: 'Secure packaging, updates, and logging for on-prem Mac Studio deployments.',
+      bullets: [
+        'CI/CD, containers, secrets, observability',
+        'Rollout/rollback strategies for on-prem',
+        'Security hardening; network topology'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'qa-1',
+      title: 'QA / Test Engineer',
+      brand: 'OperatorHQ AI',
+      dept: 'Engineering',
+      type: 'Contract',
+      location: 'Remote',
+      comp: 'Hourly',
+      summary: 'Own regression + acceptance packs for each HQ.',
+      bullets: [
+        'Playwright/mobile test suites',
+        'Golden datasets for evals',
+        'Release checklist ownership'
+      ],
+      apply: APPLY_URL,
+    },
+    {
+      id: 'cs-op-1',
+      title: 'Customer Success Manager (Operator)',
+      brand: 'OperatorHQ AI',
+      dept: 'Operations',
+      type: 'Full-Time',
+      location: 'Remote',
+      comp: 'Base + expansion bonus',
+      summary: 'Onboard, train, and expand Operator accounts.',
+      bullets: [
+        'Run training + office hours',
+        'Usage dashboards; expansion plays',
+        'Churn prevention, QBRs'
       ],
       apply: APPLY_URL,
     },
@@ -538,7 +672,7 @@
           </div>
           <p class="desc">${job.summary}</p>
           <div style="display:flex; gap:8px; align-items:center;">
-            <button class="btn" data-exempt onclick="openDetails('${job.id}')">Role details</button>
+            <button type="button" class="btn" data-exempt onclick="openDetails('${job.id}')">Role details</button>
             <a class="btn brand" href="${APPLY_URL}" target="_blank" rel="noopener">Apply</a>
           </div>
         </div>
@@ -582,17 +716,48 @@
       ${bulletList}
       <div style="display:flex; gap:8px; margin-top:14px;">
         <a class="btn brand" href="${job.apply}" target="_blank" rel="noopener">Apply</a>
-        <button class="btn" data-exempt onclick="jobModal.close()">Close</button>
+        <button type="button" class="btn" data-exempt onclick="jobModal.close()">Close</button>
       </div>
     `;
     modal.showModal();
   }
 
-  ['#search','#brand','#dept','#type','#location'].forEach(id => el(id).addEventListener('input', render));
+  function injectJobSchema(){
+    document.querySelectorAll('script[data-job-schema]').forEach(n=>n.remove());
+    JOBS.forEach(job => {
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": job.title,
+        "description": job.summary,
+        "employmentType": job.type.replace('-', ''),
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": job.brand === 'Adspend' ? 'Adspend Agency' : 'OperatorHQ AI'
+        },
+        "applicantLocationRequirements": { "@type": "Country", "name": "Remote" },
+        "jobLocationType": "TELECOMMUTE",
+        "datePosted": new Date().toISOString(),
+        "directApply": true,
+        "employmentUnitId": job.id,
+        "validThrough": new Date(Date.now()+1000*60*60*24*60).toISOString(),
+        "url": APPLY_URL
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.dataset.jobSchema = '1';
+      s.textContent = JSON.stringify(ld);
+      document.body.appendChild(s);
+    });
+  }
+
+  ['#search','#brand','#dept','#type','#location'].forEach(id => el(id).addEventListener('input', ()=>{ render(); injectJobSchema(); }));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.open) modal.close(); })
   el('#year').textContent = new Date().getFullYear();
 
+  // Initial render + schema
   render();
+  injectJobSchema();
 
   // Universal router: any .btn click goes to Typeform unless data-exempt
   document.addEventListener('click', (e)=>{
@@ -604,5 +769,3 @@
   </script>
 </body>
 </html>
-
-
