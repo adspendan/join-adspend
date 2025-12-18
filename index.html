@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers — Adspend Agency & OperatorHQ AI | Join the Future of Ads & AI</title>
+  <meta name="description"
+    content="Join Adspend and OperatorHQ AI — media buyers, creatives, engineers, and operators building the future of performance marketing and private AI systems. View open roles and apply today." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Careers — Adspend Agency & OperatorHQ AI" />
+  <meta property="og:description"
+    content="Join the team building the future of ads and AI. Media buyers, creatives, engineers, and operators wanted." />
+  <meta property="og:url" content="https://join.adspend.agency/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1115;
+      --panel: #151822;
+      --muted: #8b91a7;
+      --text: #e8ecf3;
+      --brand: #C1FF72;
+      --border: #24283a;
+      --chip: rgba(193, 255, 114, .28);
+      --chip-b: rgba(193, 255, 114, .45);
+      --status-open: #22c55e;
+      --status-evergreen: #3b82f6;
+      --status-future: #6b7280;
+
+      --good: #22c55e;
+      --bad: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      position: relative;
+    }
+
+    /* Ambient Ambient Gradient Mesh */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 15% 50%, rgba(193, 255, 114, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.05), transparent 25%);
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 100% - 32px);
+      margin: 0 auto;
+    }
+
+    /* Header - Glass */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      /* Higher than content */
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      background: rgba(15, 17, 21, 0.65);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      justify-content: space-between;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: .2px;
+      display: flex;
+      align-items: center;
+      gap: .5ch;
+    }
+
+    .brand-title a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .brand-title a:hover {
+      text-decoration: underline;
+    }
+
+    .brand-title .x {
+      color: var(--text);
+      opacity: .7;
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      background: var(--panel);
+      cursor: pointer;
+      transition: .2s transform, .2s background, .2s color, .2s box-shadow;
+      color: #fff !important;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: #1a1e2b;
+      color: #fff !important;
+    }
+
+    .btn.brand {
+      border-color: color-mix(in oklab, var(--brand), #000 30%);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--panel), var(--brand) 12%), var(--panel));
+      color: #fff !important;
+      font-weight: 800;
+    }
+
+    .btn.brand:hover {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 60px 0 40px;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin: 0;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    strong {
+      letter-spacing: -0.02em;
+      /* Premium tight tracking */
+    }
+
+    .hero .headline-accent {
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+      max-width: 600px;
+    }
+
+    .hard-signals {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hard-signals li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hard-signals li::before {
+      content: '⚡';
+      font-size: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    /* Section Helper */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    section h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      margin: 0 0 32px;
+      font-weight: 800;
+    }
+
+    /* Who This Is / Isn't For */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media(max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comparison-col,
+    .work-card,
+    .success-item,
+    .process-step,
+    .winning-list,
+    .talent-network,
+    .card {
+      background: rgba(21, 24, 34, 0.5);
+      /* Semi-transparent panel */
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      /* Refined glass border */
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      /* Subtle depth */
+    }
+
+    /* Specific overrides if needed, but grouping handles glass base */
+    .comparison-col h3 {
+      margin: 0 0 16px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comparison-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .comparison-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .comparison-list li::before {
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    .is-for h3 {
+      color: var(--good);
+    }
+
+    .is-for .comparison-list li::before {
+      content: '✓';
+      color: var(--good);
+      font-weight: bold;
+    }
+
+    .not-for h3 {
+      color: var(--bad);
+    }
+
+    .not-for .comparison-list li::before {
+      content: '✕';
+      color: var(--bad);
+      font-weight: bold;
+    }
+
+
+    /* What We Do */
+    .logo-header {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media(max-width: 768px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .work-card {
+      /* Shared glass styles applied above */
+    }
+
+    .work-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .work-card li {
+      margin-bottom: 8px;
+    }
+
+
+    /* Talent Network CTA Block */
+    .talent-network {
+      background: linear-gradient(135deg, rgba(193, 255, 114, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+      /* Border handled by glass shared styles, but we can override if needed */
+      border: 1px solid rgba(193, 255, 114, 0.2);
+      padding: 32px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .talent-network h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .talent-network p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 0 24px;
+      align-items: center;
+    }
+
+    .input {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+    }
+
+    .search {
+      min-width: 260px;
+      flex: 1;
+    }
+
+    select.input {
+      appearance: none;
+      padding-right: 28px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="%23aaaaaa"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      cursor: pointer;
+    }
+
+    @media(max-width:600px) {
+      .filters {
+        flex-direction: column;
+      }
+
+      .search {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      select.input {
+        width: 100%;
+      }
+    }
+
+    /* Job grid & card */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      /* Base glass styles handled above */
+      position: relative;
+      grid-column: span 12;
+      /* Padding and gap were specific to card layout */
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: .22s transform ease, .22s box-shadow ease, .2s border-color ease;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Core Cursor Track - Intense & Clean */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      background: radial-gradient(120px circle at var(--x, 50%) var(--y, 50%),
+          rgba(193, 255, 114, 1),
+          rgba(193, 255, 114, 0.4) 20%,
+          transparent 50%);
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      will-change: opacity, background;
+      mix-blend-mode: hard-light;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      z-index: -1;
+      background: var(--panel);
+      border-radius: inherit;
+    }
+
+    /* Inner Glow - Subtle, Clean (No Texture) */
+    .card-inner-glow {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%),
+          rgba(193, 255, 114, 0.1),
+          transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      will-change: opacity, background;
+      mix-blend-mode: screen;
+    }
+
+    .card:hover .card-inner-glow {
+      opacity: 1;
+    }
+
+    /* Particles - Bright, Random */
+    .spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #C1FF72;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 5;
+      box-shadow: 0 0 6px #C1FF72;
+      border-radius: 50%;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      border-color: var(--brand);
+    }
+
+    @media(min-width:720px) {
+      .card {
+        grid-column: span 6;
+      }
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .brand-pill {
+      color: var(--brand);
+      border-color: rgba(193, 255, 114, 0.3);
+      background: rgba(193, 255, 114, 0.05);
+    }
+
+    .job-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    /* Modal - Super Glass */
+    dialog {
+      width: min(800px, 96vw);
+      max-height: 90vh;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(21, 24, 34, 0.85);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      color: var(--text);
+      border-radius: 24px;
+      padding: 0;
+      color-scheme: dark;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, .8);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(21, 24, 34, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 10;
+    }
+
+    .modal-head strong {
+      font-size: 18px;
+    }
+
+    .modal-body {
+      padding: 24px;
+      color: var(--text);
+      overflow-y: auto;
+      max-height: calc(90vh - 65px);
+    }
+
+    .x-btn {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .x-btn:hover {
+      background: #24283a;
+      color: #fff;
+    }
+
+    .modal-section {
+      margin-bottom: 24px;
+    }
+
+    .modal-section h4 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-section ul {
+      margin: 0;
+      padding: 0 0 0 20px;
+    }
+
+    .modal-section li {
+      margin-bottom: 8px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .success-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media(max-width:600px) {
+      .success-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .success-item {
+      /* Glass styling applied via grouping, but specific bg for contrast */
+      background: rgba(193, 255, 114, 0.02);
+      padding: 16px;
+    }
+
+    .success-item strong {
+      display: block;
+      color: var(--brand);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .success-item span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      display: block;
+    }
+
+    .winning-list {
+      /* Glass styles applied via grouping */
+      padding: 24px;
+    }
+
+    .winning-list ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .winning-list li {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    /* Hiring Process */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media(max-width: 800px) {
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 500px) {
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .process-step {
+      /* Glass styling applied via grouping */
+      padding: 20px;
+    }
+
+    .process-step h3 {
+      color: var(--brand);
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .process-note {
+      margin-top: 24px;
+      padding: 16px;
+      background: rgba(193, 255, 114, 0.05);
+      border-radius: 12px;
+      color: var(--text);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .footer-legal {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+    }
+  /* Apple-Style Sticky Hero */
+  .sticky-wrapper {
+  height: 400vh; /* Scroll track length */
+  position: relative;
+  z-index: 10;
+  margin-top: -65px; /* Pull up behind header if needed, or we hide header initially */
+  }
+
+  .sticky-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f1115; /* Start dark */
+  transition: background-color 0.1s linear; /* Smooth but fast for scroll */
+  }
+
+  .hero-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 20px;
+  text-align: center;
+  }
+
+  .hero-stage.active {
+  opacity: 1;
+  pointer-events: auto;
+  }
+
+  /* Stage 1: Logos */
+  .hero-logos {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  transform: scale(1.2);
+  }
+
+  .hero-logo-text {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  }
+
+  /* Stage 2: Quote (Green BG) */
+  .hero-quote {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 1;
+  color: #000; /* Black text on green */
+  max-width: 900px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease-out;
+  }
+
+  .hero-stage.active .hero-quote {
+  transform: translateY(0);
+  }
+
+  /* Hide default header initially if we want the full immersive start */
+  body.hero-active header {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Apple-Style Scroll Hero -->
+  <div class="sticky-wrapper">
+    <div class="sticky-viewport" id="heroViewport">
+
+      <!-- Stage 1: Logos -->
+      <div class="hero-stage" id="stage1" style="opacity: 1;">
+        <div class="hero-logos">
+          <div class="hero-logo-text">Adspend Agency</div>
+          <div style="font-size:40px; color:#555;">×</div>
+          <div class="hero-logo-text">OperatorHQ AI</div>
+        </div>
+        <p style="margin-top:20px; color:#888; font-size:18px;">Scroll to begin</p>
+      </div>
+
+      <!-- Stage 2: Hype Quote -->
+      <div class="hero-stage" id="stage2">
+        <h2 class="hero-quote">Where individual imaginations gather to build systems that scale.</h2>
+      </div>
+
+    </div>
+  </div>
+
+  <header id="mainHeader">
+    <div class="container nav">
+      <div class="brand-title">
+        <a href="https://adspend.framer.website/" target="_blank" rel="noopener">Adspend Agency</a>
+        <span class="x">×</span>
+        <a href="http://operatorai.agency/" target="_blank" rel="noopener">OperatorHQ AI</a>
+      </div>
+      <a class="btn brand" href="#open-roles">View Open Roles</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. Hero -->
+    <section class="hero">
+      <h1>Shape the Future of <span class="headline-accent">Agentic AI</span> & Performance Marketing</h1>
+      <p class="hero-sub">We build systems that move real money. If you like ownership, pressure, and shipping, you’ll
+        fit here.</p>
+
+      <ul class="hard-signals">
+        <li>Proof of work > resumes</li>
+        <li>Paid trial sprints before long-term offers</li>
+        <li>Real client impact from week one</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn brand" href="#open-roles">View Open Roles</a>
+      </div>
+    </section>
+
+    <!-- 2. Who This Is / Isn't For -->
+    <section>
+      <div class="comparison-grid">
+        <div class="comparison-col is-for">
+          <h3>You’ll love this if…</h3>
+          <ul class="comparison-list">
+            <li>You want autonomy and accountability</li>
+            <li>You’re comfortable being measured on outcomes</li>
+            <li>You like building systems, not just executing tasks</li>
+          </ul>
+        </div>
+        <div class="comparison-col not-for">
+          <h3>This is not for you if…</h3>
+          <ul class="comparison-list">
+            <li>You need heavy hand-holding</li>
+            <li>You dislike feedback tied to performance</li>
+            <li>You want a slow, corporate environment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. What We Do -->
+    <section>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="logo-header">Adspend Agency</div>
+          <ul>
+            <li>Performance marketing</li>
+            <li>Creative testing</li>
+            <li>Attribution & CRO</li>
+            <li>Scaling real businesses</li>
+          </ul>
+        </div>
+        <div class="work-card">
+          <div class="logo-header">OperatorHQ <span style="color:var(--brand)">AI</span></div>
+          <ul>
+            <li>On-prem AI systems</li>
+            <li>Private LLMs</li>
+            <li>Voice agents</li>
+            <li>Business operating systems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Open Roles -->
+    <section id="open-roles">
+      <h2 style="margin-bottom:16px;">Open Roles</h2>
+      <div class="filters">
+        <label class="sr" for="search" style="display:none">Search</label>
+        <input id="search" class="input search" placeholder="Search title, team, keyword… (e.g., Media, LLM, Sales)" />
+        <select id="brand" class="input">
+          <option value="">All Orgs</option>
+          <option value="Adspend">Adspend</option>
+          <option value="OperatorHQ AI">OperatorHQ AI</option>
+        </select>
+        <select id="team" class="input">
+          <option value="">All Teams</option>
+          <option>Media Buying</option>
+          <option>Creative</option>
+          <option>CRO</option>
+          <option>Sales</option>
+          <option>Client Success</option>
+          <option>Operations</option>
+          <option>Engineering</option>
+          <option>AI</option>
+          <option>Field</option>
+          <option>Product</option>
+        </select>
+        <select id="type" class="input">
+          <option value="">All Types</option>
+          <option>Full-Time</option>
+          <option>Part-Time</option>
+          <option>Contract</option>
+          <option>Contract-to-Hire</option>
+        </select>
+        <select id="location" class="input">
+          <option value="">All Locations</option>
+          <option>Remote</option>
+          <option>Hybrid</option>
+        </select>
+      </div>
+
+      <div id="jobs" class="grid" aria-live="polite">
+        <div class="loading">Loading roles...</div>
+      </div>
+
+      <div id="empty" class="empty" hidden>
+        <h3>No exact matches</h3>
+        <p>Try adjusting your filters or join our Talent Network.</p>
+        <button type="button" class="btn" onclick="clearFilters()">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- JS for Spotlight Effect + Particles -->
+    <script>
+      function initSpotlight() {
+        if (window.spotlightCleanup) window.spotlightCleanup();
+
+        const cards = document.querySelectorAll('.card, .comparison-col, .work-card, .success-item, .process-step, .talent-network');
+
+        cards.forEach(card => {
+          if (!card.querySelector('.card-inner-glow')) {
+            const glow = document.createElement('div');
+            glow.className = 'card-inner-glow';
+            card.prepend(glow);
+          }
+        });
+
+        const states = new WeakMap();
+
+        function getCardState(card) {
+          if (!states.has(card)) {
+            states.set(card, {
+              targetX: 0,
+              targetY: 0,
+              currentX: 0,
+              currentY: 0,
+              rafId: null,
+              isHovering: false,
+              lastSpark: 0
+            });
+          }
+          return states.get(card);
+        }
+
+        const handleMove = (e) => {
+          const card = e.currentTarget;
+          const state = getCardState(card);
+          const rect = card.getBoundingClientRect();
+
+          state.targetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+          state.targetY = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+
+          if (!state.isHovering) {
+            state.isHovering = true;
+            state.currentX = state.targetX;
+            state.currentY = state.targetY;
+            card.style.setProperty('--x', `${state.currentX}px`);
+            card.style.setProperty('--y', `${state.currentY}px`);
+            loop(card);
+          }
+        };
+
+        const handleLeave = (e) => {
+          const card = e.currentTarget;
+          const state = getCardState(card);
+          state.isHovering = false;
+          if (state.rafId) cancelAnimationFrame(state.rafId);
+        };
+
+        function spawnSpark(card, x, y) {
+          const spark = document.createElement('div');
+          spark.className = 'spark';
+          spark.style.left = `${x}px`;
+          spark.style.top = `${y}px`;
+          card.appendChild(spark);
+
+          // Exaggerated Random Physics
+          const angle = Math.random() * Math.PI * 2;
+          const speed = 2 + Math.random() * 4; // Faster
+          const vx = Math.cos(angle) * speed;
+          const vy = Math.sin(angle) * speed;
+          const scale = 0.5 + Math.random(); // Varied sizes
+
+          const anim = spark.animate([
+            { transform: 'translate(0,0) scale(0)', opacity: 1 },
+            { transform: `translate(${vx * 8}px, ${vy * 8}px) scale(${scale})`, opacity: 1, offset: 0.2 },
+            { transform: `translate(${vx * 25}px, ${vy * 25}px) scale(0)`, opacity: 0 }
+          ], {
+            duration: 500 + Math.random() * 400,
+            easing: 'cubic-bezier(0,0.2,0.5,1)'
+          });
+
+          anim.onfinish = () => spark.remove();
+        }
+
+        function loop(card) {
+          const state = getCardState(card);
+          if (!state.isHovering) return;
+
+          // Smooth follow
+          const lerp = 0.12;
+          state.currentX += (state.targetX - state.currentX) * lerp;
+          state.currentY += (state.targetY - state.currentY) * lerp;
+
+          card.style.setProperty('--x', `${state.currentX}px`);
+          card.style.setProperty('--y', `${state.currentY}px`);
+
+          // Continuous Spawning
+          // Always spawn sparks if hovering, regardless of movement
+          if (Math.random() < 0.3) { // 30% chance per frame (approx 18 sparks/sec)
+            // Spawn near cursor with slight offset for volume
+            const offsetX = (Math.random() - 0.5) * 10;
+            const offsetY = (Math.random() - 0.5) * 10;
+            spawnSpark(card, state.currentX + offsetX, state.currentY + offsetY);
+          }
+
+          state.rafId = requestAnimationFrame(() => loop(card));
+        }
+
+        cards.forEach(card => {
+          card.addEventListener('mousemove', handleMove);
+          card.addEventListener('touchmove', handleMove);
+          card.addEventListener('mouseleave', handleLeave);
+          card.addEventListener('touchend', handleLeave);
+        });
+
+        window.spotlightCleanup = () => {
+          cards.forEach(card => {
+            card.removeEventListener('mousemove', handleMove);
+            card.removeEventListener('touchmove', handleMove);
+            card.removeEventListener('mouseleave', handleLeave);
+            card.removeEventListener('touchend', handleLeave);
+          });
+        };
+      }
+
+      window.addEventListener('load', initSpotlight);
+      const observer = new MutationObserver(() => initSpotlight());
+      observer.observe(document.querySelector('#jobs'), { childList: true });
+
+
+      // --- Apple Scroll Hero Logic ---
+      const wrapper = document.querySelector('.sticky-wrapper');
+      const viewport = document.getElementById('heroViewport');
+      const stage1 = document.getElementById('stage1');
+      const stage2 = document.getElementById('stage2');
+      const mainHeader = document.getElementById('mainHeader');
+      const body = document.body;
+
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const height = wrapper.offsetHeight - window.innerHeight; // Total scrollable area of hero
+        let progress = Math.min(Math.max(scrollY / height, 0), 1);
+
+        // Background Transition (Dark -> Green)
+        // Start transitioning at 0.2, fully green by 0.5
+        if (progress > 0.15 && progress < 0.6) {
+          const t = (progress - 0.15) / (0.45 - 0.15); // Normalize 0-1
+          const clampedT = Math.min(Math.max(t, 0), 1);
+          // Interpolate #0f1115 to #C1FF72
+          // #0f1115 = rgb(15, 17, 21)
+          // #C1FF72 = rgb(193, 255, 114)
+          const r = 15 + (193 - 15) * clampedT;
+          const g = 17 + (255 - 17) * clampedT;
+          const b = 21 + (114 - 21) * clampedT;
+          viewport.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        } else if (progress >= 0.6) {
+          viewport.style.backgroundColor = `rgb(193, 255, 114)`;
+        } else {
+          viewport.style.backgroundColor = `#0f1115`;
+        }
+
+        // Stage 1 Opacity (Fade out by 0.25)
+        if (progress < 0.25) {
+          stage1.style.opacity = 1 - (progress / 0.25);
+          stage1.style.transform = `scale(${1 + progress})`; // Subtle zoom out/in
+        } else {
+          stage1.style.opacity = 0;
+        }
+
+        // Stage 2 Opacity (Fade in starts at 0.3, full at 0.45, fade out at 0.85)
+        if (progress > 0.25) {
+          // In
+          if (progress < 0.45) {
+            stage2.style.opacity = (progress - 0.25) / 0.2;
+            stage2.style.transform = `translateY(${20 - ((progress - 0.25) / 0.2) * 20}px)`;
+          }
+          // Holding
+          else if (progress < 0.85) {
+            stage2.style.opacity = 1;
+            stage2.style.transform = `translateY(0)`;
+          }
+          // Out
+          else {
+            stage2.style.opacity = 1 - (progress - 0.85) / 0.15;
+            stage2.style.transform = `scale(${1 + (progress - 0.85)})`;
+          }
+        } else {
+          stage2.style.opacity = 0;
+        }
+
+        // Header Visibility
+        // Hide header while in hero (0 - 0.9), show when content arrives
+        if (progress < 0.95) {
+          mainHeader.style.opacity = 0;
+          mainHeader.style.pointerEvents = 'none';
+        } else {
+          mainHeader.style.opacity = 1;
+          mainHeader.style.pointerEvents = 'auto';
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      // Run on load and immediately to ensure state
+      window.addEventListener('load', handleScroll);
+      handleScroll();
+
+    </script>
+
+    <!-- 5. What Winning Looks Like -->
+    <section>
+      <h2>What Winning Looks Like Here</h2>
+      <div class="winning-list">
+        <h3>How We Measure Success</h3>
+        <ul>
+          <li>We care about outcomes, not activity</li>
+          <li>Ownership matters more than job titles</li>
+          <li>Clear goals, fast feedback, constant iteration</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Hiring Process -->
+    <section>
+      <h2>Hiring Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <h3>1. Apply</h3>
+          <p>Submit your application with <strong>proof of work</strong>.</p>
+        </div>
+        <div class="process-step">
+          <h3>2. Review</h3>
+          <p>Short async review by the team.</p>
+        </div>
+        <div class="process-step">
+          <h3>3. Paid Sprint</h3>
+          <p>1–2 week scoped project (paid).</p>
+        </div>
+        <div class="process-step">
+          <h3>4. Offer</h3>
+          <p>Full offer + onboarding.</p>
+        </div>
+      </div>
+      <div class="process-note">
+        <strong>Typical Timeline:</strong> 7–14 days from application to offer.
+      </div>
+    </section>
+
+    <!-- 7. Talent Network -->
+    <section>
+      <div class="talent-network">
+        <h3>Don’t See Your Role?</h3>
+        <p>We’re always meeting exceptional operators. Join the Talent Network and we’ll reach out when there’s a fit.
+        </p>
+        <a class="btn brand" href="https://form.typeform.com/to/XG6oHXSn?source=talent_network" target="_blank"
+          rel="noopener">Join Talent Network</a>
+      </div>
+    </section>
+
+    <!-- 8. Why Join Us -->
+    <section>
+      <h2>Why Join Us</h2>
+      <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+        <div class="card" style="grid-column: span 1; pointer-events:none;">
+          <div class="job-head">
+            <h3 class="job-title" style="color:var(--brand)">Autonomy & Impact</h3>
+          </div>
+          <p class="desc">No bureaucracy. You own your outcomes. Ship fast, measure everything, and iterate like a
+            founder.</p>
+        </div>
+        <div class="card" style="grid-column: span 1; pointer-events:none;">
+          <div class="job-head">
+            <h3 class="job-title" style="color:var(--brand)">High-Stakes Work</h3>
+          </div>
+          <p class="desc">We manage 8-figure ad budgets and build AI systems that run companies. The pressure is real,
+            and so are the rewards.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. Footer -->
+  <footer>
+    <div class="container" style="display:grid; gap:12px;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+        <div>© <span id="year"></span> Adspend & OperatorHQ AI</div>
+        <nav style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="mailto:careers@adspend.agency" class="pill">Contact</a>
+          <a href="https://adspend.framer.website/" target="_blank" rel="noopener" class="pill">Adspend Agency</a>
+          <a href="http://operatorai.agency/" target="_blank" rel="noopener" class="pill">OperatorHQ AI</a>
+          <a href="https://form.typeform.com/to/XG6oHXSn?source=talent_network" target="_blank" rel="noopener"
+            class="pill">Join Talent Network</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <strong>Equal Opportunity Employer.</strong> Adspend Agency and OperatorHQ AI are committed to creating a
+        diverse environment. All qualified applicants will receive consideration for employment without regard to race,
+        color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics,
+        disability, age, or veteran status.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Job Details Modal -->
+  <dialog id="jobModal" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-head">
+      <strong id="modalTitle">Role Title</strong>
+      <button type="button" class="x-btn" onclick="jobModal.close()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <script>
+    const APPLY_URL = 'https://form.typeform.com/to/XG6oHXSn';
+    let JOBS = [];
+
+    const el = sel => document.querySelector(sel);
+    const jobsEl = el('#jobs');
+    const emptyEl = el('#empty');
+    const modal = el('#jobModal');
+    const modalTitle = el('#modalTitle');
+    const modalBody = el('#modalBody');
+
+    // Load roles from JSON
+    async function loadRoles() {
+      try {
+        const response = await fetch('roles.json');
+        const data = await response.json();
+        JOBS = data.roles || [];
+        render();
+        injectJobSchema();
+      } catch (error) {
+        console.error('Failed to load roles:', error);
+        jobsEl.innerHTML = '<div class="empty">Failed to load roles. Please refresh the page.</div>';
+      }
+    }
+
+    function jobCard(job) {
+      return `
+      <article class="card" data-brand="${job.brand}" data-team="${job.team}" data-type="${job.type}" data-location="${job.location}" onclick="openDetails('${job.id}')" style="cursor:pointer">
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%">
+          <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:4px;">
+            <span class="pill brand-pill">${job.brand}</span>
+          </div>
+          <h3 class="job-title">${job.title}</h3>
+          <div class="meta" style="margin-top:4px;">
+            <span class="pill">${job.team}</span>
+            <span class="pill">${job.type}</span>
+          </div>
+          <p class="desc" style="margin-top:8px;">${job.summary}</p>
+          <div style="margin-top:12px; font-size:13px; color:var(--brand); font-weight:700;">
+            View Role &rarr;
+          </div>
+        </div>
+      </article>
+    `;
+    }
+
+    function render() {
+      const q = el('#search').value.trim().toLowerCase();
+      const brand = el('#brand').value;
+      const team = el('#team').value;
+      const type = el('#type').value;
+      const location = el('#location').value;
+
+      const list = JOBS.filter(j => (
+        (!brand || j.brand === brand) &&
+        (!team || j.team === team) &&
+        (!type || j.type === type) &&
+        (!location || j.location === location) &&
+        (!q || (j.title + " " + j.summary + " " + j.team).toLowerCase().includes(q))
+      ));
+
+      if (list.length === 0 && JOBS.length > 0) {
+        jobsEl.innerHTML = '';
+        emptyEl.hidden = false;
+      } else {
+        jobsEl.innerHTML = list.map(jobCard).join('');
+        emptyEl.hidden = true;
+      }
+    }
+
+    function clearFilters() {
+      el('#search').value = '';
+      el('#brand').value = '';
+      el('#team').value = '';
+      el('#type').value = '';
+      el('#location').value = '';
+      render();
+    }
+
+    function openDetails(id) {
+      const job = JOBS.find(j => j.id === id);
+      if (!job) return;
+
+      modalTitle.textContent = job.title;
+
+      let html = `
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px">
+        <span class="pill brand-pill">${job.brand}</span>
+        <span class="pill">${job.team}</span>
+        <span class="pill">${job.type}</span>
+        <span class="pill">${job.location}</span>
+      </div>
+      <p style="color:var(--text); margin:0 0 24px; font-size:16px; line-height:1.6; border-bottom:1px solid var(--border); padding-bottom:24px;">${job.summary}</p>
+    `;
+
+      // Responsibilities
+      if (job.responsibilities && job.responsibilities.length) {
+        html += `
+        <div class="modal-section">
+          <h4>📋 Responsibilities</h4>
+          <ul>${job.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul>
+        </div>
+      `;
+      }
+
+      // Requirements
+      if (job.requirements && job.requirements.length) {
+        html += `
+        <div class="modal-section">
+          <h4>✅ Requirements</h4>
+          <ul>${job.requirements.map(r => `<li>${r}</li>`).join('')}</ul>
+        </div>
+      `;
+      }
+
+      // Proof of Work
+      if (job.proofOfWork && job.proofOfWork.length) {
+        html += `
+        <div class="modal-section">
+          <h4>🎯 Proof of Work (Required)</h4>
+          <p style="color:var(--muted); margin:0 0 10px; font-size:13px;">Include these in your application:</p>
+          <ul>${job.proofOfWork.map(p => `<li>${p}</li>`).join('')}</ul>
+        </div>
+      `;
+      }
+
+      // Success Criteria (30/60/90)
+      if (job.success30 || job.success60 || job.success90) {
+        html += `
+        <div class="modal-section">
+          <h4>🏆 What Success Looks Like</h4>
+          <div class="success-grid">
+            ${job.success30 ? `<div class="success-item"><strong>30 Days</strong><span>${job.success30}</span></div>` : ''}
+            ${job.success60 ? `<div class="success-item"><strong>60 Days</strong><span>${job.success60}</span></div>` : ''}
+            ${job.success90 ? `<div class="success-item"><strong>90 Days</strong><span>${job.success90}</span></div>` : ''}
+          </div>
+        </div>
+      `;
+      }
+
+      // Apply CTA
+      html += `
+      <div style="display:flex; gap:12px; margin-top:24px; padding-top:24px; border-top:1px solid var(--border);">
+        <a class="btn brand" href="${APPLY_URL}?role=${encodeURIComponent(job.title)}" target="_blank" rel="noopener" style="flex:1; justify-content:center; padding:12px; font-size:16px;">Apply Now</a>
+        <button type="button" class="btn" onclick="jobModal.close()" style="padding:12px;">Close</button>
+      </div>
+    `;
+
+      modalBody.innerHTML = html;
+      modal.showModal();
+    }
+
+    function injectJobSchema() {
+      document.querySelectorAll('script[data-job-schema]').forEach(n => n.remove());
+      JOBS.forEach(job => {
+        const ld = {
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          "title": job.title,
+          "description": job.summary,
+          "employmentType": job.type.replace('-', '').toUpperCase(),
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": job.brand,
+            "sameAs": job.brand === 'Adspend' ? 'https://adspend.framer.website/' : 'http://operatorai.agency/'
+          },
+          "applicantLocationRequirements": { "@type": "Country", "name": "US" },
+          "jobLocationType": job.location === 'Remote' ? "TELECOMMUTE" : undefined,
+          "datePosted": new Date().toISOString().split('T')[0],
+          "validThrough": new Date(Date.now() + 1000 * 60 * 60 * 24 * 90).toISOString().split('T')[0],
+          "url": `${APPLY_URL}?role=${encodeURIComponent(job.title)}`
+        };
+        const s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.dataset.jobSchema = '1';
+        s.textContent = JSON.stringify(ld);
+        document.body.appendChild(s);
+      });
+    }
+
+    ['#search', '#brand', '#team', '#type', '#location'].forEach(id => el(id).addEventListener('input', () => { render(); }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.open) modal.close(); })
+    el('#year').textContent = new Date().getFullYear();
+
+    loadRoles();
+  </script>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+
+</html>

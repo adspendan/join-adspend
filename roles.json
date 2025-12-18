@@ -1,0 +1,1302 @@
+{
+    "roles": [
+        {
+            "id": "mb-senior-meta",
+            "title": "Senior Media Buyer (Meta)",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own 7-figure ad accounts across Meta. Build, scale, and systematize winning campaigns with precision and speed.",
+            "responsibilities": [
+                "Manage and scale $500K+ monthly Meta ad spend across multiple accounts",
+                "Build and iterate on campaign structures, audiences, and creative testing frameworks",
+                "Own ROAS targets and optimize daily with a data-driven approach",
+                "Collaborate with creative team on ad concepts and performance feedback",
+                "Set up and maintain pixel/CAPI tracking and attribution systems"
+            ],
+            "requirements": [
+                "5+ years running Meta ads at scale ($50K+ monthly spend)",
+                "Deep understanding of CAPI, pixel setup, attribution windows",
+                "Proven track record of scaling campaigns profitably",
+                "Strong analytical skills and comfort with data"
+            ],
+            "proofOfWork": [
+                "Screenshots of ad accounts showing scale and ROAS (anonymized is fine)",
+                "Brief case study of a campaign you scaled from $X to $Y",
+                "Explanation of your testing methodology"
+            ],
+            "success30": "Onboarded to all accounts, understand client goals, first optimizations live",
+            "success60": "Independently managing 2-3 accounts with measurable ROAS improvements",
+            "success90": "Scaling spend profitably, contributing to creative strategy, mentoring junior buyers",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "mb-meta",
+            "title": "Media Buyer (Meta)",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Execute and optimize Meta ad campaigns. Learn from senior buyers and grow into account ownership.",
+            "responsibilities": [
+                "Execute daily optimizations across active campaigns",
+                "Build audiences, test creatives, and report on performance",
+                "Maintain clean campaign structures and naming conventions",
+                "Support senior buyers with data analysis and reporting"
+            ],
+            "requirements": [
+                "2+ years running Meta ads with proven results",
+                "Understanding of funnel metrics and attribution",
+                "Strong attention to detail and organized workflow"
+            ],
+            "proofOfWork": [
+                "Screenshots of campaigns you've managed (spend and results)",
+                "Example of a test you ran and what you learned"
+            ],
+            "success30": "Executing optimizations independently on assigned accounts",
+            "success60": "Owning smaller accounts end-to-end",
+            "success90": "Ready to take on larger accounts with minimal oversight",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "mb-google",
+            "title": "Google/YouTube Media Buyer",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own search, shopping, and YouTube campaigns. Drive profitable growth across Google's ecosystem.",
+            "responsibilities": [
+                "Build and optimize Google Search, Shopping, and YouTube campaigns",
+                "Manage keyword strategies, bidding, and budget allocation",
+                "Set up conversion tracking and attribution across platforms",
+                "Report on performance and identify scaling opportunities"
+            ],
+            "requirements": [
+                "3+ years managing Google Ads at $20K+ monthly spend",
+                "Experience with Performance Max, YouTube action campaigns",
+                "Strong understanding of search intent and audience targeting"
+            ],
+            "proofOfWork": [
+                "Screenshots of Google Ads accounts showing performance",
+                "Case study of a successful campaign strategy"
+            ],
+            "success30": "Onboarded to accounts, initial audits complete, first optimizations live",
+            "success60": "Independently managing campaigns with clear performance improvements",
+            "success90": "Scaling profitable campaigns and contributing to strategy",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "mb-tiktok",
+            "title": "TikTok Media Buyer",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Scale brands on TikTok with native creative and smart targeting. Own the full funnel from awareness to conversion.",
+            "responsibilities": [
+                "Build and scale TikTok ad campaigns for ecom and lead gen",
+                "Collaborate with creative team on TikTok-native content",
+                "Optimize for cost-per-acquisition and return on ad spend",
+                "Stay ahead of TikTok algorithm changes and best practices"
+            ],
+            "requirements": [
+                "2+ years running TikTok ads at scale",
+                "Understanding of TikTok creative trends and what converts",
+                "Experience with Spark Ads, creator content, and UGC"
+            ],
+            "proofOfWork": [
+                "Screenshots of TikTok campaigns with results",
+                "Examples of ads that performed well and why"
+            ],
+            "success30": "Running optimizations on active TikTok accounts",
+            "success60": "Independently managing TikTok strategy for 1-2 clients",
+            "success90": "Scaling TikTok as a profitable channel with clear playbooks",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "tracking-specialist",
+            "title": "Tracking & Attribution Specialist",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own the data layer. Pixels, CAPI, GA4, UTMs, postbacks — you make sure every dollar is tracked.",
+            "responsibilities": [
+                "Implement and maintain pixel/CAPI setups across Meta, Google, TikTok",
+                "Configure GA4, GTM, and custom event tracking",
+                "Build UTM frameworks and ensure clean attribution",
+                "Troubleshoot tracking issues and data discrepancies",
+                "Document tracking setups and train team members"
+            ],
+            "requirements": [
+                "3+ years in tracking/analytics for digital marketing",
+                "Expert-level GTM, GA4, and platform pixel knowledge",
+                "Experience with server-side tracking and CAPI",
+                "Strong debugging and problem-solving skills"
+            ],
+            "proofOfWork": [
+                "Examples of complex tracking setups you've implemented",
+                "Case study of a tracking issue you diagnosed and solved"
+            ],
+            "success30": "Audited all client tracking setups, documented issues",
+            "success60": "Implemented fixes across priority accounts",
+            "success90": "All accounts have clean, reliable tracking with documentation",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "analytics-specialist",
+            "title": "Analytics & Reporting Specialist",
+            "brand": "Adspend",
+            "team": "Media Buying",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Turn data into decisions. Build dashboards, automate reports, and surface insights that drive action.",
+            "responsibilities": [
+                "Build and maintain client-facing dashboards in Looker/Sheets",
+                "Automate weekly and monthly reporting workflows",
+                "Analyze campaign data and surface actionable insights",
+                "Support media buyers with data requests and analysis"
+            ],
+            "requirements": [
+                "2+ years in analytics/reporting for marketing",
+                "Strong Excel/Sheets skills and SQL basics",
+                "Experience with Looker, Data Studio, or similar BI tools",
+                "Attention to detail and ability to spot data anomalies"
+            ],
+            "proofOfWork": [
+                "Examples of dashboards or reports you've built",
+                "Case study of an insight that drove a business decision"
+            ],
+            "success30": "Onboarded to reporting stack, producing first reports",
+            "success60": "Owning weekly reporting for multiple accounts",
+            "success90": "Dashboards automated, proactively surfacing insights",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "creative-strategist",
+            "title": "Creative Strategist",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Contract-to-Hire",
+            "location": "Remote",
+            "summary": "Own hooks, briefs, and the testing matrix. Turn editors and creators into a repeatable content engine.",
+            "responsibilities": [
+                "Develop hook banks, angle trees, and creative testing frameworks",
+                "Write performance briefs for UGC creators and editors",
+                "Analyze winning ads and extract replicable patterns",
+                "Collaborate with media buyers on creative performance data",
+                "Source and manage creator relationships"
+            ],
+            "requirements": [
+                "3+ years in creative strategy or performance creative",
+                "Deep understanding of what makes ads convert",
+                "Experience briefing creators and editing teams",
+                "Strong analytical skills for creative testing"
+            ],
+            "proofOfWork": [
+                "Examples of creative briefs you've written",
+                "Case study of a winning creative and your strategy behind it",
+                "Hook banks or angle frameworks you've developed"
+            ],
+            "success30": "Audit complete, first briefs out, testing matrix established",
+            "success60": "Running creative tests with clear learnings",
+            "success90": "Repeatable system for scaling winning creatives",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ugc-editor",
+            "title": "UGC Video Editor",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Cut scroll-stopping UGC ads. Fast turnaround, native feel, hooks that convert.",
+            "responsibilities": [
+                "Edit UGC footage into platform-native ad formats",
+                "Create multiple variations for testing (hooks, CTAs, lengths)",
+                "Add captions, graphics, and motion elements as needed",
+                "Turn around edits quickly based on creative briefs",
+                "Iterate based on performance data"
+            ],
+            "requirements": [
+                "2+ years editing UGC content for ads",
+                "Proficiency in CapCut, Premiere, or similar",
+                "Understanding of what makes UGC convert on Meta/TikTok",
+                "Fast, reliable, and detail-oriented"
+            ],
+            "proofOfWork": [
+                "3-5 UGC ad edits you've created",
+                "Performance context if available (views, CTR, conversions)"
+            ],
+            "success30": "Producing edits from briefs with minimal revision",
+            "success60": "Owning creative output for 2-3 accounts",
+            "success90": "High-performing ads consistently, contributing to strategy",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "motion-designer",
+            "title": "Motion Designer",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Create eye-catching motion graphics for ads — stat callouts, transitions, and scroll-stopping visuals.",
+            "responsibilities": [
+                "Design animated ad assets for Meta, TikTok, YouTube",
+                "Create stat overlays, branded intros/outros, and motion elements",
+                "Build templates for rapid creative iteration",
+                "Collaborate with editors and strategists on creative direction"
+            ],
+            "requirements": [
+                "3+ years in motion design for ads or social",
+                "Expert After Effects skills, Premiere helpful",
+                "Strong design sense and understanding of ad formats",
+                "Fast turnaround and attention to detail"
+            ],
+            "proofOfWork": [
+                "Portfolio of motion work for ads or social",
+                "Examples of animated stat callouts or ad intros"
+            ],
+            "success30": "Producing motion assets from briefs",
+            "success60": "Templates built, regular output across accounts",
+            "success90": "Motion work driving measurable creative wins",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "copywriter-dr",
+            "title": "Copywriter (Direct Response)",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Write ad copy that sells. Headlines, hooks, CTAs — words that drive clicks and conversions.",
+            "responsibilities": [
+                "Write primary text, headlines, and CTAs for Meta/TikTok ads",
+                "Develop landing page and email copy as needed",
+                "Create hook variations for creative testing",
+                "Analyze winning copy patterns and iterate"
+            ],
+            "requirements": [
+                "2+ years writing direct response copy",
+                "Understanding of ad platforms and what converts",
+                "Experience with A/B testing copy",
+                "Fast, reliable, and open to feedback"
+            ],
+            "proofOfWork": [
+                "Portfolio of ad copy you've written",
+                "Examples with performance context if available"
+            ],
+            "success30": "Writing copy for active briefs, understanding voice",
+            "success60": "Owning copy for multiple campaigns",
+            "success90": "Copy consistently contributing to creative wins",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "creative-producer",
+            "title": "Creative Producer",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Run creative operations — briefing, sourcing, scheduling, and QA. Keep the content engine humming.",
+            "responsibilities": [
+                "Source and manage UGC creators and freelancers",
+                "Coordinate shoot schedules and deliverable timelines",
+                "QA all creative assets before delivery",
+                "Maintain creative asset library and organization",
+                "Track creative spend and vendor payments"
+            ],
+            "requirements": [
+                "2+ years in creative production or project management",
+                "Experience managing creators and freelancers",
+                "Strong organizational skills and attention to detail",
+                "Comfortable with fast-paced, high-volume environments"
+            ],
+            "proofOfWork": [
+                "Examples of creative projects you've produced",
+                "Description of your production workflow"
+            ],
+            "success30": "Onboarded to systems, producing first assets",
+            "success60": "Running production for 2-3 clients independently",
+            "success90": "Creative operations running smoothly with documented SOPs",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "senior-video-producer",
+            "title": "Senior Content Producer (Video Editor)",
+            "brand": "Adspend",
+            "team": "Creative",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "World-class editor creating everything from viral memes to premium launch films. Cutting-edge AI video, ruthless storytelling, social-native instincts.",
+            "responsibilities": [
+                "Ship launch videos that capture attention",
+                "Create motion graphics and title design",
+                "Use AI tools: Veo 3, Runway, and emerging platforms",
+                "Optimize content for X, IG, TikTok",
+                "Master pacing, music, and narrative hooks",
+                "Turn cultural moments into shareable memes",
+                "Collaborate with creative leadership end-to-end"
+            ],
+            "requirements": [
+                "5+ years video editing experience",
+                "Expert in Premiere, After Effects, and modern AI video tools",
+                "Strong storytelling instincts",
+                "Platform-native understanding of social content"
+            ],
+            "proofOfWork": [
+                "Portfolio of video work across formats",
+                "Examples of launch videos or social content",
+                "Links to content that went viral or drove results"
+            ],
+            "success30": "Shipping first launch assets and social content",
+            "success60": "Owning video production for key initiatives",
+            "success90": "Video content consistently driving engagement and conversions",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "lp-cro-specialist",
+            "title": "Landing Page/CRO Specialist",
+            "brand": "Adspend",
+            "team": "CRO",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build and optimize landing pages that convert. A/B testing, page speed, and conversion rate obsession.",
+            "responsibilities": [
+                "Build landing pages in Unbounce, Webflow, or custom",
+                "Run A/B tests on headlines, layouts, CTAs, and forms",
+                "Analyze conversion data and implement improvements",
+                "Optimize page speed and mobile experience",
+                "Collaborate with media buyers on funnel performance"
+            ],
+            "requirements": [
+                "3+ years building and optimizing landing pages",
+                "Proficiency with LP builders and basic HTML/CSS",
+                "Strong understanding of CRO principles",
+                "Data-driven approach to testing"
+            ],
+            "proofOfWork": [
+                "Examples of landing pages you've built",
+                "Case study of a CRO test and its impact"
+            ],
+            "success30": "Audited existing LPs, first improvements live",
+            "success60": "Running tests regularly with documented learnings",
+            "success90": "Measurable conversion improvements across accounts",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "funnel-builder",
+            "title": "Funnel Builder",
+            "brand": "Adspend",
+            "team": "CRO",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Build complete funnels — landing pages, checkout flows, upsells, automations. Speed and quality.",
+            "responsibilities": [
+                "Build landing pages and checkout flows in GHL/ClickFunnels/Custom",
+                "Set up email/SMS automations for funnel sequences",
+                "Integrate payment processors and tracking",
+                "QA all funnel elements before launch",
+                "Document builds for future reference"
+            ],
+            "requirements": [
+                "2+ years building funnels for ecom or lead gen",
+                "Experience with GHL, ClickFunnels, or similar",
+                "Understanding of conversion best practices",
+                "Fast, reliable, and detail-oriented"
+            ],
+            "proofOfWork": [
+                "Examples of funnels you've built",
+                "Description of a complete funnel project"
+            ],
+            "success30": "Shipping first funnels with minimal revision",
+            "success60": "Owning funnel builds for multiple clients",
+            "success90": "Clean, fast funnel delivery with documented processes",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "sdr-setter",
+            "title": "SDR/Setter",
+            "brand": "Adspend",
+            "team": "Sales",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Book meetings for the closer. Cold calls, voicemail drops, SMS — relentless and systematic.",
+            "responsibilities": [
+                "120+ dials per day with voicemail drops and SMS follow-ups",
+                "Qualify leads and book meetings on the calendar",
+                "Maintain clean CRM with accurate notes",
+                "Hit show rate targets (shows > sets)",
+                "Execute scripts with live objection handling"
+            ],
+            "requirements": [
+                "1+ years in outbound sales or appointment setting",
+                "Comfortable on the phone and with rejection",
+                "Strong organizational skills and CRM hygiene",
+                "Coachable and competitive"
+            ],
+            "proofOfWork": [
+                "Metrics from previous SDR/setter role",
+                "Recording of a cold call (if available)"
+            ],
+            "success30": "Hitting dial targets, booking first meetings",
+            "success60": "Consistent show rates, pipeline building",
+            "success90": "Top performer with repeatable process",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ae-closer",
+            "title": "AE/Closer",
+            "brand": "Adspend",
+            "team": "Sales",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Close deals. Qualify, educate, and win. Agency retainers and OperatorHQ packages.",
+            "responsibilities": [
+                "Run discovery and demo calls with qualified leads",
+                "Present solutions and handle objections",
+                "Close deals and hit revenue targets",
+                "Maintain clean CRM and forecast accuracy",
+                "Collaborate with SDR team on pipeline quality"
+            ],
+            "requirements": [
+                "3+ years in B2B sales with proven close rates",
+                "Experience selling services or SaaS",
+                "Strong presentation and objection handling skills",
+                "Comfortable on video and screen share"
+            ],
+            "proofOfWork": [
+                "Sales metrics from previous role (quota attainment, deal sizes)",
+                "Recording of a sales call (if available)"
+            ],
+            "success30": "Ramped on product, closing first deals",
+            "success60": "Hitting 80%+ of quota, refining process",
+            "success90": "Consistent quota attainment, contributing to playbook",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "partnerships-affiliates",
+            "title": "Partnerships/Affiliates Manager",
+            "brand": "Adspend",
+            "team": "Sales",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build and manage referral and affiliate partnerships. Drive pipeline through strategic relationships.",
+            "responsibilities": [
+                "Identify and recruit affiliate and referral partners",
+                "Manage partner relationships and performance",
+                "Build out affiliate program infrastructure",
+                "Track and report on partner-driven revenue"
+            ],
+            "requirements": [
+                "3+ years in partnerships or affiliate management",
+                "Network in marketing, ecom, or agency space",
+                "Strong relationship building skills",
+                "Data-driven approach to partner performance"
+            ],
+            "proofOfWork": [
+                "Examples of partnerships you've built",
+                "Revenue or leads driven through partnerships"
+            ],
+            "success30": "Partner strategy defined, first outreach started",
+            "success60": "First partners signed and generating leads",
+            "success90": "Growing partner channel with measurable revenue",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "account-manager",
+            "title": "Account Manager/CSM",
+            "brand": "Adspend",
+            "team": "Client Success",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own client outcomes, reporting, and comms. Translate goals to playbooks.",
+            "responsibilities": [
+                "Serve as primary client contact for assigned accounts",
+                "Run weekly check-ins and monthly reviews",
+                "Translate client goals into actionable playbooks for the team",
+                "Monitor account health and proactively address issues",
+                "Identify upsell and expansion opportunities"
+            ],
+            "requirements": [
+                "2+ years in account management or CSM role",
+                "Strong communication and prioritization skills",
+                "Understanding of digital marketing and funnels",
+                "Agency experience preferred"
+            ],
+            "proofOfWork": [
+                "Examples of client relationships you've managed",
+                "Metrics on retention or upsell"
+            ],
+            "success30": "Onboarded to accounts, running first check-ins",
+            "success60": "Owning 5-10 accounts with strong relationships",
+            "success90": "High retention, proactive issue resolution, upsells closed",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "project-manager",
+            "title": "Project Manager/Delivery Ops",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Keep projects on track. Timelines, handoffs, and accountability across teams.",
+            "responsibilities": [
+                "Manage project timelines and deliverable tracking",
+                "Coordinate handoffs between creative, media, and client teams",
+                "Run standups and ensure accountability",
+                "Document processes and improve workflows",
+                "Escalate blockers and risks proactively"
+            ],
+            "requirements": [
+                "2+ years in project management or delivery ops",
+                "Experience with agency or fast-paced environments",
+                "Strong organizational and communication skills",
+                "Comfortable with project management tools"
+            ],
+            "proofOfWork": [
+                "Examples of projects you've managed",
+                "Description of your PM approach and tools"
+            ],
+            "success30": "Onboarded to projects, understanding workflows",
+            "success60": "Owning project delivery for 2-3 clients",
+            "success90": "On-time delivery, clear processes, team accountability",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "revops-specialist",
+            "title": "RevOps/Integrations Specialist",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own client tech setup end-to-end. Embed checkouts, wire billing flows, automate workflows.",
+            "responsibilities": [
+                "Embed and customize checkouts in GHL/ClickFunnels/Custom sites",
+                "Set up custom billing via API and troubleshoot integrations",
+                "Build automations with Zapier, n8n, webhooks",
+                "Identify product gaps and partner with engineering on fixes",
+                "Create documentation and streamline future integrations"
+            ],
+            "requirements": [
+                "2+ years in RevOps, tech ops, or integrations",
+                "Experience with GHL, Stripe, and automation tools",
+                "API experience and debugging skills",
+                "Creative problem-solver beyond 'supported features'"
+            ],
+            "proofOfWork": [
+                "Examples of integrations you've built",
+                "Case study of a complex automation workflow"
+            ],
+            "success30": "Master key APIs, lead technical onboarding",
+            "success60": "Owning all client tech setups independently",
+            "success90": "Streamlined processes, mentoring peers, zero integration bugs",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "recruiting-sourcer",
+            "title": "Recruiting/Talent Sourcer",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Find exceptional talent. Source candidates, run first screens, keep the pipeline full.",
+            "responsibilities": [
+                "Source candidates through LinkedIn, job boards, and referrals",
+                "Run initial screening calls",
+                "Maintain candidate pipeline and tracking",
+                "Coordinate interview scheduling",
+                "Build employer brand through outreach"
+            ],
+            "requirements": [
+                "1+ years in recruiting or talent sourcing",
+                "Strong communication and assessment skills",
+                "Organized and systematic approach",
+                "Experience sourcing for agency or tech roles preferred"
+            ],
+            "proofOfWork": [
+                "Metrics on candidates sourced and hires made",
+                "Examples of sourcing strategies that worked"
+            ],
+            "success30": "Sourcing candidates for active roles",
+            "success60": "First hires from your pipeline",
+            "success90": "Consistent pipeline fill with quality candidates",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "finance-admin",
+            "title": "Finance/Admin Ops",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Part-Time",
+            "location": "Remote",
+            "summary": "Keep the books clean and operations running. Invoicing, expenses, and admin support.",
+            "responsibilities": [
+                "Manage invoicing and accounts receivable",
+                "Track expenses and reconcile accounts",
+                "Support payroll and contractor payments",
+                "Handle administrative tasks and vendor coordination",
+                "Maintain financial documentation"
+            ],
+            "requirements": [
+                "2+ years in bookkeeping or finance operations",
+                "Experience with QuickBooks, Xero, or similar",
+                "Strong attention to detail and organization",
+                "Reliable and trustworthy"
+            ],
+            "proofOfWork": [
+                "Description of finance ops you've managed",
+                "Examples of processes you've improved"
+            ],
+            "success30": "Onboarded to systems, handling invoicing",
+            "success60": "Running all finance ops independently",
+            "success90": "Clean books, streamlined processes, proactive management",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "systems-operator",
+            "title": "Systems Operator",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own internal automations and tooling. Keep the agency systems running smoothly.",
+            "responsibilities": [
+                "Build and maintain internal automations and workflows",
+                "Manage CRM, project management, and communication tools",
+                "Document SOPs and train team on systems",
+                "Troubleshoot issues and implement improvements",
+                "Coordinate with vendors and manage subscriptions"
+            ],
+            "requirements": [
+                "2+ years in ops or systems administration",
+                "Experience with automation tools (Zapier, n8n, Make)",
+                "Strong technical aptitude and problem-solving",
+                "Organized with strong documentation skills"
+            ],
+            "proofOfWork": [
+                "Examples of automations or systems you've built",
+                "Description of ops improvements you've implemented"
+            ],
+            "success30": "Understanding all internal systems, first automations live",
+            "success60": "Owning systems maintenance independently",
+            "success90": "All systems optimized, documented, and running smoothly",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ea-coordinator",
+            "title": "Executive Assistant/Ops Coordinator",
+            "brand": "Adspend",
+            "team": "Operations",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Be the force-multiplier for the founder. Calendars, recruiting ops, SOPs, vendor wrangling.",
+            "responsibilities": [
+                "Manage executive calendar and inbox",
+                "Coordinate travel and meetings",
+                "Support recruiting logistics and candidate coordination",
+                "Maintain SOPs and project documentation",
+                "Handle vendor relationships and misc tasks"
+            ],
+            "requirements": [
+                "2+ years as EA or ops coordinator",
+                "Exceptional organizational skills",
+                "Strong communication and discretion",
+                "Proactive problem solver"
+            ],
+            "proofOfWork": [
+                "Description of EA responsibilities you've handled",
+                "Examples of projects you've coordinated"
+            ],
+            "success30": "Managing calendar and inbox independently",
+            "success60": "Owning recruiting logistics and SOPs",
+            "success90": "Founder fully supported, proactive on all fronts",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "full-stack-engineer",
+            "title": "Full-Stack Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build the dashboards and integrations that power OperatorHQ. Own features end-to-end.",
+            "responsibilities": [
+                "Build full-stack features for the OperatorHQ platform",
+                "Design and implement APIs and database schemas",
+                "Create polished UI experiences with React/TypeScript",
+                "Collaborate with design and product on feature specs",
+                "Ship weekly with a focus on quality and speed"
+            ],
+            "requirements": [
+                "4+ years full-stack experience (TypeScript/React/Node preferred)",
+                "Strong fundamentals in both frontend and backend",
+                "Experience with databases, APIs, and auth systems",
+                "Comfortable with ambiguity and fast iteration"
+            ],
+            "proofOfWork": [
+                "GitHub repos or shipped products you've built",
+                "Description of a complex feature you owned end-to-end"
+            ],
+            "success30": "First features shipped, understanding the codebase",
+            "success60": "Owning significant features independently",
+            "success90": "Driving architecture decisions, shipping high-impact features",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "frontend-engineer",
+            "title": "Frontend Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build polished web experiences for OperatorHQ. Own features end-to-end, ship weekly.",
+            "responsibilities": [
+                "Craft fast, tasteful UX with React and TypeScript",
+                "Own features end-to-end from design to deploy",
+                "Think deeply about interactions and user experience",
+                "Collaborate closely with design and founders",
+                "Flex across API contracts and data models when needed"
+            ],
+            "requirements": [
+                "4+ years frontend experience with React/TypeScript",
+                "Strong design sense and attention to detail",
+                "Experience with modern frontend tooling",
+                "Passion for building great user experiences"
+            ],
+            "proofOfWork": [
+                "Portfolio of web work or GitHub repos",
+                "Examples of UX improvements you've made"
+            ],
+            "success30": "First features shipped, understanding design system",
+            "success60": "Owning frontend for key features",
+            "success90": "Driving frontend architecture, consistently shipping",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "backend-engineer",
+            "title": "Backend Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own the core backend for on-prem OperatorHQ deployments. APIs, data flows, auth, and reliability.",
+            "responsibilities": [
+                "Design and ship robust APIs for internal and external use",
+                "Build data models and database schemas",
+                "Implement auth, security, and access control",
+                "Create internal tooling for leverage and velocity",
+                "Prototype quickly and iterate based on feedback"
+            ],
+            "requirements": [
+                "4+ years backend experience (Node/Python preferred)",
+                "Strong database and API design skills",
+                "Experience with auth systems and security",
+                "Comfort with on-prem deployment considerations"
+            ],
+            "proofOfWork": [
+                "GitHub repos or description of backend systems you've built",
+                "Case study of a complex backend challenge you solved"
+            ],
+            "success30": "First APIs shipped, understanding system architecture",
+            "success60": "Owning significant backend components",
+            "success90": "Driving backend architecture, high reliability",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ai-engineer",
+            "title": "AI Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build local-first LLM modules and automation pipelines. Ship real-world AI installs.",
+            "responsibilities": [
+                "Build agents, tool-calling systems, and RAG pipelines",
+                "Design and implement evals for AI system quality",
+                "Create agentic workflows that solve real problems",
+                "Optimize for on-device constraints and privacy",
+                "Stay current with AI/LLM developments"
+            ],
+            "requirements": [
+                "3+ years in AI/ML engineering",
+                "Strong TypeScript and/or Python",
+                "Experience with LLMs, RAG, and agentic systems",
+                "Understanding of containerization and deployment"
+            ],
+            "proofOfWork": [
+                "AI systems or agents you've built",
+                "RAG implementations or eval frameworks",
+                "GitHub repos demonstrating AI work"
+            ],
+            "success30": "First agent or module shipped",
+            "success60": "Owning AI features for production installs",
+            "success90": "Driving AI architecture, high-quality autonomous systems",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "solutions-engineer",
+            "title": "Solutions Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Bridge sales and engineering. Scope installs, build demos, and make complex systems understandable.",
+            "responsibilities": [
+                "Lead technical discovery and scoping for new installs",
+                "Build and deliver custom demos and prototypes",
+                "Translate client needs into technical specifications",
+                "Support sales with technical expertise",
+                "Document integration patterns and best practices"
+            ],
+            "requirements": [
+                "3+ years in solutions engineering or technical sales",
+                "Strong technical background (coding, APIs, systems)",
+                "Excellent communication and presentation skills",
+                "Experience with enterprise sales cycles"
+            ],
+            "proofOfWork": [
+                "Examples of demos or prototypes you've built",
+                "Case study of a complex deal you helped close"
+            ],
+            "success30": "Leading discovery calls independently",
+            "success60": "Owning technical aspects of 3-5 deals",
+            "success90": "Closed deals directly attributed to your work",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "devops-engineer",
+            "title": "DevOps/Infrastructure Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Own infrastructure for on-prem installs. CI/CD, containers, security, and observability.",
+            "responsibilities": [
+                "Build and maintain CI/CD pipelines",
+                "Manage container orchestration and deployments",
+                "Implement security hardening for on-prem installs",
+                "Set up monitoring, logging, and alerting",
+                "Design rollout and rollback strategies"
+            ],
+            "requirements": [
+                "3+ years in DevOps or infrastructure",
+                "Experience with Docker, Kubernetes, and CI/CD",
+                "Strong security and networking knowledge",
+                "On-prem deployment experience preferred"
+            ],
+            "proofOfWork": [
+                "Description of infrastructure you've built",
+                "Examples of security hardening implementations"
+            ],
+            "success30": "CI/CD pipeline improvements shipped",
+            "success60": "Owning infrastructure for production installs",
+            "success90": "Reliable, secure deployments with minimal incidents",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "security-engineer",
+            "title": "Security/Compliance Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own security and compliance for on-prem AI systems. Build trust through bulletproof security.",
+            "responsibilities": [
+                "Design and implement security controls for on-prem installs",
+                "Conduct security audits and vulnerability assessments",
+                "Build compliance frameworks (SOC2, HIPAA as needed)",
+                "Document security practices and train team",
+                "Respond to security incidents"
+            ],
+            "requirements": [
+                "4+ years in security engineering",
+                "Experience with compliance frameworks",
+                "Strong understanding of network and application security",
+                "On-prem and air-gapped environment experience"
+            ],
+            "proofOfWork": [
+                "Security implementations you've designed",
+                "Compliance certifications you've led"
+            ],
+            "success30": "Security audit complete, priority fixes identified",
+            "success60": "Security improvements implemented",
+            "success90": "Security posture significantly improved, compliance on track",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "onprem-install-tech",
+            "title": "On-Prem Install Technician",
+            "brand": "OperatorHQ AI",
+            "team": "Field",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Hybrid",
+            "summary": "Configure Operator on client hardware. Network setup, device config, and security hardening.",
+            "responsibilities": [
+                "Install and configure Mac Studio hardware at client sites",
+                "Set up local networks and VPN access",
+                "Run installation playbooks and verify acceptance tests",
+                "Document installations and train client users",
+                "Troubleshoot hardware and network issues"
+            ],
+            "requirements": [
+                "2+ years in IT or systems administration",
+                "Comfort with Mac systems and local networking",
+                "Strong documentation and communication skills",
+                "Willingness to travel occasionally (remote installs also available)"
+            ],
+            "proofOfWork": [
+                "Examples of system installations you've performed",
+                "Description of your troubleshooting approach"
+            ],
+            "success30": "First installs completed successfully",
+            "success60": "Running installs independently with high quality",
+            "success90": "Zero-defect installs, client training excellence",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "implementation-pm",
+            "title": "Implementation PM",
+            "brand": "OperatorHQ AI",
+            "team": "Field",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own install timelines and stakeholder management. Keep complex deployments on track.",
+            "responsibilities": [
+                "Manage end-to-end implementation timelines",
+                "Coordinate between client stakeholders and technical teams",
+                "Create and maintain installation checklists and documentation",
+                "Track risks and escalate blockers proactively",
+                "Run client status meetings and updates"
+            ],
+            "requirements": [
+                "3+ years in implementation or project management",
+                "Experience with technical deployments",
+                "Strong communication and stakeholder management",
+                "Organized with attention to detail"
+            ],
+            "proofOfWork": [
+                "Examples of implementations you've managed",
+                "Description of your PM approach"
+            ],
+            "success30": "Managing first implementation independently",
+            "success60": "Running 3-5 concurrent implementations smoothly",
+            "success90": "On-time, high-quality implementations with happy clients",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "support-engineer",
+            "title": "Support Engineer (Tier 2/3)",
+            "brand": "OperatorHQ AI",
+            "team": "Field",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Solve complex technical issues. Be the last line of defense for client escalations.",
+            "responsibilities": [
+                "Troubleshoot complex technical issues escalated from Tier 1",
+                "Debug system integrations and data flows",
+                "Document solutions and build knowledge base",
+                "Collaborate with engineering on bug fixes",
+                "Provide excellent client communication during incidents"
+            ],
+            "requirements": [
+                "3+ years in technical support or systems engineering",
+                "Strong debugging and problem-solving skills",
+                "Experience with APIs, databases, and integrations",
+                "Excellent communication under pressure"
+            ],
+            "proofOfWork": [
+                "Examples of complex issues you've resolved",
+                "Metrics on ticket resolution or client satisfaction"
+            ],
+            "success30": "Handling escalations independently",
+            "success60": "Building knowledge base, reducing repeat issues",
+            "success90": "High resolution rate, proactive issue prevention",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "product-manager",
+            "title": "Product Manager",
+            "brand": "OperatorHQ AI",
+            "team": "Product",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own the Operator product roadmap. Prioritize features, ship modules, build the marketplace vision.",
+            "responsibilities": [
+                "Define and prioritize product roadmap",
+                "Write specs and user stories for new features",
+                "Collaborate with engineering and design on delivery",
+                "Gather customer feedback and incorporate insights",
+                "Define success metrics and track outcomes"
+            ],
+            "requirements": [
+                "3+ years in product management",
+                "Experience with B2B SaaS or enterprise products",
+                "Strong technical aptitude",
+                "Excellent communication and prioritization skills"
+            ],
+            "proofOfWork": [
+                "Examples of products or features you've shipped",
+                "Case study of a product decision and its outcome"
+            ],
+            "success30": "Understanding product, contributing to roadmap",
+            "success60": "Owning a product area with clear deliverables",
+            "success90": "Features shipped with measurable impact",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "product-designer",
+            "title": "Product Designer",
+            "brand": "OperatorHQ AI",
+            "team": "Product",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Design the systems UI for Operator. Console, dashboards, and operator experiences.",
+            "responsibilities": [
+                "Design user interfaces for the Operator platform",
+                "Create wireframes, prototypes, and high-fidelity designs",
+                "Collaborate with engineering on implementation",
+                "Conduct user research and usability testing",
+                "Build and maintain design system"
+            ],
+            "requirements": [
+                "4+ years in product design for SaaS or enterprise",
+                "Strong Figma skills and design system experience",
+                "Understanding of frontend development",
+                "Experience with complex data-driven UIs"
+            ],
+            "proofOfWork": [
+                "Portfolio of product design work",
+                "Examples of design systems you've contributed to"
+            ],
+            "success30": "First designs shipped, understanding product",
+            "success60": "Owning design for key product areas",
+            "success90": "Design driving product quality and user satisfaction",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "solutions-architect",
+            "title": "Solutions Architect (AI)",
+            "brand": "OperatorHQ AI",
+            "team": "Product",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Pre-sale scoping and demo buildouts. Turn messy ops into crisp Operator installs.",
+            "responsibilities": [
+                "Lead technical discovery sessions with prospects",
+                "Design solution architectures for complex installs",
+                "Build prototypes and custom demos",
+                "Define acceptance criteria and success metrics",
+                "Partner with sales on tailored proposals"
+            ],
+            "requirements": [
+                "5+ years in solutions architecture or technical consulting",
+                "Deep AI/ML and systems integration experience",
+                "Strong communication and presentation skills",
+                "Experience translating business needs to technical specs"
+            ],
+            "proofOfWork": [
+                "Architecture documents or designs you've created",
+                "Case study of a complex solution you designed"
+            ],
+            "success30": "Leading discovery, producing first architectures",
+            "success60": "Owning technical design for major deals",
+            "success90": "Solutions winning deals and delivering success",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "operator-architect",
+            "title": "Operator Architect (Enterprise)",
+            "brand": "OperatorHQ AI",
+            "team": "Product",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Design the future of enterprise Operator deployments. Marquee role for system designers.",
+            "responsibilities": [
+                "Architect enterprise-scale Operator deployments",
+                "Design patterns for multi-site, high-availability installs",
+                "Lead technical strategy for largest accounts",
+                "Mentor solutions and engineering teams",
+                "Contribute to product roadmap from field experience"
+            ],
+            "requirements": [
+                "10+ years in enterprise architecture or consulting",
+                "Deep experience with AI systems and on-prem deployments",
+                "Track record of designing systems for Fortune 500",
+                "Exceptional communication and leadership skills"
+            ],
+            "proofOfWork": [
+                "Enterprise architectures you've designed",
+                "Case studies of large-scale deployments"
+            ],
+            "success30": "Understanding Operator, contributing to strategy",
+            "success60": "Leading architecture for first enterprise deal",
+            "success90": "Enterprise playbook defined, deals closed",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "csm-operator",
+            "title": "Customer Success Manager (Operator)",
+            "brand": "OperatorHQ AI",
+            "team": "Client Success",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Onboard, train, and expand Operator accounts. Own the client relationship post-install.",
+            "responsibilities": [
+                "Onboard new Operator clients and run training sessions",
+                "Conduct regular check-ins and usage reviews",
+                "Identify expansion opportunities and drive upsells",
+                "Monitor usage and proactively address churn risks",
+                "Run QBRs and build executive relationships"
+            ],
+            "requirements": [
+                "3+ years in customer success for enterprise SaaS",
+                "Technical aptitude to understand AI/automation products",
+                "Strong communication and relationship-building skills",
+                "Experience with expansion and retention metrics"
+            ],
+            "proofOfWork": [
+                "Metrics on retention, expansion, or NPS",
+                "Examples of client relationships you've grown"
+            ],
+            "success30": "Onboarding new clients independently",
+            "success60": "Full ownership of 10+ accounts with health metrics",
+            "success90": "Strong retention, expansion revenue, client advocacy",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "qa-engineer",
+            "title": "QA/Test Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Contract",
+            "location": "Remote",
+            "summary": "Own quality for Operator releases. Regression tests, acceptance tests, and release readiness.",
+            "responsibilities": [
+                "Build and maintain automated test suites (Playwright/mobile)",
+                "Create golden datasets for AI evaluation",
+                "Own release checklist and sign-off process",
+                "Document test coverage and gaps",
+                "Collaborate with engineering on quality improvements"
+            ],
+            "requirements": [
+                "3+ years in QA or test engineering",
+                "Experience with test automation frameworks",
+                "Strong attention to detail and systematic approach",
+                "Understanding of AI/ML testing considerations"
+            ],
+            "proofOfWork": [
+                "Test suites or automation you've built",
+                "Examples of quality improvements you've driven"
+            ],
+            "success30": "Understanding product, running first test cycles",
+            "success60": "Owning test suite and release process",
+            "success90": "High test coverage, minimal production issues",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "swe-ios",
+            "title": "Staff Software Engineer, iOS",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build OperatorHQ iOS experiences for client field teams. Local workflows, offline reliability, tight integrations.",
+            "responsibilities": [
+                "Build iOS features with Swift and SwiftUI",
+                "Implement offline-first patterns for field use",
+                "Create polished mobile UX for operators",
+                "Coordinate with backend on mobile-specific APIs",
+                "Ship weekly with a focus on quality"
+            ],
+            "requirements": [
+                "4+ years iOS development with Swift/SwiftUI",
+                "Strong design sense for mobile UX",
+                "Experience with offline-first and local storage",
+                "Comfort with async patterns and modern iOS"
+            ],
+            "proofOfWork": [
+                "iOS apps you've shipped",
+                "Examples of complex mobile features"
+            ],
+            "success30": "First features shipped",
+            "success60": "Owning mobile features independently",
+            "success90": "Driving mobile architecture, high-quality releases",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "swe-android",
+            "title": "Staff Software Engineer, Android",
+            "brand": "OperatorHQ AI",
+            "team": "Engineering",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Ship robust OperatorHQ Android apps for field teams. Clarity, performance, and reliability.",
+            "responsibilities": [
+                "Build Android features with Kotlin and Compose",
+                "Implement offline-first patterns and local storage",
+                "Create fast, reliable experiences for operators",
+                "Build reusable architecture for future installs",
+                "Ship regularly with high quality"
+            ],
+            "requirements": [
+                "4+ years Android development with Kotlin",
+                "Experience with Jetpack Compose and modern patterns",
+                "Strong focus on performance and reliability",
+                "Understanding of offline-first mobile architecture"
+            ],
+            "proofOfWork": [
+                "Android apps you've shipped",
+                "Examples of architecture decisions you've made"
+            ],
+            "success30": "First features shipped",
+            "success60": "Owning Android features independently",
+            "success90": "Driving Android architecture, consistent releases",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        }
+    ]
+}
