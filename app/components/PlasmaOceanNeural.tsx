@@ -344,6 +344,8 @@ export default function PlasmaOceanNeural({
     isVisiblePropRef.current = isVisible;
   }, [intensity, isVisible]);
 
+  const dprRef = useRef(1.0);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -407,10 +409,13 @@ export default function PlasmaOceanNeural({
       intensity: gl.getUniformLocation(program, "u_intensity"),
     };
 
-    // Handle resize - cap DPR for mobile performance
+    // Handle resize - cap DPR for performance
     const handleResize = () => {
       const isMobile = window.innerWidth < 768;
+      // Use lower DPR on mobile for performance
       const dpr = Math.min(window.devicePixelRatio, isMobile ? 1.0 : 1.5);
+      dprRef.current = dpr;
+
       canvas.width = canvas.clientWidth * dpr;
       canvas.height = canvas.clientHeight * dpr;
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -422,7 +427,7 @@ export default function PlasmaOceanNeural({
     // Mouse/touch handlers
     const handlePointerMove = (e: MouseEvent | TouchEvent) => {
       const rect = canvas.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio, 1.5);
+      const dpr = dprRef.current; // Use the exact same DPR as resize
 
       let clientX: number, clientY: number;
       if ("touches" in e) {
@@ -444,7 +449,7 @@ export default function PlasmaOceanNeural({
 
     const handleClick = (e: MouseEvent | TouchEvent) => {
       const rect = canvas.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio, 1.5);
+      const dpr = dprRef.current;
 
       let clientX: number, clientY: number;
       if ("touches" in e) {
