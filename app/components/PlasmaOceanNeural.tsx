@@ -267,277 +267,287 @@ const fragmentShaderSource = `
 `;
 
 interface PlasmaOceanNeuralProps {
-    className?: string;
-    intensity?: number;
-    isVisible?: boolean;
+  className?: string;
+  intensity?: number;
+  isVisible?: boolean;
 }
 
 export default function PlasmaOceanNeural({
-    className = "",
-    intensity = 1.0,
-    isVisible = true
+  className = "",
+  intensity = 1.0,
+  isVisible = true
 }: PlasmaOceanNeuralProps) {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>(0);
-    const glRef = useRef<WebGLRenderingContext | null>(null);
-    const programRef = useRef<WebGLProgram | null>(null);
-    const startTimeRef = useRef<number>(Date.now());
-    const isVisibleRef = useRef(true);
-    const mouseRef = useRef({ x: 0, y: 0, active: false });
-    const clickRef = useRef({ x: 0, y: 0, time: -1 });
-    const [hasWebGL, setHasWebGL] = useState(true);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number>(0);
+  const glRef = useRef<WebGLRenderingContext | null>(null);
+  const programRef = useRef<WebGLProgram | null>(null);
+  const startTimeRef = useRef<number>(Date.now());
+  const isVisibleRef = useRef(true);
+  const mouseRef = useRef({ x: 0, y: 0, active: false });
+  const clickRef = useRef({ x: 0, y: 0, time: -1 });
+  const [hasWebGL, setHasWebGL] = useState(true);
 
-    const uniformsRef = useRef<{
-        time: WebGLUniformLocation | null;
-        resolution: WebGLUniformLocation | null;
-        mouse: WebGLUniformLocation | null;
-        mouseActive: WebGLUniformLocation | null;
-        clickTime: WebGLUniformLocation | null;
-        clickPos: WebGLUniformLocation | null;
-        intensity: WebGLUniformLocation | null;
-    }>({
-        time: null,
-        resolution: null,
-        mouse: null,
-        mouseActive: null,
-        clickTime: null,
-        clickPos: null,
-        intensity: null,
-    });
+  const uniformsRef = useRef<{
+    time: WebGLUniformLocation | null;
+    resolution: WebGLUniformLocation | null;
+    mouse: WebGLUniformLocation | null;
+    mouseActive: WebGLUniformLocation | null;
+    clickTime: WebGLUniformLocation | null;
+    clickPos: WebGLUniformLocation | null;
+    intensity: WebGLUniformLocation | null;
+  }>({
+    time: null,
+    resolution: null,
+    mouse: null,
+    mouseActive: null,
+    clickTime: null,
+    clickPos: null,
+    intensity: null,
+  });
 
-    const createShader = useCallback((gl: WebGLRenderingContext, type: number, source: string) => {
-        const shader = gl.createShader(type);
-        if (!shader) return null;
+  const createShader = useCallback((gl: WebGLRenderingContext, type: number, source: string) => {
+    const shader = gl.createShader(type);
+    if (!shader) return null;
 
-        gl.shaderSource(shader, source);
-        gl.compileShader(shader);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
 
-        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-            console.error("Shader compile error:", gl.getShaderInfoLog(shader));
-            gl.deleteShader(shader);
-            return null;
-        }
-        return shader;
-    }, []);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error("Shader compile error:", gl.getShaderInfoLog(shader));
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }, []);
 
-    const createProgram = useCallback((gl: WebGLRenderingContext, vs: WebGLShader, fs: WebGLShader) => {
-        const program = gl.createProgram();
-        if (!program) return null;
+  const createProgram = useCallback((gl: WebGLRenderingContext, vs: WebGLShader, fs: WebGLShader) => {
+    const program = gl.createProgram();
+    if (!program) return null;
 
-        gl.attachShader(program, vs);
-        gl.attachShader(program, fs);
-        gl.linkProgram(program);
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
+    gl.linkProgram(program);
 
-        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-            console.error("Program link error:", gl.getProgramInfoLog(program));
-            return null;
-        }
-        return program;
-    }, []);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error("Program link error:", gl.getProgramInfoLog(program));
+      return null;
+    }
+    return program;
+  }, []);
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
+  // Use refs for props that change frequently to avoid re-running the main effect
+  const intensityRef = useRef(intensity);
+  const isVisiblePropRef = useRef(isVisible);
 
-        // Check for reduced motion preference
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (prefersReducedMotion) {
-            setHasWebGL(false);
-            return;
-        }
+  useEffect(() => {
+    intensityRef.current = intensity;
+    isVisiblePropRef.current = isVisible;
+  }, [intensity, isVisible]);
 
-        const gl = canvas.getContext("webgl", {
-            antialias: false,
-            alpha: false,
-            preserveDrawingBuffer: false,
-            powerPreference: "default" // Balance quality and power
-        });
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-        if (!gl) {
-            setHasWebGL(false);
-            return;
-        }
-
-        glRef.current = gl;
-
-        const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-        const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
-
-        if (!vertexShader || !fragmentShader) {
-            setHasWebGL(false);
-            return;
-        }
-
-        const program = createProgram(gl, vertexShader, fragmentShader);
-        if (!program) {
-            setHasWebGL(false);
-            return;
-        }
-
-        programRef.current = program;
-        gl.useProgram(program);
-
-        // Create geometry
-        const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
-        const buffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-        gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
-
-        const positionLocation = gl.getAttribLocation(program, "a_position");
-        gl.enableVertexAttribArray(positionLocation);
-        gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-
-        // Get uniform locations
-        uniformsRef.current = {
-            time: gl.getUniformLocation(program, "u_time"),
-            resolution: gl.getUniformLocation(program, "u_resolution"),
-            mouse: gl.getUniformLocation(program, "u_mouse"),
-            mouseActive: gl.getUniformLocation(program, "u_mouseActive"),
-            clickTime: gl.getUniformLocation(program, "u_clickTime"),
-            clickPos: gl.getUniformLocation(program, "u_clickPos"),
-            intensity: gl.getUniformLocation(program, "u_intensity"),
-        };
-
-        // Handle resize - cap DPR for mobile performance
-        const handleResize = () => {
-            const isMobile = window.innerWidth < 768;
-            const dpr = Math.min(window.devicePixelRatio, isMobile ? 1.0 : 1.5);
-            canvas.width = canvas.clientWidth * dpr;
-            canvas.height = canvas.clientHeight * dpr;
-            gl.viewport(0, 0, canvas.width, canvas.height);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        // Mouse/touch handlers
-        const handlePointerMove = (e: MouseEvent | TouchEvent) => {
-            const rect = canvas.getBoundingClientRect();
-            const dpr = Math.min(window.devicePixelRatio, 1.5);
-
-            let clientX: number, clientY: number;
-            if ("touches" in e) {
-                clientX = e.touches[0].clientX;
-                clientY = e.touches[0].clientY;
-            } else {
-                clientX = e.clientX;
-                clientY = e.clientY;
-            }
-
-            mouseRef.current.x = (clientX - rect.left) * dpr;
-            mouseRef.current.y = canvas.height - (clientY - rect.top) * dpr;
-            mouseRef.current.active = true;
-        };
-
-        const handlePointerLeave = () => {
-            mouseRef.current.active = false;
-        };
-
-        const handleClick = (e: MouseEvent | TouchEvent) => {
-            const rect = canvas.getBoundingClientRect();
-            const dpr = Math.min(window.devicePixelRatio, 1.5);
-
-            let clientX: number, clientY: number;
-            if ("touches" in e) {
-                clientX = e.changedTouches[0].clientX;
-                clientY = e.changedTouches[0].clientY;
-            } else {
-                clientX = e.clientX;
-                clientY = e.clientY;
-            }
-
-            clickRef.current.x = (clientX - rect.left) * dpr;
-            clickRef.current.y = canvas.height - (clientY - rect.top) * dpr;
-            clickRef.current.time = (Date.now() - startTimeRef.current) / 1000;
-        };
-
-        canvas.addEventListener("mousemove", handlePointerMove);
-        canvas.addEventListener("touchmove", handlePointerMove);
-        canvas.addEventListener("mouseleave", handlePointerLeave);
-        canvas.addEventListener("touchend", handlePointerLeave);
-        canvas.addEventListener("click", handleClick);
-        canvas.addEventListener("touchstart", handleClick);
-
-        // Visibility change handler
-        const handleVisibilityChange = () => {
-            isVisibleRef.current = document.visibilityState === "visible";
-        };
-        document.addEventListener("visibilitychange", handleVisibilityChange);
-
-        // Animation loop
-        const render = () => {
-            if (!gl || !programRef.current) return;
-
-            if (!isVisibleRef.current || !isVisible) {
-                animationRef.current = requestAnimationFrame(render);
-                return;
-            }
-
-            const time = (Date.now() - startTimeRef.current) / 1000;
-            const uniforms = uniformsRef.current;
-
-            gl.uniform1f(uniforms.time, time);
-            gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
-            gl.uniform2f(uniforms.mouse, mouseRef.current.x, mouseRef.current.y);
-            gl.uniform1f(uniforms.mouseActive, mouseRef.current.active ? 1.0 : 0.0);
-            gl.uniform1f(uniforms.clickTime, clickRef.current.time);
-            gl.uniform2f(uniforms.clickPos, clickRef.current.x, clickRef.current.y);
-            gl.uniform1f(uniforms.intensity, intensity);
-
-            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-
-            animationRef.current = requestAnimationFrame(render);
-        };
-
-        render();
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-            canvas.removeEventListener("mousemove", handlePointerMove);
-            canvas.removeEventListener("touchmove", handlePointerMove);
-            canvas.removeEventListener("mouseleave", handlePointerLeave);
-            canvas.removeEventListener("touchend", handlePointerLeave);
-            canvas.removeEventListener("click", handleClick);
-            canvas.removeEventListener("touchstart", handleClick);
-            cancelAnimationFrame(animationRef.current);
-            if (gl && programRef.current) {
-                gl.deleteProgram(programRef.current);
-            }
-        };
-    }, [createShader, createProgram, intensity, isVisible]);
-
-    // Fallback for no WebGL or reduced motion
-    if (!hasWebGL) {
-        return (
-            <div
-                className={`plasma-ocean-neural-fallback ${className}`}
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    background: "radial-gradient(ellipse at 30% 40%, rgba(193, 255, 114, 0.2) 0%, rgba(20, 50, 20, 0.5) 40%, rgba(15, 17, 21, 1) 100%)",
-                    zIndex: 0,
-                }}
-            />
-        );
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setHasWebGL(false);
+      return;
     }
 
+    const gl = canvas.getContext("webgl", {
+      antialias: false,
+      alpha: false,
+      preserveDrawingBuffer: false,
+      powerPreference: "default" // Balance quality and power
+    });
+
+    if (!gl) {
+      setHasWebGL(false);
+      return;
+    }
+
+    glRef.current = gl;
+
+    const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+    const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+
+    if (!vertexShader || !fragmentShader) {
+      setHasWebGL(false);
+      return;
+    }
+
+    const program = createProgram(gl, vertexShader, fragmentShader);
+    if (!program) {
+      setHasWebGL(false);
+      return;
+    }
+
+    programRef.current = program;
+    gl.useProgram(program);
+
+    // Create geometry
+    const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+    const positionLocation = gl.getAttribLocation(program, "a_position");
+    gl.enableVertexAttribArray(positionLocation);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+    // Get uniform locations
+    uniformsRef.current = {
+      time: gl.getUniformLocation(program, "u_time"),
+      resolution: gl.getUniformLocation(program, "u_resolution"),
+      mouse: gl.getUniformLocation(program, "u_mouse"),
+      mouseActive: gl.getUniformLocation(program, "u_mouseActive"),
+      clickTime: gl.getUniformLocation(program, "u_clickTime"),
+      clickPos: gl.getUniformLocation(program, "u_clickPos"),
+      intensity: gl.getUniformLocation(program, "u_intensity"),
+    };
+
+    // Handle resize - cap DPR for mobile performance
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const dpr = Math.min(window.devicePixelRatio, isMobile ? 1.0 : 1.5);
+      canvas.width = canvas.clientWidth * dpr;
+      canvas.height = canvas.clientHeight * dpr;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Mouse/touch handlers
+    const handlePointerMove = (e: MouseEvent | TouchEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio, 1.5);
+
+      let clientX: number, clientY: number;
+      if ("touches" in e) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      mouseRef.current.x = (clientX - rect.left) * dpr;
+      mouseRef.current.y = canvas.height - (clientY - rect.top) * dpr;
+      mouseRef.current.active = true;
+    };
+
+    const handlePointerLeave = () => {
+      mouseRef.current.active = false;
+    };
+
+    const handleClick = (e: MouseEvent | TouchEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio, 1.5);
+
+      let clientX: number, clientY: number;
+      if ("touches" in e) {
+        clientX = e.changedTouches[0].clientX;
+        clientY = e.changedTouches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      clickRef.current.x = (clientX - rect.left) * dpr;
+      clickRef.current.y = canvas.height - (clientY - rect.top) * dpr;
+      clickRef.current.time = (Date.now() - startTimeRef.current) / 1000;
+    };
+
+    canvas.addEventListener("mousemove", handlePointerMove);
+    canvas.addEventListener("touchmove", handlePointerMove);
+    canvas.addEventListener("mouseleave", handlePointerLeave);
+    canvas.addEventListener("touchend", handlePointerLeave);
+    canvas.addEventListener("click", handleClick);
+    canvas.addEventListener("touchstart", handleClick);
+
+    // Visibility change handler
+    const handleVisibilityChange = () => {
+      isVisibleRef.current = document.visibilityState === "visible";
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Animation loop
+    const render = () => {
+      if (!gl || !programRef.current) return;
+
+      // Check visibility via refs
+      if (!isVisibleRef.current || !isVisiblePropRef.current) {
+        animationRef.current = requestAnimationFrame(render);
+        return;
+      }
+
+      const time = (Date.now() - startTimeRef.current) / 1000;
+      const uniforms = uniformsRef.current;
+
+      gl.uniform1f(uniforms.time, time);
+      gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
+      gl.uniform2f(uniforms.mouse, mouseRef.current.x, mouseRef.current.y);
+      gl.uniform1f(uniforms.mouseActive, mouseRef.current.active ? 1.0 : 0.0);
+      gl.uniform1f(uniforms.clickTime, clickRef.current.time);
+      gl.uniform2f(uniforms.clickPos, clickRef.current.x, clickRef.current.y);
+      gl.uniform1f(uniforms.intensity, intensityRef.current);
+
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+      animationRef.current = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      canvas.removeEventListener("mousemove", handlePointerMove);
+      canvas.removeEventListener("touchmove", handlePointerMove);
+      canvas.removeEventListener("mouseleave", handlePointerLeave);
+      canvas.removeEventListener("touchend", handlePointerLeave);
+      canvas.removeEventListener("click", handleClick);
+      canvas.removeEventListener("touchstart", handleClick);
+      cancelAnimationFrame(animationRef.current);
+      if (gl && programRef.current) {
+        gl.deleteProgram(programRef.current);
+      }
+    };
+  }, [createShader, createProgram]); // Removed intensity and isVisible from deps
+
+  // Fallback for no WebGL or reduced motion
+  if (!hasWebGL) {
     return (
-        <canvas
-            ref={canvasRef}
-            className={`plasma-ocean-neural ${className}`}
-            style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                zIndex: 0,
-                cursor: "crosshair",
-            }}
-        />
+      <div
+        className={`plasma-ocean-neural-fallback ${className}`}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "radial-gradient(ellipse at 30% 40%, rgba(193, 255, 114, 0.2) 0%, rgba(20, 50, 20, 0.5) 40%, rgba(15, 17, 21, 1) 100%)",
+          zIndex: 0,
+        }}
+      />
     );
+  }
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className={`plasma-ocean-neural ${className}`}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        cursor: "crosshair",
+      }}
+    />
+  );
 }

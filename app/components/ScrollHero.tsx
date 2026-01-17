@@ -29,15 +29,24 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
     const [windowHeight, setWindowHeight] = useState(1000);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    const lastWidth = useRef(0);
+
     useEffect(() => {
         setWindowHeight(window.innerHeight);
+        lastWidth.current = window.innerWidth;
 
         const handleScroll = () => {
             setScrollY(window.scrollY);
         };
 
         const handleResize = () => {
-            setWindowHeight(window.innerHeight);
+            // Only update if width changes (desktop resize) or height changes significantly (orientation change)
+            // This prevents address bar show/hide on mobile from triggering rerenders
+            const newWidth = window.innerWidth;
+            if (newWidth !== lastWidth.current) {
+                lastWidth.current = newWidth;
+                setWindowHeight(window.innerHeight);
+            }
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
@@ -140,6 +149,7 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                             padding: "20px",
                             textAlign: "center",
                             pointerEvents: stage1Opacity > 0.3 ? "auto" : "none",
+                            willChange: "opacity, transform"
                         }}
                     >
                         <div style={{
@@ -214,6 +224,7 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                             padding: "40px 20px",
                             textAlign: "center",
                             pointerEvents: "none", // Let background receive pointer events
+                            willChange: "opacity, transform"
                         }}
                     >
                         <h2 style={{
