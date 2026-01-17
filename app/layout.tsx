@@ -2,18 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Careers — Adspend Agency & OperatorHQ AI | Join the Future of Ads & AI",
-  description: "Join Adspend and OperatorHQ AI — media buyers, creatives, engineers, and operators building the future of performance marketing and private AI systems. View open roles and apply today.",
+  title: "Join Adspend & OperatorHQ",
+  description: "We are building the future of decentralized advertising and AI operating systems. View open roles and apply today.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
-    title: "Careers — Adspend Agency & OperatorHQ AI",
-    description: "Join the team building the future of ads and AI. Media buyers, creatives, engineers, and operators wanted.",
+    title: "Join Adspend & OperatorHQ",
+    description: "We are building the future of decentralized advertising and AI operating systems.",
     url: "https://join.adspend.agency/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Careers — Adspend Agency & OperatorHQ AI",
-    description: "Join the team building the future of ads and AI. Media buyers, creatives, engineers, and operators wanted.",
+    title: "Join Adspend & OperatorHQ",
+    description: "We are building the future of decentralized advertising and AI operating systems.",
   },
 };
 
