@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
-// Dynamically import PlasmaOcean to avoid SSR issues
-const PlasmaOcean = dynamic(() => import("./PlasmaOcean"), {
+// Dynamically import PlasmaOceanNeural to avoid SSR issues
+const PlasmaOceanNeural = dynamic(() => import("./PlasmaOceanNeural"), {
     ssr: false,
     loading: () => <div style={{ background: "linear-gradient(135deg, #1a3d1c 0%, #0f1115 100%)", position: "absolute", inset: 0 }} />
 });
@@ -112,7 +112,7 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                         transition: "opacity 0.3s ease",
                     }}
                 >
-                    {/* === PLASMA OCEAN BACKGROUND === */}
+                    {/* === PLASMA OCEAN NEURAL BACKGROUND === */}
                     <div
                         style={{
                             position: "absolute",
@@ -122,7 +122,7 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                             zIndex: 1,
                         }}
                     >
-                        <PlasmaOcean intensity={1.2} isVisible={stage2Opacity > 0.1} />
+                        <PlasmaOceanNeural intensity={1.0} isVisible={stage2Opacity > 0.1} />
                     </div>
 
                     {/* === STAGE 1: Black screen with logos === */}
@@ -145,39 +145,55 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                         <div style={{
                             display: "flex",
                             alignItems: "center",
-                            gap: "20px",
-                            flexWrap: "wrap",
+                            gap: "16px",
+                            flexWrap: "nowrap",
                             justifyContent: "center",
-                            marginBottom: "24px"
+                            marginBottom: "32px",
+                            width: "100%",
+                            padding: "0 16px",
+                            boxSizing: "border-box"
                         }}>
+                            {/* Adspend Agency Logo */}
+                            <img
+                                src="/adspend-logo.png"
+                                alt="Adspend Agency"
+                                style={{
+                                    height: "clamp(60px, 15vw, 130px)",
+                                    width: "auto",
+                                    maxWidth: "42vw",
+                                    objectFit: "contain"
+                                }}
+                            />
                             <span style={{
-                                fontSize: "clamp(28px, 5vw, 52px)",
-                                fontWeight: 800,
-                                color: "#fff",
-                                letterSpacing: "-0.02em"
-                            }}>
-                                Adspend Agency
-                            </span>
-                            <span style={{
-                                fontSize: "clamp(24px, 4vw, 40px)",
-                                color: "rgba(255,255,255,0.5)",
-                                fontWeight: 300
+                                fontSize: "clamp(18px, 3vw, 32px)",
+                                color: "rgba(255,255,255,0.4)",
+                                fontWeight: 200,
+                                flexShrink: 0,
+                                display: "inline-block",
+                                transform: `rotate(${stage1Progress * 360}deg)`,
+                                transition: "transform 0.1s ease-out"
                             }}>
                                 ×
                             </span>
-                            <span style={{
-                                fontSize: "clamp(28px, 5vw, 52px)",
-                                fontWeight: 800,
-                                color: "#fff",
-                                letterSpacing: "-0.02em"
-                            }}>
-                                OperatorHQ AI
-                            </span>
+                            {/* OperatorHQ Logo */}
+                            <img
+                                src="/operatorhq-logo.png"
+                                alt="OperatorHQ AI"
+                                style={{
+                                    height: "clamp(60px, 15vw, 130px)",
+                                    width: "auto",
+                                    maxWidth: "42vw",
+                                    objectFit: "contain",
+                                    marginLeft: "-10px"
+                                }}
+                            />
                         </div>
                         <p style={{
                             fontSize: "14px",
                             color: "rgba(255,255,255,0.5)",
-                            animation: "pulse 2s ease-in-out infinite"
+                            animation: "pulse 2s ease-in-out infinite",
+                            opacity: Math.max(0, 1 - stage1Progress * 8),
+                            transition: "opacity 0.2s ease-out"
                         }}>
                             Scroll to begin
                         </p>
@@ -197,7 +213,7 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                             zIndex: 5,
                             padding: "40px 20px",
                             textAlign: "center",
-                            pointerEvents: stage2Opacity > 0.5 ? "auto" : "none",
+                            pointerEvents: "none", // Let background receive pointer events
                         }}
                     >
                         <h2 style={{
@@ -235,11 +251,11 @@ export default function ScrollHero({ roles, onCategoryClick }: ScrollHeroProps) 
                 <div className="container header-inner">
                     <div className="header-brand">
                         <a href="https://adspend.agency" target="_blank" rel="noopener noreferrer">
-                            Adspend Agency
+                            <img src="/adspend-logo.png" alt="Adspend Agency" className="header-logo" />
                         </a>
                         <span className="header-x">×</span>
                         <a href="https://operatorai.agency" target="_blank" rel="noopener noreferrer">
-                            OperatorHQ AI
+                            <img src="/operatorhq-logo.png" alt="OperatorHQ AI" className="header-logo" />
                         </a>
                     </div>
                     <button

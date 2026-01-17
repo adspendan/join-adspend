@@ -30,7 +30,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Adspend
+                        <img src="/adspend-logo.png" alt="Adspend Agency" className="header-logo" />
                     </a>
                     <span className="header-x">×</span>
                     <a
@@ -38,7 +38,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        OperatorHQ
+                        <img src="/operatorhq-logo.png" alt="OperatorHQ AI" className="header-logo" />
                     </a>
                 </div>
 

@@ -300,6 +300,12 @@ strong {
   opacity: 0.8;
 }
 
+.header-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
 .header-x {
   color: var(--text-muted);
   font-weight: 400;
@@ -1612,6 +1618,13 @@ strong {
   transform: none;
 }
 
+.work-card-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
 .work-card-list {
   list-style: none;
   padding-left: 0;
@@ -1682,12 +1695,21 @@ strong {
 
 @media (max-width: 768px) {
   .scroll-hero-logos {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .scroll-hero-logos .hero-logo {
+    height: clamp(35px, 10vw, 50px);
+    max-width: 38vw;
   }
 
   .scroll-hero-x {
-    display: none;
+    font-size: 14px;
   }
 
   .scroll-hero-quote {
@@ -1709,5 +1731,135 @@ strong {
 
   .main-headline {
     font-size: 28px;
+  }
+}
+
+/* ========================
+   WORK CARD BULLETS - GREEN ONLY
+   ======================== */
+
+.work-card-list.green-bullets {
+  list-style: none !important;
+  padding-left: 0;
+  margin: 0;
+}
+
+.work-card-list.green-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  list-style: none !important;
+}
+
+.work-card-list.green-bullets li::marker {
+  content: none;
+  display: none;
+}
+
+.work-card-list.green-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--brand);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ========================
+   TALENT NETWORK BUTTON - GLOW HOVER
+   ======================== */
+
+.talent-cta .btn-brand {
+  background: var(--brand);
+  color: #000;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.talent-cta .btn-brand:hover {
+  background: var(--brand);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(193, 255, 114, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================
+   FOOTER LOGOS
+   ======================== */
+
+.footer-links-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-legal-centered {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+.footer-copyright-centered {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ========================
+   HERO LOGOS
+   ======================== */
+
+.hero-logo {
+  height: clamp(60px, 12vw, 100px);
+  width: auto;
+  object-fit: contain;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+
+@media (max-width: 768px) {
+  .footer-links-centered {
+    gap: 16px;
+  }
+
+  .footer-logo {
+    height: 35px;
+  }
+
+  /* Hero logos - larger on mobile (nearly double, but fit side by side) */
+  .hero-logo {
+    height: clamp(70px, 25vw, 120px);
+    max-width: 42vw;
   }
 }

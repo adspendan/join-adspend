@@ -127,22 +127,27 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Own the data layer. Pixels, CAPI, GA4, UTMs, postbacks — you make sure every dollar is tracked.",
+            "summary": "Own the data layer. Pixels, CAPI, GA4, UTMs, postbacks \u2014 you make sure every dollar is tracked. Expert in Hyros, Triple Whale, and our internal Trackhawk HQ.",
             "responsibilities": [
                 "Implement and maintain pixel/CAPI setups across Meta, Google, TikTok",
+                "Configure and optimize Hyros, Triple Whale, and similar attribution platforms",
+                "Master our internal Trackhawk HQ (part of OperatorOS) for client attribution",
                 "Configure GA4, GTM, and custom event tracking",
-                "Build UTM frameworks and ensure clean attribution",
+                "Build UTM frameworks and ensure clean attribution across channels",
                 "Troubleshoot tracking issues and data discrepancies",
                 "Document tracking setups and train team members"
             ],
             "requirements": [
                 "3+ years in tracking/analytics for digital marketing",
+                "Experience with Hyros, Triple Whale, or similar attribution tools",
                 "Expert-level GTM, GA4, and platform pixel knowledge",
                 "Experience with server-side tracking and CAPI",
-                "Strong debugging and problem-solving skills"
+                "Strong debugging and problem-solving skills",
+                "Ability to learn and master proprietary internal tools (Trackhawk HQ)"
             ],
             "proofOfWork": [
                 "Examples of complex tracking setups you've implemented",
+                "Experience with Hyros/Triple Whale or similar platforms",
                 "Case study of a tracking issue you diagnosed and solved"
             ],
             "success30": "Audited all client tracking setups, documented issues",
@@ -188,28 +193,33 @@
             "status": "OPEN",
             "type": "Contract-to-Hire",
             "location": "Remote",
-            "summary": "Own hooks, briefs, and the testing matrix. Turn editors and creators into a repeatable content engine.",
+            "summary": "Own hooks, briefs, and the testing matrix. Turn editors and AI tools into a repeatable content engine.",
             "responsibilities": [
                 "Develop hook banks, angle trees, and creative testing frameworks",
-                "Write performance briefs for UGC creators and editors",
+                "Write performance briefs for UGC creators, editors, and AI content generation",
+                "Leverage AI tools (ChatGPT, Claude, Midjourney) for ideation and concepting",
                 "Analyze winning ads and extract replicable patterns",
                 "Collaborate with media buyers on creative performance data",
-                "Source and manage creator relationships"
+                "Source and manage creator relationships",
+                "Stay current on AI creative tools and integrate into workflows",
+                "Continuously evaluate and adopt emerging AI technologies"
             ],
             "requirements": [
                 "3+ years in creative strategy or performance creative",
                 "Deep understanding of what makes ads convert",
                 "Experience briefing creators and editing teams",
+                "Familiarity with AI content generation tools",
                 "Strong analytical skills for creative testing"
             ],
             "proofOfWork": [
                 "Examples of creative briefs you've written",
                 "Case study of a winning creative and your strategy behind it",
-                "Hook banks or angle frameworks you've developed"
+                "Hook banks or angle frameworks you've developed",
+                "Examples of using AI tools in your creative process"
             ],
             "success30": "Audit complete, first briefs out, testing matrix established",
-            "success60": "Running creative tests with clear learnings",
-            "success90": "Repeatable system for scaling winning creatives",
+            "success60": "Running creative tests with AI-assisted workflows",
+            "success90": "Repeatable system for scaling winning creatives using AI",
             "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
         },
         {
@@ -220,10 +230,11 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Cut scroll-stopping UGC ads. Fast turnaround, native feel, hooks that convert.",
+            "summary": "Cut scroll-stopping UGC ads. Fast turnaround, native feel, hooks that convert. AI-assisted editing workflows.",
             "responsibilities": [
                 "Edit UGC footage into platform-native ad formats",
                 "Create multiple variations for testing (hooks, CTAs, lengths)",
+                "Use AI tools for captioning, background removal, and enhancement",
                 "Add captions, graphics, and motion elements as needed",
                 "Turn around edits quickly based on creative briefs",
                 "Iterate based on performance data"
@@ -231,15 +242,18 @@
             "requirements": [
                 "2+ years editing UGC content for ads",
                 "Proficiency in CapCut, Premiere, or similar",
+                "Experience with AI editing tools (Opus Clip, Descript, etc.)",
                 "Understanding of what makes UGC convert on Meta/TikTok",
-                "Fast, reliable, and detail-oriented"
+                "Fast, reliable, and detail-oriented",
+                "Commitment to learning new AI tools as they emerge"
             ],
             "proofOfWork": [
                 "3-5 UGC ad edits you've created",
-                "Performance context if available (views, CTR, conversions)"
+                "Performance context if available (views, CTR, conversions)",
+                "Examples of AI-assisted editing you've done"
             ],
             "success30": "Producing edits from briefs with minimal revision",
-            "success60": "Owning creative output for 2-3 accounts",
+            "success60": "Owning creative output for 2-3 accounts with AI workflows",
             "success90": "High-performing ads consistently, contributing to strategy",
             "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
         },
@@ -251,7 +265,7 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Create eye-catching motion graphics for ads — stat callouts, transitions, and scroll-stopping visuals.",
+            "summary": "Create eye-catching motion graphics for ads \u2014 stat callouts, transitions, and scroll-stopping visuals.",
             "responsibilities": [
                 "Design animated ad assets for Meta, TikTok, YouTube",
                 "Create stat overlays, branded intros/outros, and motion elements",
@@ -281,7 +295,7 @@
             "status": "OPEN",
             "type": "Contract",
             "location": "Remote",
-            "summary": "Write ad copy that sells. Headlines, hooks, CTAs — words that drive clicks and conversions.",
+            "summary": "Write ad copy that sells. Headlines, hooks, CTAs \u2014 words that drive clicks and conversions.",
             "responsibilities": [
                 "Write primary text, headlines, and CTAs for Meta/TikTok ads",
                 "Develop landing page and email copy as needed",
@@ -311,7 +325,7 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Run creative operations — briefing, sourcing, scheduling, and QA. Keep the content engine humming.",
+            "summary": "Run creative operations \u2014 briefing, sourcing, scheduling, and QA. Keep the content engine humming.",
             "responsibilities": [
                 "Source and manage UGC creators and freelancers",
                 "Coordinate shoot schedules and deliverable timelines",
@@ -342,30 +356,35 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "World-class editor creating everything from viral memes to premium launch films. Cutting-edge AI video, ruthless storytelling, social-native instincts.",
+            "summary": "World-class editor creating everything from viral memes to premium launch films. Heavy AI workflow expertise\u2014creating AI-generated influencers, mastering frontier and open-source video models.",
             "responsibilities": [
-                "Ship launch videos that capture attention",
-                "Create motion graphics and title design",
-                "Use AI tools: Veo 3, Runway, and emerging platforms",
-                "Optimize content for X, IG, TikTok",
-                "Master pacing, music, and narrative hooks",
-                "Turn cultural moments into shareable memes",
-                "Collaborate with creative leadership end-to-end"
+                "Ship launch videos and social content that capture attention",
+                "Create AI-generated influencers and synthetic media for brands",
+                "Master AI video tools: Kling, VEO3, Sora, Runway, Pika, Nano Banana Pro",
+                "Use aggregated AI platforms (Higgsfield, etc.) to streamline workflows",
+                "Use fine-tuned open-source models (SDXL, Flux, AnimateDiff) for custom outputs",
+                "Build and optimize AI-powered content production workflows",
+                "Stay current with emerging AI technologies and integrate them into workflows",
+                "Optimize content for X, IG, TikTok, and YouTube Shorts",
+                "Turn cultural moments into shareable memes at speed"
             ],
             "requirements": [
                 "5+ years video editing experience",
                 "Expert in Premiere, After Effects, and modern AI video tools",
-                "Strong storytelling instincts",
-                "Platform-native understanding of social content"
+                "Hands-on experience with AI video generators (Kling, Sora, Runway, VEO3, etc.)",
+                "Understanding of both frontier models and open-source alternatives",
+                "Strong storytelling instincts and platform-native understanding",
+                "Ability to rapidly learn and adopt new AI tools as they emerge"
             ],
             "proofOfWork": [
-                "Portfolio of video work across formats",
-                "Examples of launch videos or social content",
-                "Links to content that went viral or drove results"
+                "Portfolio of video work including AI-generated content",
+                "Examples of AI influencer or synthetic media you've created",
+                "Links to content that went viral or drove measurable results",
+                "Description of AI tools and workflows you've mastered"
             ],
-            "success30": "Shipping first launch assets and social content",
-            "success60": "Owning video production for key initiatives",
-            "success90": "Video content consistently driving engagement and conversions",
+            "success30": "Shipping first launch assets using AI-assisted workflows",
+            "success60": "Owning video production and AI content pipelines",
+            "success90": "AI-powered content consistently driving engagement and conversions",
             "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
         },
         {
@@ -407,7 +426,7 @@
             "status": "OPEN",
             "type": "Contract",
             "location": "Remote",
-            "summary": "Build complete funnels — landing pages, checkout flows, upsells, automations. Speed and quality.",
+            "summary": "Build complete funnels \u2014 landing pages, checkout flows, upsells, automations. Speed and quality.",
             "responsibilities": [
                 "Build landing pages and checkout flows in GHL/ClickFunnels/Custom",
                 "Set up email/SMS automations for funnel sequences",
@@ -438,18 +457,23 @@
             "status": "OPEN",
             "type": "Contract",
             "location": "Remote",
-            "summary": "Book meetings for the closer. Cold calls, voicemail drops, SMS — relentless and systematic.",
+            "summary": "Book meetings for the closer. Master our Closer HQ portal with Ghostline lead scraping, voicemail drops, and AI-powered sales tools. Relentless and systematic.",
             "responsibilities": [
-                "120+ dials per day with voicemail drops and SMS follow-ups",
+                "120+ dials per day using Closer HQ's integrated power dialer",
+                "Use Ghostline for lead scraping and automated voicemail drop campaigns",
+                "Leverage Ghost Data for lead enrichment and data refinement",
                 "Qualify leads and book meetings on the calendar",
-                "Maintain clean CRM with accurate notes",
+                "Maintain clean CRM inside Closer HQ with accurate notes",
                 "Hit show rate targets (shows > sets)",
-                "Execute scripts with live objection handling"
+                "Execute scripts with live objection handling",
+                "Track daily/weekly/monthly activities in My Rhythm dashboard",
+                "Earn XP and rewards through gamified performance system"
             ],
             "requirements": [
                 "1+ years in outbound sales or appointment setting",
                 "Comfortable on the phone and with rejection",
                 "Strong organizational skills and CRM hygiene",
+                "Ability to master proprietary sales tools (Closer HQ, Ghostline)",
                 "Coachable and competitive"
             ],
             "proofOfWork": [
@@ -469,23 +493,31 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Close deals. Qualify, educate, and win. Agency retainers and OperatorHQ packages.",
+            "summary": "Close deals using our AI-powered Closer HQ portal. Whisper Close gives you real-time AI coaching on every call. Qualify, educate, and win.",
             "responsibilities": [
-                "Run discovery and demo calls with qualified leads",
-                "Present solutions and handle objections",
+                "Run discovery and demo calls using Closer HQ's integrated dialer",
+                "Leverage Whisper Close AI coaching for real-time call assistance",
+                "Use the AI Playground to demo voice agents and RAG chatbots live",
+                "Access prospect intelligence and competitor analysis tools",
+                "Present solutions and handle objections with AI-suggested closing lines",
                 "Close deals and hit revenue targets",
-                "Maintain clean CRM and forecast accuracy",
-                "Collaborate with SDR team on pipeline quality"
+                "Maintain clean CRM and forecast accuracy in Closer HQ",
+                "Collaborate with SDR team on pipeline quality",
+                "Complete sales training courses and earn XP rewards",
+                "Compete on the gamified leaderboard"
             ],
             "requirements": [
                 "3+ years in B2B sales with proven close rates",
                 "Experience selling services or SaaS",
                 "Strong presentation and objection handling skills",
-                "Comfortable on video and screen share"
+                "Comfortable using AI-powered sales tools",
+                "Ability to master proprietary systems (Closer HQ, Whisper Close)",
+                "Competitive and driven by performance metrics"
             ],
             "proofOfWork": [
                 "Sales metrics from previous role (quota attainment, deal sizes)",
-                "Recording of a sales call (if available)"
+                "Recording of a sales call (if available)",
+                "Experience with AI-powered sales tools or CRMs"
             ],
             "success30": "Ramped on product, closing first deals",
             "success60": "Hitting 80%+ of quota, refining process",
@@ -500,10 +532,12 @@
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
-            "summary": "Build and manage referral and affiliate partnerships. Drive pipeline through strategic relationships.",
+            "summary": "Build and manage referral and affiliate partnerships. Use Ghostline for partner prospecting and Closer HQ for tracking partner performance.",
             "responsibilities": [
                 "Identify and recruit affiliate and referral partners",
-                "Manage partner relationships and performance",
+                "Use Ghostline for partner lead generation and outreach",
+                "Leverage Ghost Data for partner research and enrichment",
+                "Manage partner relationships and performance in Closer HQ",
                 "Build out affiliate program infrastructure",
                 "Track and report on partner-driven revenue"
             ],
@@ -511,7 +545,8 @@
                 "3+ years in partnerships or affiliate management",
                 "Network in marketing, ecom, or agency space",
                 "Strong relationship building skills",
-                "Data-driven approach to partner performance"
+                "Data-driven approach to partner performance",
+                "Ability to use internal prospecting tools (Ghostline, Ghost Data)"
             ],
             "proofOfWork": [
                 "Examples of partnerships you've built",
@@ -740,6 +775,76 @@
             "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
         },
         {
+            "id": "seo-aeo-specialist",
+            "title": "SEO/AEO Specialist",
+            "brand": "Adspend",
+            "team": "Marketing",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own organic visibility across traditional search and AI answer engines. Optimize content for Google, ChatGPT, Gemini, and emerging platforms.",
+            "responsibilities": [
+                "Develop and execute SEO strategies for client websites",
+                "Optimize content for AI answer engines (ChatGPT, Gemini, Perplexity)",
+                "Conduct keyword research and competitive analysis",
+                "Build and maintain link acquisition strategies",
+                "Monitor rankings across traditional and AI-powered search",
+                "Create content briefs optimized for both SEO and AEO",
+                "Track and report on organic performance metrics"
+            ],
+            "requirements": [
+                "3+ years in SEO with proven ranking results",
+                "Understanding of how AI answer engines source and cite content",
+                "Experience with technical SEO (schema, site speed, crawlability)",
+                "Familiarity with tools like Ahrefs, SEMrush, Screaming Frog",
+                "Strong content strategy and writing skills",
+                "Data-driven approach to optimization"
+            ],
+            "proofOfWork": [
+                "Case studies of sites you've ranked (before/after traffic)",
+                "Examples of content that ranks in AI answer engines",
+                "Description of your AEO approach and methodology"
+            ],
+            "success30": "Audited client sites, first optimizations live",
+            "success60": "Measurable ranking improvements, AEO strategy documented",
+            "success90": "Consistent organic growth, clients appearing in AI answers",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "growth-marketing-manager",
+            "title": "Growth Marketing Manager",
+            "brand": "Adspend",
+            "team": "Marketing",
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Own the growth engine. Paid acquisition, organic loops, partnerships, and AI-assisted marketing automation.",
+            "responsibilities": [
+                "Develop and execute multi-channel growth strategies",
+                "Manage paid acquisition across Meta, Google, and emerging channels",
+                "Build organic growth loops through content and SEO/AEO",
+                "Implement AI-powered marketing automation and personalization",
+                "Analyze funnel metrics and optimize for CAC/LTV",
+                "Test and scale new acquisition channels"
+            ],
+            "requirements": [
+                "4+ years in growth marketing or demand generation",
+                "Proven track record of scaling acquisition channels",
+                "Experience with marketing automation and AI tools",
+                "Strong analytical skills and data-driven mindset",
+                "Agency or startup experience preferred"
+            ],
+            "proofOfWork": [
+                "Growth metrics from campaigns you've managed",
+                "Case study of a channel you scaled from X to Y",
+                "Examples of creative growth experiments"
+            ],
+            "success30": "Audited current growth channels, identified opportunities",
+            "success60": "New experiments running with measurable results",
+            "success90": "Scalable growth engine driving consistent pipeline",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
             "id": "full-stack-engineer",
             "title": "Full-Stack Engineer",
             "brand": "OperatorHQ AI",
@@ -837,6 +942,10 @@
             "title": "AI Engineer",
             "brand": "OperatorHQ AI",
             "team": "AI",
+            "teams": [
+                "AI",
+                "Engineering"
+            ],
             "status": "OPEN",
             "type": "Full-Time",
             "location": "Remote",
@@ -1296,6 +1405,196 @@
             "success30": "First features shipped",
             "success60": "Owning Android features independently",
             "success90": "Driving Android architecture, consistent releases",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "prompt-engineer",
+            "title": "Prompt Engineer / AI Trainer",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "teams": [
+                "AI",
+                "Engineering"
+            ],
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Design and optimize prompts for production AI systems. Fine-tune behaviors, reduce hallucinations, and maximize output quality.",
+            "responsibilities": [
+                "Design, test, and iterate on system prompts for production LLMs",
+                "Create evaluation frameworks to measure prompt performance",
+                "Build prompt libraries and templates for common use cases",
+                "Reduce hallucinations and improve accuracy through prompt engineering",
+                "Document best practices and train team on prompt design",
+                "Stay current with latest prompting techniques and model capabilities"
+            ],
+            "requirements": [
+                "2+ years working with LLMs (GPT-4, Claude, Gemini)",
+                "Deep understanding of prompt engineering techniques",
+                "Experience with evaluation and testing frameworks",
+                "Strong analytical and writing skills",
+                "Ability to think systematically about AI behavior"
+            ],
+            "proofOfWork": [
+                "Examples of complex prompts you've designed",
+                "Case study of a prompt optimization that improved results",
+                "Description of your evaluation methodology"
+            ],
+            "success30": "Audited existing prompts, first improvements deployed",
+            "success60": "Owning prompt design for key AI features",
+            "success90": "Measurable quality improvements, prompt library established",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ai-solutions-architect",
+            "title": "AI Solutions Architect",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "teams": [
+                "AI",
+                "Engineering"
+            ],
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Design and architect AI solutions for enterprise and SMB clients. Translate business requirements into deployable AI systems.",
+            "responsibilities": [
+                "Lead technical discovery and requirements gathering with clients",
+                "Design AI system architectures for on-prem and cloud deployments",
+                "Select appropriate models, frameworks, and infrastructure",
+                "Create technical specifications and implementation plans",
+                "Oversee deployment and integration with existing systems",
+                "Ensure security, compliance, and data privacy requirements"
+            ],
+            "requirements": [
+                "5+ years in software architecture or solutions engineering",
+                "Deep understanding of LLMs, embeddings, and AI infrastructure",
+                "Experience with on-prem deployments and enterprise security",
+                "Strong client-facing communication skills",
+                "Familiarity with vector databases, RAG, and AI orchestration"
+            ],
+            "proofOfWork": [
+                "Architecture diagrams of AI systems you've designed",
+                "Case study of a successful AI deployment",
+                "Description of your approach to client requirements"
+            ],
+            "success30": "Leading discovery for first client projects",
+            "success60": "Architectures delivered and approved for implementation",
+            "success90": "Multiple successful deployments, repeatable patterns established",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "conversational-ai-dev",
+            "title": "Conversational AI Developer",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "teams": [
+                "AI",
+                "Engineering"
+            ],
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build voice agents and conversational AI systems. Design natural dialogues that handle real business workflows.",
+            "responsibilities": [
+                "Develop voice agents for customer service and sales automation",
+                "Design conversation flows and dialogue management",
+                "Integrate with telephony systems (Twilio, VAPI, custom)",
+                "Implement speech-to-text and text-to-speech pipelines",
+                "Build intent recognition and entity extraction systems",
+                "Monitor and improve agent performance based on call analytics"
+            ],
+            "requirements": [
+                "3+ years building conversational AI or voice applications",
+                "Experience with voice platforms (Twilio, VAPI, Retell, etc.)",
+                "Understanding of NLU, dialogue management, and speech processing",
+                "Proficiency in Python or TypeScript",
+                "Strong debugging skills for real-time systems"
+            ],
+            "proofOfWork": [
+                "Voice agents or chatbots you've built",
+                "Demo or recording of a conversational AI system",
+                "Description of a challenging dialogue problem you solved"
+            ],
+            "success30": "First voice agent deployed for internal testing",
+            "success60": "Production agents handling real calls",
+            "success90": "High-performing agents with measurable business impact",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ai-data-engineer",
+            "title": "AI Data Engineer",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "teams": [
+                "AI",
+                "Engineering"
+            ],
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Build the data infrastructure that powers AI systems. ETL pipelines, embeddings, vector databases, and data quality.",
+            "responsibilities": [
+                "Design and build ETL pipelines for AI training and inference",
+                "Implement and manage vector databases (Pinecone, Weaviate, pgvector)",
+                "Create embedding pipelines for RAG applications",
+                "Ensure data quality, lineage, and governance",
+                "Optimize data workflows for cost and performance",
+                "Build monitoring and alerting for data pipelines"
+            ],
+            "requirements": [
+                "4+ years in data engineering or ML ops",
+                "Experience with vector databases and embeddings",
+                "Proficiency in Python and SQL",
+                "Understanding of LLMs and how they consume data",
+                "Experience with cloud data platforms (AWS, GCP, Azure)"
+            ],
+            "proofOfWork": [
+                "Data pipelines you've built for AI/ML systems",
+                "Case study of a data infrastructure project",
+                "Examples of RAG or embedding implementations"
+            ],
+            "success30": "Understanding current data architecture, first pipelines deployed",
+            "success60": "Owning data infrastructure for key AI features",
+            "success90": "Reliable, monitored data pipelines powering production AI",
+            "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
+        },
+        {
+            "id": "ai-product-manager",
+            "title": "AI Product Manager",
+            "brand": "OperatorHQ AI",
+            "team": "AI",
+            "teams": [
+                "AI",
+                "Product"
+            ],
+            "status": "OPEN",
+            "type": "Full-Time",
+            "location": "Remote",
+            "summary": "Define and ship AI products that solve real business problems. Own the roadmap, prioritize features, and drive outcomes.",
+            "responsibilities": [
+                "Define product vision and roadmap for AI features",
+                "Gather requirements from clients and internal stakeholders",
+                "Write clear specs and success criteria for engineering",
+                "Prioritize features based on impact and feasibility",
+                "Monitor product metrics and iterate based on data",
+                "Stay current with AI capabilities and competitive landscape"
+            ],
+            "requirements": [
+                "4+ years in product management, 2+ with AI/ML products",
+                "Deep understanding of LLMs and AI capabilities",
+                "Strong technical communication skills",
+                "Experience shipping products end-to-end",
+                "Data-driven approach to prioritization"
+            ],
+            "proofOfWork": [
+                "Products you've shipped and their outcomes",
+                "Examples of product specs or roadmaps",
+                "Case study of a difficult prioritization decision"
+            ],
+            "success30": "Understanding product landscape, first specs written",
+            "success60": "Owning roadmap for key AI features, shipping regularly",
+            "success90": "AI products driving measurable business outcomes",
             "applyUrl": "https://form.typeform.com/to/XG6oHXSn"
         }
     ]

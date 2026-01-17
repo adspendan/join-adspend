@@ -4,12 +4,15 @@ import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import ScrollHero from "./components/ScrollHero";
 import JobCard from "./components/JobCard";
 import JobModal from "./components/JobModal";
+import ComparisonCard from "./components/ComparisonCard";
+import HeartButton from "./components/HeartButton";
 
 interface Role {
   id: string;
   title: string;
   brand: string;
   team: string;
+  teams?: string[]; // Optional array for roles that belong to multiple teams
   type: string;
   location: string;
   summary: string;
@@ -65,7 +68,10 @@ export default function Home() {
           .includes(searchQuery.toLowerCase());
 
       const matchesBrand = !brandFilter || role.brand === brandFilter;
-      const matchesTeam = !teamFilter || role.team === teamFilter;
+      // Check both primary team and additional teams array
+      const matchesTeam = !teamFilter ||
+        role.team === teamFilter ||
+        (role.teams && role.teams.includes(teamFilter));
       const matchesType = !typeFilter || role.type === typeFilter;
       const matchesLocation = !locationFilter || role.location === locationFilter;
 
@@ -111,10 +117,10 @@ export default function Home() {
         {/* === HERO SECTION (Below scroll) === */}
         <section className="section hero-below">
           <h1 className="main-headline">
-            Shape the Future of <span className="highlight">Agentic AI</span> & Performance Marketing
+            Shape the Future of <span className="highlight">Agentic AI</span> & <span className="highlight">Performance Advertising</span>
           </h1>
           <p className="main-subheadline">
-            We build systems that move real money. If you like ownership, pressure, and shipping, you'll fit here.
+            We build systems that scale. If you like ownership, pressure, and shipping, you'll feel right at home.
           </p>
           <ul className="hero-bullets">
             <li><span className="bullet-icon">⚡</span> Proof of work &gt; resumes</li>
@@ -137,22 +143,24 @@ export default function Home() {
         {/* === YOU'LL LOVE THIS IF / NOT FOR YOU === */}
         <section className="section">
           <div className="comparison-grid">
-            <article className="card comparison-card is-for">
-              <h3>You'll love this if…</h3>
-              <ul className="comparison-list">
-                <li>You want autonomy and accountability</li>
-                <li>You're comfortable being measured on outcomes</li>
-                <li>You like building systems, not just executing tasks</li>
-              </ul>
-            </article>
-            <article className="card comparison-card not-for">
-              <h3>This is not for you if…</h3>
-              <ul className="comparison-list">
-                <li>You need heavy hand-holding</li>
-                <li>You dislike feedback tied to performance</li>
-                <li>You want a slow, corporate environment</li>
-              </ul>
-            </article>
+            <ComparisonCard
+              title="You'll love this if…"
+              items={[
+                "You want autonomy and accountability",
+                "You're comfortable being measured on outcomes",
+                "You like building systems, not just executing tasks"
+              ]}
+              variant="positive"
+            />
+            <ComparisonCard
+              title="This is not for you if…"
+              items={[
+                "You need heavy hand-holding",
+                "You dislike feedback tied to performance",
+                "You want a slow, corporate environment"
+              ]}
+              variant="negative"
+            />
           </div>
         </section>
 
@@ -160,23 +168,21 @@ export default function Home() {
         <section className="section">
           <div className="work-grid">
             <article className="card work-card">
-              <h3 className="work-card-title">Adspend Agency</h3>
-              <ul className="work-card-list">
-                <li>Performance marketing</li>
+              <img src="/adspend-logo.png" alt="Adspend Agency" className="work-card-logo" />
+              <ul className="work-card-list green-bullets">
+                <li>Performance advertising</li>
                 <li>Creative testing</li>
                 <li>Attribution & CRO</li>
-                <li>Scaling real businesses</li>
+                <li>Scaling real businesses with ads</li>
               </ul>
             </article>
             <article className="card work-card">
-              <h3 className="work-card-title">
-                OperatorHQ <span className="highlight">AI</span>
-              </h3>
-              <ul className="work-card-list">
-                <li>On-prem AI systems</li>
-                <li>Private LLMs</li>
-                <li>Voice agents</li>
-                <li>Business operating systems</li>
+              <img src="/operatorhq-logo.png" alt="OperatorHQ AI" className="work-card-logo" />
+              <ul className="work-card-list green-bullets">
+                <li>Building AI infrastructure for businesses</li>
+                <li>On-prem AI systems / Private LLMs</li>
+                <li>Voice agents / RAG chat / AI agents</li>
+                <li>Agentic business operating systems</li>
               </ul>
             </article>
           </div>
@@ -309,14 +315,12 @@ export default function Home() {
           <article className="card talent-cta">
             <h3>Don't See Your Role?</h3>
             <p>We're always meeting exceptional operators. Join the Talent Network and we'll reach out when there's a fit.</p>
-            <a
+            <HeartButton
               href="https://form.typeform.com/to/XG6oHXSn?source=talent_network"
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn-brand"
             >
               Join Talent Network
-            </a>
+            </HeartButton>
           </article>
         </section>
 
@@ -339,30 +343,37 @@ export default function Home() {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <div className="footer-inner">
-            <div className="footer-copy">
-              © {new Date().getFullYear()} Adspend & OperatorHQ AI
-            </div>
-            <nav className="footer-links">
-              <a href="mailto:careers@adspend.agency" className="footer-link">Contact</a>
-              <a href="https://adspend.agency" target="_blank" rel="noopener noreferrer" className="footer-link">
-                Adspend Agency
-              </a>
-              <a href="https://operatorai.agency" target="_blank" rel="noopener noreferrer" className="footer-link">
-                OperatorHQ AI
-              </a>
-              <a
-                href="https://form.typeform.com/to/XG6oHXSn?source=talent_network"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link"
-              >
-                Join Talent Network
-              </a>
-            </nav>
-          </div>
-          <div className="footer-legal">
+          {/* Centered nav links */}
+          <nav className="footer-links-centered">
+            <a href="mailto:careers@adspend.agency" className="footer-link">Contact</a>
+            <a href="https://adspend.agency" target="_blank" rel="noopener noreferrer" className="footer-link">
+              Adspend Agency
+            </a>
+            <a href="https://operatorai.agency" target="_blank" rel="noopener noreferrer" className="footer-link">
+              OperatorHQ AI
+            </a>
+            <HeartButton
+              href="https://form.typeform.com/to/XG6oHXSn?source=talent_network"
+              className="footer-link"
+            >
+              Join Talent Network
+            </HeartButton>
+          </nav>
+          {/* Centered Equal Opportunity */}
+          <div className="footer-legal-centered">
             <strong>Equal Opportunity Employer.</strong> Adspend Agency and OperatorHQ AI are committed to creating a diverse environment. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics, disability, age, or veteran status.
+          </div>
+          {/* Footer Logos - side by side, with links */}
+          <div className="footer-logos">
+            <a href="https://adspend.agency" target="_blank" rel="noopener noreferrer">
+              <img src="/adspend-logo.png" alt="Adspend Agency" className="footer-logo" />
+            </a>
+            <a href="https://operatorai.agency" target="_blank" rel="noopener noreferrer">
+              <img src="/operatorhq-logo.png" alt="OperatorHQ AI" className="footer-logo" />
+            </a>
+          </div>
+          <div className="footer-copyright-centered">
+            © {new Date().getFullYear()} Adspend Agency & OperatorHQ AI
           </div>
         </div>
       </footer>
