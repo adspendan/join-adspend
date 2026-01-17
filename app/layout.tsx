@@ -4,11 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Join Adspend & OperatorHQ",
   description: "We are building the future of decentralized advertising and AI operating systems. View open roles and apply today.",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
   openGraph: {
     type: "website",
     title: "Join Adspend & OperatorHQ",
